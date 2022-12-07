@@ -1,3 +1,76 @@
+import { useState } from "react"
+import capitalize from "../helpers.ts"
+
+const Decoration = () => {
+  return (
+    <div className="images">
+      <div className="image"><img src="./static/square/1.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/2.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/3.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/4.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/5.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/6.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/7.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/8.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/9.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/10.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/11.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/12.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/13.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/14.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/15.jpg" alt="" /></div>
+      <div className="image"><img src="./static/square/16.jpg" alt="" /></div>
+    </div>
+  )
+}
+
+// const Skills = () => {
+//   const [skills, setSkills] = useState({
+//     linux: {
+//       name: 'Linux',
+//       ls: ["Linux", "Bash"]
+//     },
+//     prog: {
+//       name: 'Programming languages',
+//       ls: ["C/C++", "Java"]
+//     },
+//     script: {
+//       name: 'Scripting languages',
+//       ls: ["Python", "JavaScript", "Powershell", "TypeScript", "Bash"]
+//     },
+//     web: {
+//       name: 'Web',
+//       ls: ["HTML/CSS", "JavaScript", "TypeScript", "Markdown", "Django", "NodeJS", "Flask", "Angular", "React"]
+//     },
+//     vcs: {
+//       name: 'Version control',
+//       ls: ["git"]
+//     },
+//     db: {
+//       name: 'Database',
+//       ls: ["SQL", "Firebase"]
+//     },
+//     framework: {
+//       name: 'Web frameworks',
+//       ls: ["Django", "NodeJS", "Flask"]
+//     },
+//     frontend: {
+//       name: 'Frontend frameworks',
+//       ls: ["React", "Angular"]
+//     }
+//   });
+
+
+//   const skillCategoryComp = (
+
+//     <ul>
+//       {Object.keys(skills).map(id => (
+//         <li id={id} key={id}>{skills[id].name}</li>
+//       ))}
+//     </ul>
+//   )
+// }
+
 const Home = () => {
   return (
     <div className="home-component">
@@ -10,57 +83,7 @@ const Home = () => {
       </header>
 
       <section className="container">
-        <div className="images">
-          <div className="image">
-            <img src="./static/square/1.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/2.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/3.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/4.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/5.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/6.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/7.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/8.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/9.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/10.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/11.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/12.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/13.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/14.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/15.jpg" alt="" />
-          </div>
-          <div className="image">
-            <img src="./static/square/16.jpg" alt="" />
-          </div>
-
-        </div>
+        <Decoration />
       </section>
 
       <section className="container">
@@ -69,7 +92,7 @@ const Home = () => {
         <div className="skills-section">
           <div className="category-wrapper">
             <div className="category">
-              <ul id="skill-category">
+              <ul>
                 <li id="skill" className="active">All</li>
                 <li id="linux">Linux</li>
                 <li id="prog">Programming languages</li>
