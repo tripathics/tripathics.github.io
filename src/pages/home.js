@@ -1,5 +1,4 @@
 import { useState } from "react"
-import capitalize from "../helpers.ts"
 
 const Decoration = () => {
   return (
@@ -24,52 +23,77 @@ const Decoration = () => {
   )
 }
 
-// const Skills = () => {
-//   const [skills, setSkills] = useState({
-//     linux: {
-//       name: 'Linux',
-//       ls: ["Linux", "Bash"]
-//     },
-//     prog: {
-//       name: 'Programming languages',
-//       ls: ["C/C++", "Java"]
-//     },
-//     script: {
-//       name: 'Scripting languages',
-//       ls: ["Python", "JavaScript", "Powershell", "TypeScript", "Bash"]
-//     },
-//     web: {
-//       name: 'Web',
-//       ls: ["HTML/CSS", "JavaScript", "TypeScript", "Markdown", "Django", "NodeJS", "Flask", "Angular", "React"]
-//     },
-//     vcs: {
-//       name: 'Version control',
-//       ls: ["git"]
-//     },
-//     db: {
-//       name: 'Database',
-//       ls: ["SQL", "Firebase"]
-//     },
-//     framework: {
-//       name: 'Web frameworks',
-//       ls: ["Django", "NodeJS", "Flask"]
-//     },
-//     frontend: {
-//       name: 'Frontend frameworks',
-//       ls: ["React", "Angular"]
-//     }
-//   });
+const Skills = (props) => {
+  const skillset = {
+    skills: {
+      angular: { id: 'angular', name: 'Angular' },
+      bash: { id: 'bash', name: 'Bash' },
+      cpp: { id: 'cpp', name: 'C/C++' },
+      django: { id: 'django', name: 'Django' },
+      firebase: { id: 'firebase', name: 'Firebase' },
+      flask: { id: 'flask', name: 'Flask' },
+      git: { id: 'git', name: 'Git' },
+      html: { id: 'html', name: 'HTML/CSS' },
+      java: { id: 'java', name: 'Java' },
+      javascript: { id: 'javascript', name: 'JavaScript' },
+      linux: { id: 'linux', name: 'Linux' },
+      markdown: { id: 'markdown', name: 'Markdown' },
+      nodejs: { id: 'nodejs', name: 'NodeJS' },
+      powershell: { id: 'powershell', name: 'Powershell' },
+      python: { id: 'python', name: 'Python' },
+      react: { id: 'react', name: 'ReactJS' },
+      typescript: { id: 'typescript', name: 'TypeScript' },
+      sql: {id: 'cpp', name: 'SQL'}
+    },
+    categories: {
+      all: { id: 'all', name: 'All' , skillsLs: ["angular", "bash", "cpp", "django", "firebase", "flask", "git", "html", "java", "javascript", "linux", "markdown", "nodejs", "powershell", "python", "react", "typescript", "sql"] },
+      linux: { id: 'linux', name: 'Linux', skillsLs: ['linux', 'bash'] },
+      prog: { id: 'prog', name: 'Programming languages', skillsLs: ['cpp', 'java'] },
+      script: { id: 'script', name: 'Scripting languages', skillsLs: ['python', 'javascript', 'powershell', 'typescript', 'bash'] },
+      web: { id: 'web', name: 'Web', skillsLs: ['html', 'javascript', 'typescript', 'markdown', 'django', 'nodejs', 'flask', 'angular', 'react'] },
+      vcs: { id: 'vcs', name: 'Version Control', skillsLs: ['git'] },
+      db: { id: 'db', name: 'Database', skillsLs: ['sql', 'firebase'] },
+      framework: { id: 'framework', name: 'Web framework', skillsLs: ['django', 'nodejs', 'flask'] },
+      frontend: { id: 'frontend', name: 'Frontend framework', skillsLs: ['react', 'angular'] },
+    }
+  }
 
+  const [currCategory, setCurrCategory] = useState('all');
 
-//   const skillCategoryComp = (
+  const skillCategoryComp = (
+    <div className="category-wrapper">
+      <ul className="category">
+        {Object.keys(skillset.categories).map(id => (
+          <li onClick={() => { setCurrCategory(id) }}
+            id={id}
+            key={id}
+            className={id === currCategory ? 'active' : ''}
+          >
+            {skillset.categories[id].name}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 
-//     <ul>
-//       {Object.keys(skills).map(id => (
-//         <li id={id} key={id}>{skills[id].name}</li>
-//       ))}
-//     </ul>
-//   )
-// }
+  const skillsComp = (
+    <div className="skills">
+      {skillset.categories[currCategory].skillsLs.map((id) => (
+        <p className="skill">
+          <img src={`./static/skills/${skillset.skills[id].id}.svg`} alt="" />
+          {skillset.skills[id].name}
+        </p>
+      ))}
+    </div>
+  )
+
+  return (
+    <div className="skills-section">
+      {skillCategoryComp}
+      {skillsComp}
+    </div>
+  )
+}
 
 const Home = () => {
   return (
@@ -88,98 +112,7 @@ const Home = () => {
 
       <section className="container">
         <h2 id="section-h1"><a href="#section-h1">Skills</a></h2>
-
-        <div className="skills-section">
-          <div className="category-wrapper">
-            <div className="category">
-              <ul>
-                <li id="skill" className="active">All</li>
-                <li id="linux">Linux</li>
-                <li id="prog">Programming languages</li>
-                <li id="script">Scripting languages</li>
-                <li id="web">Web</li>
-                <li id="vcs">Version control</li>
-                <li id="db">Database</li>
-                <li id="framework">Web frameworks</li>
-                <li id="frontend">Frontend frameworks</li>
-              </ul>
-            </div>
-          </div>
-          <div id="skills" className="skills">
-            <p className="skill linux">
-              <img src="./static/skills/linux.svg" role="presentation" alt="" />
-              Linux
-            </p>
-            <p className="skill prog">
-              <img src="./static/skills/cpp.svg" role="presentation" alt="" />
-              C/C++
-            </p>
-            <p className="skill script">
-              <img src="./static/skills/python.svg" role="presentation" alt="" />
-              Python
-            </p>
-            <p className="skill prog">
-              <img src="./static/skills/java.svg" role="presentation" alt="" />
-              Java
-            </p>
-            <p className="skill web">
-              <img src="./static/skills/html.svg" role="presentation" alt="" />
-              HTML/CSS
-            </p>
-            <p className="skill script web">
-              <img src="./static/skills/javascript.svg" role="presentation" alt="" />
-              JavaScript
-            </p>
-            <p className="skill script">
-              <img src="./static/skills/powershell.svg" role="presentation" alt="" />
-              Powershell
-            </p>
-            <p className="skill script web">
-              <img src="./static/skills/typescript.svg" role="presentation" alt="" />
-              TypeScript
-            </p>
-            <p className="skill script linux">
-              <img src="./static/skills/bash.svg" role="presentation" alt="" />
-              Bash
-            </p>
-            <p className="skill web">
-              <img src="./static/skills/markdown.svg" role="presentation" alt="" />
-              Markdown
-            </p>
-            <p className="skill vcs">
-              <img src="./static/skills/git.svg" role="presentation" alt="" />
-              Git
-            </p>
-            <p className="skill db">
-              <img src="./static/skills/cpp.svg" role="presentation" alt="" />
-              SQL
-            </p>
-            <p className="skill db">
-              <img src="./static/skills/firebase.svg" role="presentation" alt="" />
-              Firebase
-            </p>
-            <p className="skill web framework">
-              <img src="./static/skills/django.svg" role="presentation" alt="" />
-              Django
-            </p>
-            <p className="skill web framework">
-              <img src="./static/skills/nodejs.svg" role="presentation" alt="" />
-              NodeJS
-            </p>
-            <p className="skill web framework">
-              <img src="./static/skills/flask.svg" role="presentation" alt="" />
-              Flask
-            </p>
-            <p className="skill web frontend">
-              <img src="./static/skills/angular.svg" role="presentation" alt="" />
-              Angular
-            </p>
-            <p className="skill web frontend">
-              <img src="./static/skills/react.svg" role="presentation" alt="" />
-              React
-            </p>
-          </div>
-        </div>
+        <Skills />
       </section>
 
       <section className="container">
