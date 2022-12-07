@@ -24,8 +24,8 @@ const Nav = () => {
         </button>
         <ul id="nav-colapse-items">
           <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/projects">Projects</NavLink></li>
           <li><NavLink to="/posts">Posts</NavLink></li>
+          <li><NavLink to="/projects">Projects</NavLink></li>
           <li><NavLink to="/gallery">Gallery</NavLink></li>
           <li><NavLink to="/contact">Contact</NavLink></li>
         </ul>
@@ -33,8 +33,8 @@ const Nav = () => {
       <div id="nav-exp-items">
         <ul>
           <li><NavLink onClick={toggleMenu} to="/">Home</NavLink></li>
-          <li><NavLink onClick={toggleMenu} to="/projects">Projects</NavLink></li>
           <li><NavLink onClick={toggleMenu} to="/posts">Posts</NavLink></li>
+          <li><NavLink onClick={toggleMenu} to="/projects">Projects</NavLink></li>
           <li><NavLink onClick={toggleMenu} to="/gallery">Gallery</NavLink></li>
           <li><NavLink onClick={toggleMenu} to="/contact">Contact</NavLink></li>
         </ul>

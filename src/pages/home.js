@@ -1,4 +1,6 @@
 import { useState } from "react"
+import Heading from "../components/heading"
+import { Card, ProjectCard } from "../components/card"
 
 const Decoration = () => {
   return (
@@ -23,7 +25,7 @@ const Decoration = () => {
   )
 }
 
-const Skills = (props) => {
+const Skills = () => {
   const skillset = {
     skills: {
       angular: { id: 'angular', name: 'Angular' },
@@ -43,10 +45,10 @@ const Skills = (props) => {
       python: { id: 'python', name: 'Python' },
       react: { id: 'react', name: 'ReactJS' },
       typescript: { id: 'typescript', name: 'TypeScript' },
-      sql: {id: 'cpp', name: 'SQL'}
+      sql: { id: 'cpp', name: 'SQL' }
     },
     categories: {
-      all: { id: 'all', name: 'All' , skillsLs: ["angular", "bash", "cpp", "django", "firebase", "flask", "git", "html", "java", "javascript", "linux", "markdown", "nodejs", "powershell", "python", "react", "typescript", "sql"] },
+      all: { id: 'all', name: 'All', skillsLs: ["angular", "bash", "cpp", "django", "firebase", "flask", "git", "html", "java", "javascript", "linux", "markdown", "nodejs", "powershell", "python", "react", "typescript", "sql"] },
       linux: { id: 'linux', name: 'Linux', skillsLs: ['linux', 'bash'] },
       prog: { id: 'prog', name: 'Programming languages', skillsLs: ['cpp', 'java'] },
       script: { id: 'script', name: 'Scripting languages', skillsLs: ['python', 'javascript', 'powershell', 'typescript', 'bash'] },
@@ -96,6 +98,22 @@ const Skills = (props) => {
 }
 
 const Home = () => {
+  const posts = [
+    {title: 'Python for C programmers', time: 'Jul 7, 2022', pageLink: 'python-for-c-programmers', tags: ["Python", "Beginner"]},
+    {title: 'My journey through Angular', time: 'Jun 5, 2022', pageLink: 'TODO', tags: ["Front-end", "TypeScript", "Walkthrough"]},
+    {title: 'Introduction to Linux Terminal', time: 'February 20, 2022', pageLink: 'TODO', tags: ["Command line", "Terminal", "Linux"]},
+    {title: 'Installing Arch Linux on a Virtualbox VM', time: 'January 27, 2022', pageLink: 'TODO', tags: ["Linux", "OS", "VM"]},
+    {title: 'Creating a simple typing game webapp', time: 'December 18, 2021', pageLink: 'TODO', tags: ["JavaScript", "Event", "API"]},
+    {title: 'Setting up your first coding environment', time: 'August 17, 2020', pageLink: 'first-coding-environment-setup', tags: ["IDE", "C", "VsCode"]},
+  ]
+  
+  const projects = [
+    {title: 'Typing Game', desc: 'A typing game for desktop and mobile', time: '2022', srcLink: 'https://github.com/tripathics/typing-game', demoLink: 'https://tripathics.github.io/typing-game', imgSrc: 'typewriter.webp'},
+    {title: 'Todo List', desc: 'Todo list CLI app', time: '2021', srcLink: 'https://github.com/tripathics/projects/tree/main/todo_list', demoLink: '', imgSrc: 'todo.webp'},
+    {title: 'Filter', desc: 'Apply filter to images from CLI', time: '2021', srcLink: 'https://github.com/tripathics/projects/tree/main/filter_more', demoLink: '', imgSrc: 'filter.webp'},
+    {title: 'DNA', desc: 'Identify people from their DNA sequence given a database', time: '2021', srcLink: 'https://github.com/tripathics/projects/tree/main/dna', demoLink: '', imgSrc: 'dna.webp'},
+  ]
+
   return (
     <div className="home-component">
       <header className="head-container hero">
@@ -116,80 +134,20 @@ const Home = () => {
       </section>
 
       <section className="container">
-        <div className="section-heading">
-          <h2 id="section-h2"><a href="#section-h2">What's new</a></h2>
-          <a className="button" href="./posts">View all</a>
-        </div>
+        <Heading id='section-h2' title="What's new" pageLink='/posts' />
+
         <div className="home-posts">
-          <article className="card">
-            <time>Jul 7, 2022</time>
-            <h3><a href="./python-for-c-programmers">Python for C programmers</a></h3>
-            <div className="tags">
-              <span className="tag">Python</span>
-              <span className="tag">Beginner</span>
-            </div>
-          </article>
-
-          <article className="card">
-            <time>Jun 5, 2022</time>
-            <h3><a href="./TODO">My journey through Angular</a></h3>
-            <div className="tags">
-              <span className="tag">Front-end</span>
-              <span className="tag">TypeScript</span>
-              <span className="tag">Walkthrough</span>
-            </div>
-          </article>
-
-          <article className="card">
-            <time>February 28, 2022</time>
-            <h3><a href="./TODO">Introduction to Linux Terminal</a></h3>
-            <div className="tags">
-              <span className="tag">Command line</span>
-              <span className="tag">Terminal</span>
-              <span className="tag">Linux</span>
-            </div>
-          </article>
-
-          <article className="card">
-            <time>January 27, 2022</time>
-            <h3><a href="./TODO">Installing Arch Linux on a Virtualbox VM</a></h3>
-            <div className="tags">
-              <span className="tag">Linux</span>
-              <span className="tag">OS</span>
-              <span className="tag">VM</span>
-            </div>
-          </article>
-
-          <article className="card">
-            <time>December 18, 2021</time>
-            <h3><a href="./TODO">Creating a simple typing game webapp</a></h3>
-            <div className="tags">
-              <span className="tag">JavaScript</span>
-              <span className="tag">Events</span>
-              <span className="tag">API</span>
-            </div>
-          </article>
-
-          <article className="card">
-            <time>August 17, 2020</time>
-            <h3><a href="./first-coding-environment-setup">Setting up your first coding environment</a></h3>
-            <div className="tags">
-              <span className="tag">IDE</span>
-              <span className="tag">C</span>
-              <span className="tag">VSCode</span>
-            </div>
-          </article>
+          {posts.map((post, i) => <Card {...post} key={i} />)}
         </div>
       </section>
 
       <section className="container">
-        <div className="section-heading">
-          <h2 id="section-h3"><a href="#section-h3">Featured projects</a></h2>
-          <a className="button" href="./projects">View all</a>
-        </div>
+        <Heading id='section-h3' title="Featured projects" pageLink='/projects' />
 
         <div className="home-projects">
-          <article className="anchored card">
+          {projects.map((project, i) => <ProjectCard {...project} key={i} />)}
+
+          {/* <article className="anchored card">
             <div className="image-wrapper">
               <img src="./static/media/typewriter.webp" width="250" height="250" alt="Typewriter" />
             </div>
@@ -244,15 +202,12 @@ const Home = () => {
             <div className="anchored links">
               <a target="_blank" rel="noreferrer" href="https://github.com/tripathics/projects/tree/main/dna" className="button">Source</a>
             </div>
-          </article>
+          </article> */}
         </div>
       </section>
 
       <section className="container resume">
-        <div className="section-heading">
-          <h2 id="section-h4"><a href="#section-h4" >Resume</a></h2>
-          <a className="button" href="https://1drv.ms/b/s!AnLTSa_M6LzggsQ6jQZR5gu_Jln6xQ?e=Bdh9Ky" target="_blank" rel="noreferrer">Download .pdf</a>
-        </div>
+        <Heading id='section-h4' title="Resume" extLinkText="View PDF" extLink='https://1drv.ms/b/s!AnLTSa_M6LzggsQ6jQZR5gu_Jln6xQ?e=Bdh9Ky'/>
         <div className="image-wrapper">
           <img src="./static/Chandrashekhar_Tripathi-resume.webp" alt="resume" width="925" height="1196" />
         </div>
