@@ -68,18 +68,6 @@ const Home = () => {
 
         <div className="skills-section">
           <div className="category-wrapper">
-            <div className="slide">
-              <svg width="20" height="36" viewBox="0 0 20 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clipPath="url(#clip0_55_2)">
-                  <path id="slide-left" d="M11.5975 9.34019L10.2955 8L0 17.9997L10.2955 28L11.5975 26.6595L2.68291 17.9997L11.5975 9.34019Z" fill="black" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_55_2">
-                    <rect width="20" height="36" fill="none" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
             <div className="category">
               <ul id="skill-category">
                 <li id="skill" className="active">All</li>
@@ -92,11 +80,6 @@ const Home = () => {
                 <li id="framework">Web frameworks</li>
                 <li id="frontend">Frontend frameworks</li>
               </ul>
-            </div>
-            <div className="slide">
-              <svg width="20" height="36" viewBox="0 0 20 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="slide-right" d="M8.00001 26.6598L9.30196 28L19.5975 18.0003L9.30196 8L8.00001 9.34046L16.9146 18.0003L8.00001 26.6598Z" fill="black" />
-              </svg>
             </div>
           </div>
           <div id="skills" className="skills">
