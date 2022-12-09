@@ -1,20 +1,19 @@
-import { Link } from "react-router-dom"
+import React from "react"
+import { Link } from "gatsby"
 
-const Card = (props) => {
-  const { time, pageLink, title, tags } = props
+const Card = ({ time, pageLink, title, tags }) => {
   return (
     <article className="card">
       <time>{time}</time>
       <h3><Link to={pageLink}>{title}</Link></h3>
       <div className="tags">
-        {tags.map(tag => <span className="tag">{tag}</span>)}
+        {tags.map((tag, i) => <span key={i} className="tag">{tag}</span>)}
       </div>
     </article>
   )
 }
 
-const ProjectCard = (props) => {
-  const { imgSrc, time, demoLink, srcLink, title, desc } = props
+const ProjectCard = ({ imgSrc, time, demoLink, srcLink, title, desc }) => {
   return (
     <article className="anchored card">
       <div className="image-wrapper">

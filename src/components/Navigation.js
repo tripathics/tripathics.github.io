@@ -1,6 +1,15 @@
-import { NavLink } from "react-router-dom"
+import React from "react"
+import { Link } from "gatsby"
 
-const Nav = () => {
+const mainNavItems = [
+  { url: '/', label: 'Home' },
+  { url: '/posts', label: 'Posts' },
+  { url: '/projects', label: 'Projects' },
+  { url: '/gallery', label: 'Gallery' },
+  { url: '/contact', label: 'Contact' },
+]
+
+const Navigation = () => {
   const toggleMenu = () => {
     let navItems = document.getElementById('nav-exp-items');
     navItems.classList.toggle('expand');
@@ -11,7 +20,7 @@ const Nav = () => {
     } else {
       btn.innerHTML = `<svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"><title>Menu</title><path d="M10 80h80a5 5 0 000-10H10a5 5 0 000 10zm0-25h80a5 5 0 000-10H10a5 5 0 000 10zM5 25a5 5 0 005 5h80a5 5 0 000-10H10a5 5 0 00-5 5z" fill="currentColor"/></svg>`;
     }
-  } 
+  }
 
   return (
     <nav className="nav-component">
@@ -23,24 +32,20 @@ const Nav = () => {
           </svg>
         </button>
         <ul id="nav-colapse-items">
-          <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/posts">Posts</NavLink></li>
-          <li><NavLink to="/projects">Projects</NavLink></li>
-          <li><NavLink to="/gallery">Gallery</NavLink></li>
-          <li><NavLink to="/contact">Contact</NavLink></li>
+          {mainNavItems.map((item, i) => (
+            <li key={i}><Link to={item.url} activeClassName="active">{item.label}</Link></li>
+          ))}
         </ul>
       </div>
       <div id="nav-exp-items">
         <ul>
-          <li><NavLink onClick={toggleMenu} to="/">Home</NavLink></li>
-          <li><NavLink onClick={toggleMenu} to="/posts">Posts</NavLink></li>
-          <li><NavLink onClick={toggleMenu} to="/projects">Projects</NavLink></li>
-          <li><NavLink onClick={toggleMenu} to="/gallery">Gallery</NavLink></li>
-          <li><NavLink onClick={toggleMenu} to="/contact">Contact</NavLink></li>
+          {mainNavItems.map((item, i) => (
+            <li key={i}><Link onClick={toggleMenu} to={item.url} activeClassName="active">{item.label}</Link></li>
+          ))}
         </ul>
       </div>
     </nav>
   )
 }
 
-export default Nav
+export default Navigation

@@ -1,4 +1,5 @@
-import DP from "../media/pp.webp"
+import React from "react"
+import DP from "../images/me.webp"
 
 const Me = () => {
   return (

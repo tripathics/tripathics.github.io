@@ -1,6 +1,7 @@
+import React from "react"
 import todoIllustration from "../media/comingsoon.png";
 
-const TODO = () => {
+const Todo = () => {
   return (
     <div id="todo">
         <img src={todoIllustration} alt="Coming soon"/>
@@ -8,4 +9,4 @@ const TODO = () => {
   )
 }
 
-export default TODO;
+export default Todo;

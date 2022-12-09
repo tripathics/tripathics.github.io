@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom"
+import React from "react"
+import { Link } from "gatsby"
 
-const Heading = (props) => {
-
-  const { id, title, pageLink, extLink, extLinkText } = props
+const Heading = ({ id, title, pageLink, extLink, extLinkText }) => {
   return (
     <div className="section-heading">
       <h2 id={id}>
