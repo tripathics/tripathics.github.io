@@ -1,12 +1,11 @@
 import React from "react"
+import { PageTitle } from "../components/Heading"
 import Todo from "../components/todo"
 
 const Gallery = () => {
   return (
     <>
-      <header className="head-container">
-        <h1 id="section-g0" className="title"><a href="#section-g0">Photo Gallery</a></h1>
-      </header>
+      <PageTitle id='section-g0' title='Gallery' />
       <section className="container">
         <Todo />
       </section>

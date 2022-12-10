@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const Card = ({ time, pageLink, title, tags }) => {
+const Card = ({ date, writeup, name, tags }) => {
   return (
     <article className="card">
-      <time>{time}</time>
-      <h3><Link to={pageLink}>{title}</Link></h3>
+      <time>{date}</time>
+      <h3><Link to={writeup}>{name}</Link></h3>
       <div className="tags">
         {tags.map((tag, i) => <span key={i} className="tag">{tag}</span>)}
       </div>
@@ -13,24 +13,31 @@ const Card = ({ time, pageLink, title, tags }) => {
   )
 }
 
-const ProjectCard = ({ imgSrc, time, demoLink, srcLink, title, desc }) => {
+const ProjectCard = ({ name, date, slug, tagline, url, src, writeup, highlight }) => {
   return (
     <article className="anchored card">
       <div className="image-wrapper">
-        <img src={`./static/projects/${imgSrc}`} width="250" height="250" alt="" />
+        {highlight && (
+          <img src={require(`../images/projects/${slug}.webp`).default} width="250" height="250" alt="" />
+        )}
+        {!highlight && (
+          <img src={require(`../images/projects/filter.webp`).default} width="250" height="250" alt="" />
+        )}
+
       </div>
       <div className="proj-desc">
-        <time>{time}</time>
-        {demoLink ? (
-          <h3><a href={demoLink} target="_blank" rel="noreferrer">{title}</a></h3>
+        <time>{date}</time>
+        {url ? (
+          <h3><a href={url} target="_blank" rel="noreferrer">{name}</a></h3>
         ) : (
-          <h3><a href={srcLink} target="_blank" rel="noreferrer">{title}</a></h3>
+          <h3><a href={src} target="_blank" rel="noreferrer">{name}</a></h3>
         )}
-        <p>{desc}</p>
+        <p>{tagline}</p>
       </div>
       <div className="anchored links">
-        <a target="_blank" rel="noreferrer" href={srcLink} className="button">Source</a>
-        {demoLink && <a target="_blank" rel="noreferrer" href={demoLink} className="button">Demo</a>}
+        <a target="_blank" rel="noreferrer" href={src} className="button">Source</a>
+        {url && <a target="_blank" rel="noreferrer" href={url} className="button">Demo</a>}
+        {writeup && <Link to={slug} className="button">Article</Link>}
       </div>
     </article>
   )

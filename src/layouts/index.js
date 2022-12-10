@@ -1,4 +1,5 @@
-import "../index.scss"
+import "../styles/index.scss"
+import "../styles/new-moon.css"
 import React from "react"
 import Navigation from "../components/Navigation"
 import Me from "../components/Me"

@@ -1,11 +1,10 @@
 import React from "react"
+import { PageTitle } from "../components/Heading"
 
 const Contact = () => {
   return (
     <div className="contact-component">
-      <header className="head-container">
-        <h1 id="section-c0"><a href="#section-c0">Contact Me</a></h1>
-      </header>
+      <PageTitle id={'section-c0'} title='Contact Me' />
       <section className="container">
         <form className="form-control" action="/contact" method="post">
           <div className="inp-name field-container">

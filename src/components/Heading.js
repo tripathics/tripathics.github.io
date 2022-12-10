@@ -17,4 +17,15 @@ const Heading = ({ id, title, pageLink, extLink, extLinkText }) => {
   )
 }
 
-export default Heading;
+const PageTitle = ({ id, title }) => {
+  id = id ?? '';
+  return (
+    <header className="head-container">
+      <h1 id={id}>
+        {id ? <a href={`#${id}`}>{title}</a> : <>{title}</>}
+      </h1>
+    </header>
+  )
+}
+
+export {Heading, PageTitle};

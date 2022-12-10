@@ -1,25 +1,19 @@
 import React from "react"
-import Heading from "../components/Heading"
+import { Heading } from "../components/Heading"
 import { Card, ProjectCard } from "../components/Card"
 import Decoration from "../components/Decoration"
 import Skills from "../components/Skills"
 import { Link } from "gatsby"
+import { projectsList } from "../data/projectsList"
 
 const IndexPage = () => {
   const posts = [
-    { title: 'Python for C programmers', time: 'Jul 7, 2022', pageLink: 'python-for-c-programmers', tags: ["Python", "Beginner"] },
-    { title: 'My journey through Angular', time: 'Jun 5, 2022', pageLink: 'TODO', tags: ["Front-end", "TypeScript", "Walkthrough"] },
-    { title: 'Introduction to Linux Terminal', time: 'February 20, 2022', pageLink: 'TODO', tags: ["Command line", "Terminal", "Linux"] },
-    { title: 'Installing Arch Linux on a Virtualbox VM', time: 'January 27, 2022', pageLink: 'TODO', tags: ["Linux", "OS", "VM"] },
-    { title: 'Creating a simple typing game webapp', time: 'December 18, 2021', pageLink: 'TODO', tags: ["JavaScript", "Event", "API"] },
-    { title: 'Setting up your first coding environment', time: 'August 17, 2020', pageLink: 'first-coding-environment-setup', tags: ["IDE", "C", "VsCode"] },
-  ]
-
-  const projects = [
-    { title: 'Typing Game', desc: 'A typing game for desktop and mobile', time: '2022', srcLink: 'https://github.com/tripathics/typing-game', demoLink: 'https://tripathics.github.io/typing-game', imgSrc: 'typewriter.webp' },
-    { title: 'Todo List', desc: 'Todo list CLI app', time: '2021', srcLink: 'https://github.com/tripathics/projects/tree/main/todo_list', demoLink: '', imgSrc: 'todo.webp' },
-    { title: 'Filter', desc: 'Apply filter to images from CLI', time: '2021', srcLink: 'https://github.com/tripathics/projects/tree/main/filter_more', demoLink: '', imgSrc: 'filter.webp' },
-    { title: 'DNA', desc: 'Identify people from their DNA sequence given a database', time: '2021', srcLink: 'https://github.com/tripathics/projects/tree/main/dna', demoLink: '', imgSrc: 'dna.webp' },
+    { name: 'Python for C programmers', date: 'Jul 7, 2022', writeup: 'python-for-c-programmers', tags: ["Python", "Beginner"] },
+    { name: 'My journey through Angular', date: 'Jun 5, 2022', writeup: 'TODO', tags: ["Front-end", "TypeScript", "Walkthrough"] },
+    { name: 'Introduction to Linux Terminal', date: 'February 20, 2022', writeup: 'TODO', tags: ["Command line", "Terminal", "Linux"] },
+    { name: 'Installing Arch Linux on a Virtualbox VM', date: 'January 27, 2022', writeup: 'TODO', tags: ["Linux", "OS", "VM"] },
+    { name: 'Creating a simple typing game webapp', date: 'December 18, 2021', writeup: 'TODO', tags: ["JavaScript", "Event", "API"] },
+    { name: 'Setting up your first coding environment', date: 'August 17, 2020', writeup: 'first-coding-environment-setup', tags: ["IDE", "C", "VsCode"] },
   ]
 
   return (
@@ -53,7 +47,9 @@ const IndexPage = () => {
         <Heading id='section-h3' title="Featured projects" pageLink='/projects' />
 
         <div className="home-projects">
-          {projects.map((project, i) => <ProjectCard {...project} key={i} />)}
+          {projectsList.filter(project => project.highlight).map((project, i) => (
+            <ProjectCard {...project} key={i} />
+          ))}
         </div>
       </section>
 

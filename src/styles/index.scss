@@ -67,7 +67,6 @@
 
     --mobile-ctnr-side-padding: 1.5rem;
 
-    scroll-behavior: smooth;
     scroll-padding-top: calc(var(--main-offset) + 0.8rem);
 }
 
@@ -453,7 +452,7 @@ img {
 
 /* hero section */
 header.hero {
-    background: no-repeat url(images/hero.svg),
+    background: no-repeat url(../images/hero.svg),
         linear-gradient(180deg, rgba(var(--gray-3-grad), 1) 0%,
             rgba(var(--gray-3-grad), 0.75) 50%,
             rgba(var(--gray-3-grad), 0.5) 75%,
@@ -476,6 +475,10 @@ p.hero-description {
 .section-heading {
     display: flex;
     justify-content: space-between;
+
+    h2 {
+        margin-bottom: 1.2rem;
+    }
 }
 
 /* picture grid */
@@ -519,6 +522,7 @@ p.hero-description {
     border: none;
     font-weight: 500;
     font-size: 0.8rem;
+    line-height: 1.6;
     padding: 0.5rem 1rem;
     margin: 0;
     color: var(--gray-6);
@@ -729,51 +733,54 @@ hr {
 }
 
 /********* Featured projects ********/
+.home-projects {
+    .card {
+        --hp-card-len: 300px;
+        max-width: var(--hp-card-len);
+    }
 
-.home-projects .card {
-    --hp-card-len: 300px;
+    .image-wrapper {
+        max-width: var(--hp-card-len);
+        max-height: var(--hp-card-len);
+    }
+}
+
+.card {
     display: flex;
     flex-direction: column;
     background-color: transparent;
-    max-width: var(--hp-card-len);
-}
+    
+    .proj-desc {
+        time {
+            font-weight: 600;
+        }
+        h3 {
+            line-height: 1.15;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin: 0.2rem 0;
+        }
+        p {
+            line-height: 1.2;
+            font-size: 0.9rem;
+        }
+    }
 
-.home-projects .image-wrapper {
-    max-width: var(--hp-card-len);
-    max-height: var(--hp-card-len);
-}
-
-.proj-desc time {
-    font-weight: 600;
-}
-
-.proj-desc h3 {
-    line-height: 1.15;
-    font-size: 1.3rem;
-    font-weight: 400;
-    margin: 0.2rem 0;
-}
-
-.proj-desc p {
-    line-height: 1.2;
-    font-size: 0.9rem;
-}
-
-.home-projects .card .button {
-    background-color: var(--gray-05);
-    color: var(--gray-8);
-    font-weight: 550;
-    border-color: var(--gray-4);
-    margin-right: 0.25rem;
-}
-
-.home-projects .card .button:hover {
-    border-color: var(--gray-6);
-}
-
-.home-projects .card .button:active {
-    border-color: black;
-
+    .links {
+        .button {
+            background-color: var(--gray-05);
+            color: var(--gray-8);
+            font-weight: 550;
+            border-color: var(--gray-4);
+            margin-right: 0.25rem;
+        }
+        .button:hover {
+            border-color: var(--gray-6);
+        }
+        .button:active {
+            border-color: black;
+        }
+    }
 }
 
 /* Resume */
@@ -1202,64 +1209,23 @@ div#todo {
 }
 
 .projects-component {
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(192px, 1fr));
+        gap: 1.5rem 1rem;
 
-    /* projects projects */
-    .proj {
-        display: flex;
-        flex-direction: row;
-        margin: 2rem 0;
-
-        hr {
-            display: none;
-        }
-
-        .clipart {
-            flex-shrink: 0;
-            margin: 0 1.5rem;
-
-            img {
-                width: 135px;
-                height: 135px;
+        @media screen and (max-width: 1440px) {
+            .card .image-wrapper img {
+                aspect-ratio: 3 / 2;
+                object-fit: cover;
             }
         }
 
-        .text {
-
-            h2,
-            h3 {
-                a {
-                    color: #313131;
-                }
+        @media screen and (max-width: 500px) {
+            .card .image-wrapper img {
+                aspect-ratio: 2 / 1;
+                object-fit: cover;
             }
-
-            p {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-
-    @media screen and (max-width: 600px) {
-        .clipart>img {
-            width: 100px;
-            height: 100px;
-        }
-    }
-
-    @media screen and (max-width: 460px) {
-        .proj {
-            flex-direction: column-reverse;
-
-            .clipart {
-                margin: auto;
-                margin-top: 10px;
-            }
-        }
-
-        .proj>hr {
-            margin-top: 0.3rem;
-            margin-bottom: 0;
-            display: block;
         }
     }
 }
