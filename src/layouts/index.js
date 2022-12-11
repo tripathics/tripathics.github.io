@@ -1,4 +1,5 @@
 import "../styles/index.scss"
+import "../styles/components.scss"
 import "../styles/new-moon.css"
 import React from "react"
 import Navigation from "../components/Navigation"

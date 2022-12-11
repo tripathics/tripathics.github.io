@@ -2,20 +2,13 @@
 slug: "first-coding-environment-setup"
 date: "2022-12-09"
 title: "Setting up your first coding environment"
+hero: {
+    txt: '',
+    prerequisites: "Using interactive websites on browsers.;Basic knowledge to install a program from a wizard based installer.",
+    setup: "A computer with Linux (preferrably Debian or Ubuntu), Windows or MacOS;An active internet connection.",
+    lesson: "Install Visual Studio Code;Install Compilers for C and C++;Set up a workspace in vscode"
+}
 ---
-
-### Prerequisites
-* Using interactive websites on browsers.
-* Basic knowledge to install a program from a wizard based installer.
-
-### What you'll need
-* A computer with Linux (preferrably Debian or Ubuntu), Windows or MacOS
-* An active internet connection.
-
-### After reading this article, you'll be able to
-* Install Visual Studio Code 
-* Install Compilers for C and C++
-* Set up a workspace in vscode
 
 ## Introduction
 To make a computer program, one typically starts by writing the [source code](https://en.wikipedia.org/wiki/Source_code) in a text editor, compiling it into a binary and finally running the program.  
@@ -34,9 +27,9 @@ In windows, you need to run the installer and follow the wizard, in MacOS, you h
 
 For Ubuntu or other Debian based systems, you can install using `apt` in the terminal.
 
-```console
-~$ cd Downloads
-~/Downloads$ sudo apt-get install ./code_1.69.0-1657183742_amd64.deb
+```shell
+cd Downloads
+sudo apt-get install ./code_<version>.deb
 ```
 
 ## Installing C/C++ compilers 
@@ -47,51 +40,51 @@ For C/C++, we will be using the [GNU Compilers (`gcc` and `g++`)](https://en.wik
 
 ### GCC on Linux (Ubuntu or Debian) 
 
-* To verity whether GCC is installed, open a terminal window and enter the command 
+To verity whether GCC is installed, open a terminal window and enter the command 
 
-    ```console
-    $ gcc -v
-    ```
+```shell
+gcc -v
+```
 
-* If GCC isn't installed, update your system's package list and install the GNU compiler tools and the GDB debugger with this command:
+If GCC isn't installed, update your system's package list and install the GNU compiler tools and the GDB debugger with this command:
 
-    ```console
-    $ sudo apt-get update
-    $ sudo apt-get install build-essential gdb
-    ```
+```shell
+sudo apt-get update
+sudo apt-get install build-essential gdb
+```
 
 ### GCC on Windows using MSYS 
 
-* Get the latest version of Mingw-w64 (Minimal GNU for Windows) via MSYS2. Mingw is a toolset which provides GNU softwares for windows including GCC. [Download the MSYS2 installer](https://github.com/msys2/msys2-installer/releases/download/2022-01-18/msys2-x86_64-20220118.exe). Open the installer and follow the wizard to complete installation. Check the *run MSYS2 64bit now* checkbox in the end and click on Finish.
+Get the latest version of Mingw-w64 (Minimal GNU for Windows) via MSYS2. Mingw is a toolset which provides GNU softwares for windows including GCC. [Download the MSYS2 installer](https://github.com/msys2/msys2-installer/releases/download/2022-01-18/msys2-x86_64-20220118.exe). Open the installer and follow the wizard to complete installation. Check the *run MSYS2 64bit now* checkbox in the end and click on Finish.
 
-* In the MSYS command line window, update package databases and base packages.
-    ```console
-    $ pacman -Syu
-    ```
+In the MSYS command line window, update package databases and base packages.
+```shell
+pacman -Syu
+```
 
-* Run "MSYS2 MSYS" from start menu and update the rest of the base packages.
-    ```console
-    $ pacman -Syu
-    ```
+Run "MSYS2 MSYS" from start menu and update the rest of the base packages.
+```shell
+pacman -Syu
+```
 
-* Now MSYS2 is ready to install packages. Install mingw-w64 GCC to start compiling:
-    ```console
-    $ pacman -S --needed base-devel mingw-w64-x86_64-toolchain
-    ```
+Now MSYS2 is ready to install packages. Install mingw-w64 GCC to start compiling:
+```shell
+pacman -S --needed base-devel mingw-w64-x86_64-toolchain
+```
 
 ### Clang on MacOS
 
-* In MacOS, we will use Clans/LLVM compiler. To check whether it is installed, run the following command in terminal
+In MacOS, we will use Clans/LLVM compiler. To check whether it is installed, run the following command in terminal
 
-    ```console
-    $ clang --version
-    ```
+```shell
+clang --version
+```
 
-* If Clang isn't installed, install the command line developer tools by entering the command in terminal
+If Clang isn't installed, install the command line developer tools by entering the command in terminal
 
-    ```console
-    $ xcode-select --install
-    ```
+```shell
+xcode-select --install
+```
 
 ## Getting familiar with VSCode 
 
@@ -128,11 +121,10 @@ Anything on vscode can be done with the Command Palette which can be accessed wi
 Install C/C++ extension to enable support for C/C++ development which includes syntax highlighting, autocomplete suggestions, automated build and debugging etc.
 
 #### Installing from command pallete
-1. Open vscode.
-1. The extension can also be installed by typing the following command in the command pallete (<kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>P</kbd>):
-    ```
-    ext install ms-vscode
-    ```
+Open vscode. The extension can also be installed by the command in the command pallete (<kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>P</kbd>):
+```
+ext install ms-vscode
+```
 
 #### Installing from the Extensions view
 1. Open VSCode
@@ -149,50 +141,50 @@ Create a folder (say projects/) where you'll be saving all your codes and open t
 
 ## Writing your first program 
 
-### Writing the code
-1. In the **File Explorer** view, hover over your folder name and four action icons will appear. Click on the 'New file' icon.
-1. Set the filename to `hello.c`.
-1. Write the hello world program in C in `hello.c` file.
-    ```C
-    #include <stdio.h>
+### Writing code
+In the **File Explorer** view, hover over your folder name and four action icons will appear. Click on the 'New file' icon.
+Set the filename to `hello.c`.
+Write the hello world program in C in `hello.c` file.
+```C
+#include <stdio.h>
 
-    int main(void)
-    {
-        printf("hello, world\n");
-        return 0;
-    }
-    ```
-    When writing the code you'll notice that vscode is showing you autocomplete suggestions and syntax highlighting. This is enabled by that C/C++ extension which you installed earlier.
+int main(void)
+{
+    printf("hello, world\n");
+    return 0;
+}
+```
 
-1. Save changes to your file (<kbd>Ctrl</kbd>-<kbd>S</kbd> in windows and <kbd>⌘</kbd>-<kbd>S</kbd> in macos).
+When writing the code you'll notice that vscode is showing you autocomplete suggestions and syntax highlighting. C/C++ extension provides this feature.
 
+Save changes to your file (<kbd>Ctrl</kbd>-<kbd>S</kbd> in windows and <kbd>⌘</kbd>-<kbd>S</kbd> in macos).
 
 ### Compilation 
 
 #### Using `gcc` CLI from vscode terminal (recommended for learners)
-1. In the menu bar, click on **Terminal** followed by **New Terminal** (<kbd>Ctrl</kbd>-<kbd>\`</kbd> in windows or <kbd>⌘</kbd>-<kbd>\`</kbd> on macos). This will open a new terminal in vscode.
-1. The terminal opens in the folder or directory which you have opened in vscode.
-1. The most basic syntax for `gcc` cli is
-    ```console
-    $ gcc srcfile.c -o outfile
-    ```
+In the menu bar, click on **Terminal** followed by **New Terminal** (<kbd>Ctrl</kbd>-<kbd>\`</kbd> in windows or <kbd>⌘</kbd>-<kbd>\`</kbd> on macos). This will open a new terminal within the folder currently opened in vscode.  
+The most basic syntax for `gcc` cli is
 
-    * `srcfile.c` is the source file, which is `hello.c` here
-    * `-o` meaning 'out' is an option to gcc. It places the compilation output into the filename which follows it i.e. `outfile`.
-    * `outfile` is the executable of binary file which is the final program that runs on the machine.
-        * In windows, every executable has a .exe [filename extension](https://en.wikipedia.org/wiki/Filename_extension). So if you are using windows, compile using
-            ```console
-            $ gcc hello.c -o hello.exe
-            ```
-            The output file in windows will thus be `hello.exe`
+```shell
+gcc srcfile.c -o outfile
+```
 
-        * In Linux or MacOS, there is no need for a filename extension. Compile using
-            ```console
-            $ gcc hello.c -o hello
-            ```
-            The output file is `hello`
+* `srcfile.c` is the source file, which is `hello.c` here
+* `-o` meaning 'out' is an option to gcc. It places the compilation output into the filename which follows it i.e. `outfile`.
+* `outfile` is the executable of binary file which is the final program that runs on the machine.
+    * In windows, every executable has a .exe [filename extension](https://en.wikipedia.org/wiki/Filename_extension). So if you are using windows, compile using
+        ```shell
+        gcc hello.c -o hello.exe
+        ```
+        The output file in windows will thus be `hello.exe`
+
+    * In Linux or MacOS, there is no need for a filename extension. Compile using
+        ```shell
+        gcc hello.c -o hello
+        ```
+        The output file is `hello`
     
-#### Compilation by shortcut
+#### Compilation using **vscode tasks**
 1. In the menu bar, select **Terminal** followed by **Configure Default Build Task...** 
 1. Select the default compiler for compiling all C source codes i.e. `gcc` in this case.
 1. A new `task.json` file will be created in `.vscode` folder where the default compiler and some other configurations will be set. Compilation can be customized further from this file. Close this file and return to `hello.c` in vscode.
@@ -202,18 +194,19 @@ After compilation, notice in the **Explorer** view (<kbd>Ctrl</kbd>-<kbd>Shift</
 
 ### Executing the program 
 
-1. Open the vscode integrated terminal <kbd>Ctrl</kbd>-<kbd>\`</kbd> or <kbd>⌘</kbd>-<kbd>\`</kbd>.
-1. Run the executable file from terminal, the output will print just below the prompt:
-    * In Linux/MacOS:
-        ```console
-        $ ./hello
-        hello world
-        ```
-    * In Windows
-        ```console
-        $ ./hello.exe
-        hello world
-        ```
+Open the vscode integrated terminal <kbd>Ctrl</kbd>-<kbd>\`</kbd> or <kbd>⌘</kbd>-<kbd>\`</kbd> and run the executable file, the output will print just below the prompt:
+
+In Linux/MacOS:
+```shell
+./hello
+hello world
+```
+
+In Windows
+```shell
+./hello.exe
+hello world
+```
 
 ## Writing more programs 
 
@@ -232,9 +225,9 @@ int main(void)
 
 and then compilation and execution
 
-```console
-$ gcc helloagain.c -o helloagain
-$ ./helloagain
+```shell
+gcc helloagain.c -o helloagain
+./helloagain
 hello again world!
 ```
 

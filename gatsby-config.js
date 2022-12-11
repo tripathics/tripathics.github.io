@@ -26,7 +26,7 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 800,
-              // linkImagesToOriginal: false,
+              linkImagesToOriginal: false,
               backgroundColor: 'transparent',
             },
           },
@@ -39,9 +39,9 @@ module.exports = {
               showLineNumbers: false,
               noInlineHighlight: false,
               prompt: {
-                user: 'root',
+                user: 'shyam',
                 host: 'localhost',
-                global: true,
+                global: false,
               },
             },
           },

@@ -620,6 +620,7 @@ p.hero-description {
         li:last-child {
             margin-right: var(--mobile-ctnr-side-padding);
         }
+
         li {
             button {
                 border-right: none;
@@ -628,6 +629,7 @@ p.hero-description {
                 text-align: left;
                 white-space: pre;
             }
+
             button.active {
                 border-right: none;
                 border-bottom: 2px solid var(--blue-4);
@@ -656,41 +658,6 @@ p.hero-description {
         background-color: var(--gray-25);
         padding: 1.5rem;
         border-radius: 0.25rem;
-
-        h3 {
-            margin: 0.5rem 0;
-            font-size: 1.1rem;
-
-            a {
-                color: black;
-            }
-
-            a:hover {
-                text-decoration: underline;
-            }
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-
-            .tag {
-                font-family: monospace;
-                font-size: 0.7rem;
-                border: solid 1px var(--blue-1);
-                background-color: var(--gray-1);
-                padding: 0.2rem 0.3rem;
-                margin: 0.2rem 0.3rem;
-                border-radius: 0.25rem;
-            }
-
-            .tag:hover {
-                border: solid 1px var(--blue-4);
-                background-color: #fff;
-                color: #000;
-                cursor: pointer;
-            }
-        }
     }
 }
 
@@ -733,61 +700,12 @@ hr {
 }
 
 /********* Featured projects ********/
-.home-projects {
-    .card {
-        --hp-card-len: 300px;
-        max-width: var(--hp-card-len);
-    }
-
-    .image-wrapper {
-        max-width: var(--hp-card-len);
-        max-height: var(--hp-card-len);
-    }
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    background-color: transparent;
-    
-    .proj-desc {
-        time {
-            font-weight: 600;
-        }
-        h3 {
-            line-height: 1.15;
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin: 0.2rem 0;
-        }
-        p {
-            line-height: 1.2;
-            font-size: 0.9rem;
-        }
-    }
-
-    .links {
-        .button {
-            background-color: var(--gray-05);
-            color: var(--gray-8);
-            font-weight: 550;
-            border-color: var(--gray-4);
-            margin-right: 0.25rem;
-        }
-        .button:hover {
-            border-color: var(--gray-6);
-        }
-        .button:active {
-            border-color: black;
-        }
-    }
-}
 
 /* Resume */
 .resume .image-wrapper img {
     max-width: 1200px;
     mix-blend-mode: multiply;
-    border: solid 2px var(--gray-5);
+    box-shadow: 0 0 2px rgb(255 255 255), 0 4px 12px -4px rgb(0 0 0 / 30%)
 }
 
 /* Todo */
@@ -1010,33 +928,49 @@ div#todo {
     /* Featured Projects */
     .home-projects {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(192px, 1fr));
+        gap: 1.5rem 1rem;
+
+        @media screen and (max-width: 1440px) {
+            .card .image-wrapper img {
+                aspect-ratio: 3 / 2;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .card .image-wrapper img {
+                aspect-ratio: 2 / 1;
+            }
+        }
+
+        //     display: grid;
+        //     grid-template-columns: repeat(4, 1fr);
+        //     gap: 1rem;
     }
 
-    @media screen and (max-width: 1130px) {
-        .home-projects {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
+    // @media screen and (max-width: 1130px) {
+    //     .home-projects {
+    //         grid-template-columns: repeat(3, 1fr);
+    //     }
+    // }
 
-    @media screen and (max-width: 925px) and (min-width: 711px) {
-        .home-projects {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
+    // @media screen and (max-width: 925px) and (min-width: 711px) {
+    //     .home-projects {
+    //         grid-template-columns: repeat(4, 1fr);
+    //     }
+    // }
 
-    @media screen and (max-width: 710px) and (min-width: 551px) {
-        .home-projects {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
+    // @media screen and (max-width: 710px) and (min-width: 551px) {
+    //     .home-projects {
+    //         grid-template-columns: repeat(3, 1fr);
+    //     }
+    // }
 
-    @media screen and (max-width: 550px) {
-        .home-projects {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
+    // @media screen and (max-width: 550px) {
+    //     .home-projects {
+    //         grid-template-columns: repeat(2, 1fr);
+    //     }
+    // }
 }
 
 @supports not (display: grid) {
@@ -1205,7 +1139,6 @@ div#todo {
             }
         }
     }
-
 }
 
 .projects-component {
@@ -1217,15 +1150,43 @@ div#todo {
         @media screen and (max-width: 1440px) {
             .card .image-wrapper img {
                 aspect-ratio: 3 / 2;
-                object-fit: cover;
             }
         }
 
         @media screen and (max-width: 500px) {
             .card .image-wrapper img {
                 aspect-ratio: 2 / 1;
-                object-fit: cover;
             }
         }
     }
+}
+
+.blog-component.grid {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) 300px;
+    gap: 5rem;
+    
+    main {
+        article.container {
+            padding-right: 0;
+
+            p {
+                text-align: justify;
+            }
+        }
+    }
+    aside.container {
+        padding-left: 0;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: var(--gray-9);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray-7);
+    border-radius: 2px;
 }

@@ -15,7 +15,7 @@ const Card = ({ date, writeup, name, tags }) => {
 
 const ProjectCard = ({ name, date, slug, tagline, url, src, writeup, highlight }) => {
   return (
-    <article className="anchored card">
+    <article className="project-card anchored card">
       <div className="image-wrapper">
         {highlight && (
           <img src={require(`../images/projects/${slug}.webp`).default} width="250" height="250" alt="" />
