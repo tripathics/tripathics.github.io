@@ -90,7 +90,7 @@ xcode-select --install
 
 ### VS Code User Interface 
 
-![VS Code UI](../static/media/posts/vscode-ui-overview.png)
+![VS Code UI](./images/vscode-ui-overview.png)
 
 VS Code UI is divided into five areas:
 * **Editor** - The main area to edit your files. Multiple editors (files) can be opened side by side.
@@ -103,13 +103,13 @@ VS Code UI is divided into five areas:
 Toggle the **integrated terminal**, using <kbd>Ctrl</kbd>-<kbd>\`</kbd> or <kbd>⌘</kbd>-<kbd>\`</kbd> shortcut.  
 
 ### Activity Bar 
-![Activity bar context menu](../static/media/posts/activity-bar-context-menu.png)
+![Activity bar context menu](./images/activity-bar-context-menu.png)
 
 It lets you switch between different views. Buttons can be added or removed and their order can be changed by dragging them. To hide the view (side bar) from screen, press <kbd>Ctrl</kbd>-<kbd>B</kbd> on Windows or <kbd>⌘</kbd>-<kbd>B</kbd> on MacOS.
 
 ### Command palette 
 
-![Command Palette](../static/media/posts/command-palette.png)
+![Command Palette](./images/command-palette.png)
 
 Anything on vscode can be done with the Command Palette which can be accessed with <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>P</kbd> on Windows or with <kbd>⌘</kbd>-<kbd>Shift</kbd>-<kbd>P</kbd> on MacOS. 
 
@@ -223,14 +223,16 @@ int main(void)
 }
 ```
 
-and then compilation and execution
-
+is compiled using
 ```shell
 gcc helloagain.c -o helloagain
+```
+
+It can then be executed through the terminal like
+```shell
 ./helloagain
 hello again world!
 ```
-
 ## References 
 
 This article was made possible with the help of [Visual Studio code docs](https://code.visualstudio.com/docs/) Visit this documentation page to learn more about vscode features like debugging and configuration. 

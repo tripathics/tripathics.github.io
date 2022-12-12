@@ -1163,9 +1163,9 @@ div#todo {
 
 .blog-component.grid {
     display: grid;
-    grid-template-columns: minmax(300px, 1fr) 300px;
-    gap: 5rem;
-    
+    grid-template-columns: minmax(300px, 1fr) 350px;
+    gap: 3rem;
+
     main {
         article.container {
             padding-right: 0;
@@ -1175,8 +1175,16 @@ div#todo {
             }
         }
     }
+
     aside.container {
-        padding-left: 0;
+        margin-top: 0;
+    }
+
+    aside.container>ul {
+        padding: 3.4rem 1.5rem 1rem;
+        margin: 0;
+        position: sticky;
+        top: var(--main-offset);
     }
 }
 

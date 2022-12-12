@@ -2,6 +2,12 @@
 slug: "hello-markdown-rendered-page"
 date: "2022-12-09"
 title: "Hello Markdown"
+hero: {
+    txt: '',
+    prerequisites: "",
+    setup: "",
+    lesson: ""
+}
 ---
 
 # Hello 
