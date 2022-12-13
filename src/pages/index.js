@@ -8,12 +8,12 @@ import { projectsList } from "../data/projectsList"
 
 const IndexPage = () => {
   const posts = [
-    { name: 'Python for C programmers', date: 'Jul 7, 2022', writeup: 'python-for-c-programmers', tags: ["Python", "Beginner"] },
-    { name: 'My journey through Angular', date: 'Jun 5, 2022', writeup: 'TODO', tags: ["Front-end", "TypeScript", "Walkthrough"] },
-    { name: 'Introduction to Linux Terminal', date: 'February 20, 2022', writeup: 'TODO', tags: ["Command line", "Terminal", "Linux"] },
-    { name: 'Installing Arch Linux on a Virtualbox VM', date: 'January 27, 2022', writeup: 'TODO', tags: ["Linux", "OS", "VM"] },
-    { name: 'Creating a simple typing game webapp', date: 'December 18, 2021', writeup: 'TODO', tags: ["JavaScript", "Event", "API"] },
-    { name: 'Setting up your first coding environment', date: 'August 17, 2020', writeup: 'first-coding-environment-setup', tags: ["IDE", "C", "VsCode"] },
+    { name: 'Python for C programmers', date: 'Jul 7, 2022', writeup: '/posts/python-for-c-programmers', tags: ["Python", "Beginner"] },
+    { name: 'My journey through Angular', date: 'Jun 5, 2022', writeup: '/posts/TODO', tags: ["Front-end", "TypeScript", "Walkthrough"] },
+    { name: 'Introduction to Linux Terminal', date: 'February 20, 2022', writeup: '/posts/TODO', tags: ["Command line", "Terminal", "Linux"] },
+    { name: 'Installing Arch Linux on a Virtualbox VM', date: 'January 27, 2022', writeup: '/posts/TODO', tags: ["Linux", "OS", "VM"] },
+    { name: 'Creating a simple typing game webapp', date: 'December 18, 2021', writeup: '/posts/TODO', tags: ["JavaScript", "Event", "API"] },
+    { name: 'Setting up your first coding environment', date: 'August 17, 2020', writeup: '/posts/first-coding-environment-setup', tags: ["IDE", "C", "VsCode"] },
   ]
 
   return (

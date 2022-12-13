@@ -4,8 +4,9 @@
 module.exports = {
   siteMetadata: {
     title: `My Gatsby Site`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://tripathics.github.io/`,
   },
+  pathPrefix: '/',
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-layout',

@@ -1103,9 +1103,12 @@ div#todo {
 
 .blog-component {
   h1:not(:first-child),
-  h2:not(:first-child),
-  h3:not(:first-child) {
+  h2:not(:first-child) {
     margin-top: 3rem;
+  }
+
+  h3:not(:first-child) {
+    margin-top: 2.5rem;
   }
 
   h4:not(:first-child) {

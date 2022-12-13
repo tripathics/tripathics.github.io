@@ -29,10 +29,14 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tripathics/homepage-react"
+    "url": "https://github.com/tripathics/tripathics.github.io"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
