@@ -8,39 +8,48 @@ export default function BlogPostTemplate({
   const { frontmatter, html, tableOfContents } = markdownRemark
   const { txt, prerequisites, setup, lesson } = frontmatter.hero
   return (
-    <div className="blog-component grid">
-      <main>
-        <header className="head-container">
-          <h1>{frontmatter.title}</h1>
+    <div className="blog-component">
+      <header className="head-container">
+
+        <h1>{frontmatter.title}</h1>
+        <section className="segment">
           {txt && <p>{txt}</p>}
           {prerequisites && (
             <>
-            <h3>Prerequisites</h3>
-            <ul>{prerequisites.split(';').map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}</ul>
+              <h4>Prerequisites</h4>
+              <ul>{prerequisites.split(';').map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}</ul>
             </>
           )}
           {setup && (
             <>
-            <h3>What you'll need</h3>
-            <ul>{setup.split(';').map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}</ul>
+              <h4>What you'll need</h4>
+              <ul>{setup.split(';').map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}</ul>
             </>
           )}
           {lesson && (
             <>
-            <h3>After reading this article, you'll be able to</h3>
-            <ul>{lesson.split(';').map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}</ul>
+              <h4>After reading this article, you'll be able to</h4>
+              <ul>{lesson.split(';').map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}</ul>
             </>
           )}
-        </header>
+        </section>
+      </header>
+
+      <main className="grid">
+        <aside className="container">
+          <div className="toc-sidebar">
+            <h2>Table of contents</h2>
+            <div className="toc" dangerouslySetInnerHTML={{ __html: tableOfContents }} />
+          </div>
+        </aside>
         <article className="container" dangerouslySetInnerHTML={{ __html: html }} />
       </main>
-      <aside className="container" dangerouslySetInnerHTML={{ __html: tableOfContents }} />
     </div>
   )
 }
