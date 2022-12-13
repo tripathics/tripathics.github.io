@@ -18,10 +18,10 @@ const ProjectCard = ({ name, date, slug, tagline, url, src, writeup, highlight }
     <article className="project-card anchored card">
       <div className="image-wrapper">
         {highlight && (
-          <img src={require(`../images/projects/${slug}.webp`).default} width="250" height="250" alt="" />
+          <img src={`/projects/${slug}.webp`} width="250" height="250" alt="" />
         )}
         {!highlight && (
-          <img src={require(`../images/projects/filter.webp`).default} width="250" height="250" alt="" />
+          <img src={`/projects/filter.webp`} width="250" height="250" alt="" />
         )}
 
       </div>

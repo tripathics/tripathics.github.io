@@ -3,11 +3,27 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `My Gatsby Site`,
+    title: `Homepage of Chandrashekhar Tripathi`,
     siteUrl: `https://tripathics.github.io/`,
   },
   pathPrefix: '/',
   plugins: [
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Chandrashekhar Tripathi',
+        short_name: 'Chandrashekhar Tripathi',
+        description:
+          'CS Undergrad at NIT Arunachal Pradesh. This is my homepage.',
+        start_url: '/',
+        background_color: '#31363b',
+        theme_color: '#31363b',
+        display: 'minimal-ui',
+        icon: `static/logo.png`,
+      },
+    },
+
     'gatsby-plugin-sass',
     'gatsby-plugin-layout',
     {
@@ -29,6 +45,16 @@ module.exports = {
         path: `${__dirname}/src/content`
       }
     },
+
+    // static
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'assets',
+        path: `${__dirname}/static/`,
+      },
+    },
+
 
     {
       resolve: 'gatsby-transformer-remark',

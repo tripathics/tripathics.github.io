@@ -1,4 +1,6 @@
-import * as React from "react"
+import React from "react"
+import Helmet from "react-helmet"
+import config from "../../utils/config"
 import { graphql } from "gatsby"
 
 export default function BlogPostTemplate({
@@ -9,8 +11,9 @@ export default function BlogPostTemplate({
   const { txt, prerequisites, setup, lesson } = frontmatter.hero
   return (
     <div className="blog-component">
-      <header className="head-container">
+      <Helmet title={`${frontmatter.title} | ${config.siteTitle}`} />
 
+      <header className="head-container">
         <h1>{frontmatter.title}</h1>
         <section className="segment">
           {txt && <p>{txt}</p>}

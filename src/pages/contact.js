@@ -1,9 +1,13 @@
 import React from "react"
+import Helmet from "react-helmet"
+import config from "../utils/config"
 import { PageTitle } from "../components/Heading"
 
 const Contact = () => {
   return (
     <div className="contact-component">
+      <Helmet title={`Contact | ${config.siteTitle}`} />
+
       <PageTitle id={'section-c0'} title='Contact Me' />
       <section className="container">
         <form className="form-control" action="/contact" method="post">

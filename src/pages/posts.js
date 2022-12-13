@@ -1,10 +1,14 @@
 import React from "react"
+import Helmet from "react-helmet"
+import config from "../utils/config"
 import { Link } from "gatsby"
 import { PageTitle } from "../components/Heading"
 
 const Posts = () => {
   return (
     <div className="posts-component">
+      <Helmet title={`Posts | ${config.siteTitle}`} />
+
       <PageTitle id='section-ps0' title='Posts' />
       <section className="container">
         <h2 className="year">2022</h2>

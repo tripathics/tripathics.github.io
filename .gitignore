@@ -22,9 +22,6 @@
 # yarn-debug.log*
 # yarn-error.log*
 
-# temp
-media/
-
 # gatsby
 node_modules/
 .cache/

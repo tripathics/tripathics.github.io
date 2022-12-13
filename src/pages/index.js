@@ -1,4 +1,6 @@
 import React from "react"
+import Helmet from "react-helmet"
+import config from "../utils/config"
 import { Heading } from "../components/Heading"
 import { Card, ProjectCard } from "../components/Card"
 import Decoration from "../components/Decoration"
@@ -18,6 +20,8 @@ const IndexPage = () => {
 
   return (
     <div className="home-component">
+      <Helmet title={config.siteTitle}/>
+
       <header className="head-container hero">
         <h1 className="hero-heading" id="section-hero"><Link to="#section-hero">Hello!</Link></h1>
 
@@ -56,7 +60,7 @@ const IndexPage = () => {
       <section className="container resume">
         <Heading id='section-h4' title="Resume" extLinkText="View PDF" extLink='https://1drv.ms/b/s!AnLTSa_M6LzggsQ6jQZR5gu_Jln6xQ?e=Bdh9Ky' />
         <div className="image-wrapper">
-          <img src="./static/Chandrashekhar_Tripathi-resume.webp" alt="resume" width="925" height="1196" />
+          <img src={require("../assets/Chandrashekhar_Tripathi-resume.webp").default} alt="resume" width="925" height="1196" />
         </div>
       </section>
     </div>

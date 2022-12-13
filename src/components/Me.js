@@ -1,5 +1,5 @@
 import React from "react"
-import DP from "../images/me.webp"
+import DP from "../assets/me.webp"
 
 const Me = () => {
   return (

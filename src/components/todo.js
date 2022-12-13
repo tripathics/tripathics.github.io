@@ -1,5 +1,5 @@
 import React from "react"
-import todoIllustration from "../media/comingsoon.png";
+import todoIllustration from "../assets/comingsoon.png";
 
 const Todo = () => {
   return (
