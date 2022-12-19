@@ -56,7 +56,7 @@ const Skills = () => {
     <div className="skills">
       {skillset.categories[currCategory].skillsLs.map((id, i) => (
         <p key={i} className="skill">
-          <img src={`./static/skills/${skillset.skills[id].id}.svg`} alt="" />
+          <img src={`./skills/${skillset.skills[id].id}.svg`} alt="" />
           {skillset.skills[id].name}
         </p>
       ))}

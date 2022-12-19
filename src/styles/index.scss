@@ -852,7 +852,7 @@ div#todo {
     gap: 0.2rem;
   }
 
-  @media screen and (max-width: 1440px) and (min-width: 1140px) {
+  @media screen and (max-width: 1440px) and (min-width: 1000px) {
     .images {
       grid-template-columns: repeat(7, 1fr);
 
@@ -862,21 +862,11 @@ div#todo {
     }
   }
 
-  @media screen and (max-width: 1140px) and (min-width: 1000px) {
+  @media screen and (max-width: 1000px) and (min-width: 925px) {
     .images {
       grid-template-columns: repeat(6, 1fr);
 
       div:nth-child(n + 13) {
-        display: none;
-      }
-    }
-  }
-
-  @media screen and (max-width: 1000px) and (min-width: 925px) {
-    .images {
-      grid-template-columns: repeat(5, 1fr);
-
-      div:nth-child(n + 16) {
         display: none;
       }
     }

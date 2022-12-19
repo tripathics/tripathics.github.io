@@ -10,7 +10,11 @@ const Layout = ({ children }) => {
   return (
     <div className="layout-component">
       <Navigation />
-      <Me />
+      <Me
+        ghUsername={'tripathics'}
+        instaHandle={'c_strip.z'}
+        linkedinLink={'https://www.linkedin.com/in/tripathics'} 
+      />
       <main className="layout-main">{children}</main>
       <Footer />
     </div>
