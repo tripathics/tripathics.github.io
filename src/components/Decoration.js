@@ -22,8 +22,8 @@ const images = [
 const Decoration = () => {
   return (
     <div className="images">
-      {images.map(image => (
-        <div className="image">
+      {images.map((image, i) => (
+        <div key={i} className="image">
           <img src={image.url} alt="" />
         </div>
       ))}

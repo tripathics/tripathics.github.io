@@ -378,12 +378,24 @@ time {
   background-color: transparent;
   color: #ededed;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
   p {
     font-size: 0.8rem;
     line-height: 1rem;
     margin: 0;
     padding: 0;
+
+    a {
+      color: inherit;
+    }
+    a:hover {
+      color: var(--rainbow-5);
+      text-decoration: none;
+      border-bottom: solid 1px;
+    }
   }
 }
 
@@ -790,10 +802,11 @@ div#todo {
       }
 
       .footer-component {
-        --footer-offset: max(calc(100vh - 4rem), calc(var(--main-offset) + var(--greet-height)));
+        --footer-height: 6rem;
+        --footer-offset: max(calc(100vh - var(--footer-height)), calc(var(--main-offset) + var(--greet-height)));
         position: sticky;
         top: var(--footer-offset);
-        height: 4rem;
+        height: var(--footer-height);
         grid-area: ftr;
         align-self: end;
       }
@@ -1202,6 +1215,4 @@ div#todo {
       display: block;
     }
   }
-
-
 }
