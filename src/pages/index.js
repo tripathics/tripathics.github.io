@@ -23,7 +23,7 @@ const IndexPage = () => {
       <Helmet title={config.siteTitle}/>
 
       <header className="head-container hero">
-        <h1 className="hero-heading" id="section-hero"><Link to="#section-hero">Hello!</Link></h1>
+        <h1 className="hero-heading" id="hello"><Link to="#hello">Hello!</Link></h1>
 
         <p className="hero-description">I'm Chandrashekhar, a software developer and engineer who likes making projects from scratch and learning new technologies. I'm a computer science student pursuing B. Tech. from <Link to="https://www.nitap.ac.in/" target="_blank" rel="noreferrer">NIT Arunachal Pradesh</Link>. I like pop music, coding, sketching and shooting photos.
           <br /><br />
@@ -40,7 +40,7 @@ const IndexPage = () => {
       </section>
 
       <section className="container">
-        <Heading id='section-h2' title="What's new" pageLink='/posts' />
+        <Heading id='posts' title="What's new" pageLink='/posts' />
 
         <div className="home-posts">
           {posts.map((post, i) => <Card {...post} key={i} />)}
@@ -48,7 +48,7 @@ const IndexPage = () => {
       </section>
 
       <section className="container">
-        <Heading id='section-h3' title="Featured projects" pageLink='/projects' />
+        <Heading id='featuredProjects' title="Featured projects" pageLink='/projects' />
 
         <div className="home-projects">
           {projectsList.filter(project => project.highlight).map((project, i) => (
@@ -58,7 +58,7 @@ const IndexPage = () => {
       </section>
 
       <section className="container resume">
-        <Heading id='section-h4' title="Resume" extLinkText="View PDF" extLink='https://1drv.ms/b/s!AnLTSa_M6LzggsUl7fNYjBTZWzYRvQ?e=Eswnji' />
+        <Heading id='resume' title="Resume" extLinkText="View PDF" extLink='https://1drv.ms/b/s!AnLTSa_M6LzggsUl7fNYjBTZWzYRvQ?e=Eswnji' />
         <div className="image-wrapper">
           <img src={require("../assets/Chandrashekhar_Tripathi-resume.webp").default} alt="resume" width="925" height="1196" />
         </div>
