@@ -1,5 +1,12 @@
 export const projectsList = [
   {
+    name: 'Vehicle Management System',
+    date: '2023',
+    slug: 'vms',
+    tagline: 'Track fleet of vehicles and get billing',
+    src: 'https://github.com/tripathics/iocl-tracker'
+  },
+  {
     name: 'tripathics.github.io',
     date: '2022',
     slug: 'homepage',
