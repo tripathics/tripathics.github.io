@@ -148,6 +148,13 @@ li {
   line-height: 1.6;
 }
 
+@media screen and (max-width: 710px) {
+  p,
+  li {
+    font-size: 0.95rem;
+  }
+}
+
 p {
   margin: 0.5rem 0;
 }
@@ -625,14 +632,6 @@ p.hero-description {
 }
 
 @media screen and (max-width: 710px) {
-
-  p,
-  li {
-    letter-spacing: -.01rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
   .category-wrapper {
     position: absolute;
     left: 0;
