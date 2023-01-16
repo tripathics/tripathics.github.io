@@ -82,12 +82,13 @@ code.language-text {
 :not(pre) > code[class*='language-'] {
   -webkit-font-smoothing: subpixel-antialiased;
   background: var(--inline-code-background-color);
+  font-family: 'Menlo', var(--font-family-monospace);
   color: var(--font-color-base);
-  padding: 0.2rem 0.3rem;
+  padding: 0.12rem 0.3rem;
   font-weight: 500;
-  font-size: 0.95rem;
-  border-radius: 4px;
-  border: 1px solid var(--border-color);
+  font-size: 85%;
+  border-radius: 6px;
+  border: 1px solid var(--code-border-color);
 }
 
 :not(pre) > a code[class*='language-'] {
