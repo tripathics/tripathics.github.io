@@ -58,7 +58,7 @@ const IndexPage = () => {
       </section>
 
       <section className="container resume">
-        <Heading id='resume' title="Resume" extLinkText="View PDF" extLink='https://1drv.ms/b/s!AnLTSa_M6LzggsUl7fNYjBTZWzYRvQ?e=Eswnji' />
+        <Heading id='resume' title="Resume" extLinkText="View PDF" extLink='https://1drv.ms/b/s!AnLTSa_M6LzghoxPkZAZUAH33qjX7w?e=uVNHKh' />
         <div className="image-wrapper">
           <img src={require("../assets/Chandrashekhar_Tripathi-resume.webp").default} alt="resume" width="925" height="1196" />
         </div>

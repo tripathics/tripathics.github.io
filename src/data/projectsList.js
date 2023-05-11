@@ -1,19 +1,27 @@
 export const projectsList = [
   {
+    name: 'Atulyam 2023',
+    date: '2023',
+    slug: 'atulyam',
+    tagline: 'Atulyam fest website of 2023 - Code+Design',
+    url: 'https://atulyam23.com',
+    src: 'https://github.com/tripathics/atulyam-2023',
+    highlight: true,
+  },
+  {
+    name: 'URL Shortener',
+    date: '2023',
+    slug: 'url-shortener',
+    tagline: 'URL Shortener full stack website',
+    src: 'https://github.com/tripathics/url-shortner',
+    highlight: false,
+  },
+  {
     name: 'Vehicle Management System',
     date: '2023',
     slug: 'vms',
     tagline: 'Track fleet of vehicles and get billing',
     src: 'https://github.com/tripathics/iocl-tracker',
-    highlight: true,
-  },
-  {
-    name: 'Airavat',
-    date: '2022',
-    slug: 'airavat',
-    tagline: 'Bus tracking system',
-    url: '',
-    src: 'https://github.com/tripathics/airavat',
     highlight: true,
   },
   {
@@ -24,6 +32,15 @@ export const projectsList = [
     url: 'https://technodaya.netlify.app',
     src: 'https://github.com/Pursottam6003/Designathon-for-one/',
     writeup: '',
+    highlight: true,
+  },
+  {
+    name: 'Airavat',
+    date: '2022',
+    slug: 'airavat',
+    tagline: 'Bus tracking system',
+    url: '',
+    src: 'https://github.com/tripathics/airavat',
     highlight: true,
   },
   {
@@ -41,7 +58,7 @@ export const projectsList = [
     url: 'https://tripathics.github.io/typing-game',
     src: 'https://github.com/tripathics/typing-game',
     writeup: '',
-    highlight: true,
+    highlight: false,
   },
   {
     name: 'Todo List',
