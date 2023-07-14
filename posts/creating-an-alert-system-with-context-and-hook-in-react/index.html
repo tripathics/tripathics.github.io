@@ -659,8 +659,39 @@ Then we return the <code class="language-text">id</code> so that the component t
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span></code></pre></div>
 <p><em>But...</em>
-<img src="alerts-not-cleared-after-unmount.png" alt=""></p>
-<p>The alerts have not cleared. This is because when the <code class="language-text">&lt;AlertTestForm /></code> the states also get lost. Thus there is nothing to "clear" and the alerts are not getting cleared. We can use the <a href="https://react.dev/reference/react/useRef"><code class="language-text">useRef</code></a> hook to keep track of the alert ids that are added by this component.</p>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b98ab9a661fd1645e100de24128fcea4/d43b4/alerts-not-cleared-after-unmount.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 59.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABbUlEQVQoz+WPyyuEYRTGv/9CyH00MkxEbFymppBbCiGSS+TWNE0MC/IHkCwQC0Z2rCwsSMbdiCyIjViwsiCZhr6X+b6ffC6NmWFl56lf53nPOT2nV0owpOOLPjFNqzp9CtFxSUTFGojRGYmNNxIdl0xouI5scymTc2tMTC8zs7DKzPwqjoU1xhyLSAZjBt/J1ELNeSW0tlmoq2+htKyaqpoGGps7KK+sxdI9yN7pI869RzYPPKy73LhOntg6vkEKi9DjS3iknpAwHalpWRQWV5BXUEZWbj4mcxGFxeXkmIpoamliY3uKlaUhnM5JNncd7OzPsrQ8jtRt78efnt4BrLY+2jttdHTZsFjtH/TQ2mZlZHQYWZzwcLuDx32I/HyKeDnj7v4IiV90fnHFxeV10JksK4hnEELVvPYWKpLXq+CPorxVL7IQCCE0/95Tvvy71IBDkqqq/MSnftvxJ+DLn0HBwn2P/CSJP9Y/DHwFGBUyXDF8XpYAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="alerts not cleared after unmount"
+        title="alerts not cleared after unmount"
+        src="/static/b98ab9a661fd1645e100de24128fcea4/5a190/alerts-not-cleared-after-unmount.png"
+        srcset="/static/b98ab9a661fd1645e100de24128fcea4/772e8/alerts-not-cleared-after-unmount.png 200w,
+/static/b98ab9a661fd1645e100de24128fcea4/e17e5/alerts-not-cleared-after-unmount.png 400w,
+/static/b98ab9a661fd1645e100de24128fcea4/5a190/alerts-not-cleared-after-unmount.png 800w,
+/static/b98ab9a661fd1645e100de24128fcea4/c1b63/alerts-not-cleared-after-unmount.png 1200w,
+/static/b98ab9a661fd1645e100de24128fcea4/d43b4/alerts-not-cleared-after-unmount.png 1202w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>The alerts are not getting cleared. This is because when the <code class="language-text">&lt;AlertTestForm /></code> the states also get lost. Thus there is nothing to "clear" and the alerts are not getting cleared. We can use the <a href="https://react.dev/reference/react/useRef"><code class="language-text">useRef</code></a> hook to keep track of the alert ids that are added by this component.</p>
 <p>The system of alerts we're making is supposed to be used by many pages in the app. Instead of declaring these state variables for <code class="language-text">alertIds</code>, references for not losing these <code class="language-text">alertIds</code>, functions to <code class="language-text">clearAlerts()</code> and handling clearing of alerts in the component's cleanup function, we can create a custom hook.</p>
 <h2 id="the-usealerts-hook" style="position:relative;"><a href="#the-usealerts-hook" aria-label="the usealerts hook permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The <code class="language-text">useAlerts</code> hook</h2>
 <p>Create the <code class="language-text">useAlerts</code> hook at the bottom of <strong><code class="language-text">alerts-context.js</code></strong> file.</p>
