@@ -1,11 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
+import { slugify } from "../utils/helpers"
 
-const Card = ({ date, writeup, name, tags }) => {
+const PostCard = ({ date, year, title, tags = [] }) => {
   return (
     <article className="card">
-      <time>{date}</time>
-      <h3><Link to={writeup}>{name}</Link></h3>
+      <time>{date}, {year}</time>
+      <h3><Link to={`/posts/${slugify(title)}`}>{title}</Link></h3>
       <div className="tags">
         {tags.map((tag, i) => <span key={i} className="tag">{tag}</span>)}
       </div>
@@ -13,7 +14,7 @@ const Card = ({ date, writeup, name, tags }) => {
   )
 }
 
-const ProjectCard = ({ name, date, slug, tagline, url, src, writeup, highlight }) => {
+const ProjectCard = ({ name, date, slug, tagline, url, src, writeup }) => {
   return (
     <article className="project-card anchored card">
       <div className="image-wrapper">
@@ -23,7 +24,6 @@ const ProjectCard = ({ name, date, slug, tagline, url, src, writeup, highlight }
         {!slug && (
           <img src={`/projects/filter.webp`} width="250" height="250" alt="" />
         )}
-
       </div>
       <div className="proj-desc">
         <time>{date}</time>
@@ -43,4 +43,4 @@ const ProjectCard = ({ name, date, slug, tagline, url, src, writeup, highlight }
   )
 }
 
-export { Card, ProjectCard }
+export { PostCard, ProjectCard }

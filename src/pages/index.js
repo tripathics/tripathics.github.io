@@ -2,17 +2,16 @@ import React from "react"
 import Helmet from "react-helmet"
 import config from "../utils/config"
 import { Heading } from "../components/Heading"
-import { Card, ProjectCard } from "../components/Card"
+import { PostCard, ProjectCard } from "../components/Card"
 import Decoration from "../components/Decoration"
 import Skills from "../components/Skills"
 import { Link } from "gatsby"
 import { projectsList } from "../data/projectsList"
+import { graphql } from "gatsby"
 
-const IndexPage = () => {
-  const posts = [
-    { name: 'Setting up Node on Linux', date: 'Jan 15, 2023', writeup: '/posts/setting-up-node-on-linux', tags: ["Setup", "Linux", "Web"] },
-    { name: 'Setting up your first coding environment', date: 'August 17, 2020', writeup: '/posts/setting-up-your-first-coding-environment', tags: ["IDE", "C", "VsCode"] },
-  ]
+const IndexPage = ({ data }) => {
+  const { allMarkdownRemark } = data;
+  const posts = allMarkdownRemark.edges.map(edge => edge.node.frontmatter);
 
   return (
     <div className="home-component">
@@ -39,7 +38,7 @@ const IndexPage = () => {
         <Heading id='posts' title="What's new" pageLink='/posts' />
 
         <div className="home-posts">
-          {posts.map((post, i) => <Card {...post} key={i} />)}
+          {posts.map((post, i) => <PostCard {...post} key={i} />)}
         </div>
       </section>
 
@@ -47,7 +46,7 @@ const IndexPage = () => {
         <Heading id='featuredProjects' title="Featured projects" pageLink='/projects' />
 
         <div className="home-projects">
-          {projectsList.filter(project => project.highlight).map((project, i) => (
+          {projectsList.filter(project => project.highlight).filter((_, i) => i < 4).map((project, i) => (
             <ProjectCard {...project} key={i} />
           ))}
         </div>
@@ -62,5 +61,27 @@ const IndexPage = () => {
     </div>
   )
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/content/" } },
+      sort:{frontmatter: {date:DESC} }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "MMM DD")
+            year:date(formatString:"YYYY")
+            tags
+          }
+        }
+      }
+    }
+  }
+`
+
 
 export default IndexPage
