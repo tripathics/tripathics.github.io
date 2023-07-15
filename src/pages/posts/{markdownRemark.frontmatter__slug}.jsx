@@ -16,7 +16,7 @@ export default function BlogPostTemplate({
       <header className="head-container">
         <h1>{frontmatter.title}</h1>
         <section className="segment">
-          {txt && <p>{txt}</p>}
+          {txt && <p dangerouslySetInnerHTML={{ __html: txt }}></p>}
           {prerequisites && (
             <>
               <h4>Prerequisites</h4>

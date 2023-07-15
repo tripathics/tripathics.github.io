@@ -44,6 +44,14 @@ export const projectsList = [
     highlight: true,
   },
   {
+    name: 'SHIELD Web App',
+    date: '2022',
+    slug: 'shield-app',
+    tagline: 'SHEILD\'s frontend website',
+    url: 'https://shield-app.netlify.app',
+    src: 'https://github.com/tripathics/shield-app',
+  },
+  {
     name: 'tripathics.github.io',
     date: '2022',
     slug: 'homepage',
