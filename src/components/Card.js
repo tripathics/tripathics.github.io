@@ -8,7 +8,7 @@ const PostCard = ({ date, year, title, tags = [] }) => {
       <time>{date}, {year}</time>
       <h3><Link to={`/posts/${slugify(title)}`}>{title}</Link></h3>
       <div className="tags">
-        {tags.map((tag, i) => <span key={i} className="tag">{tag}</span>)}
+        {(tags || []).map((tag, i) => <span key={i} className="tag">{tag}</span>)}
       </div>
     </article>
   )
