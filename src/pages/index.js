@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <div className="home-component">
-      <Helmet title={config.siteTitle} />
+      <Helmet title={config.siteTitle} htmlAttributes={{ lang: 'en' }} />
 
       <header className="head-container hero">
         <h1 className="hero-heading" id="hello"><Link to="#hello">Hello!</Link></h1>

@@ -31,7 +31,7 @@ const Posts = ({ data }) => {
       if (!acc.includes(tag)) acc.push(tag);
     });
     return acc;
-  }, []);
+  }, []).sort();
 
   return (
     <div className="posts-component">
@@ -63,12 +63,12 @@ const Posts = ({ data }) => {
 }
 
 export const query = graphql`
-      query {
-        allMarkdownRemark(
-          filter: {fileAbsolutePath: {regex: "/content/" } },
-          sort:{frontmatter: {date:DESC} }
-        ) {
-        edges {
+  query {
+    allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/content/" } },
+      sort:{frontmatter: {date:DESC} }
+    ) {
+      edges {
         node {
           id
           frontmatter {
