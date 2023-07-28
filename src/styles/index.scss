@@ -294,7 +294,7 @@ time {
     li {
       display: inline-block;
       list-style-type: none;
-      margin: 0 0 0 2.5rem;
+      margin: 0 0 0 2rem;
       padding: 0;
       font-size: 1rem;
     }
@@ -310,6 +310,9 @@ time {
       position: relative;
       padding: 0;
       width: fit-content;
+      letter-spacing: -0.04ch;
+      text-transform: uppercase;
+      font-weight: 600;
 
       a {
         color: var(--gray-4);
@@ -379,21 +382,45 @@ time {
 
   button.menu {
     display: none;
-    background-color: transparent;
     border: none;
-    border-radius: 0.275rem;
-    height: 2.4rem;
-    width: 2.4rem;
-    margin-right: 0.2rem;
+    background-color: transparent;
+    letter-spacing: -0.04ch;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--gray-4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 
-    path,
-    g {
-      fill: rgb(255, 255, 255);
+    .menu-label {
+      visibility: hidden;
     }
   }
-
-  button.menu:active {
-    background-color: #0f0f0f;
+  button.menu:before,
+  button.menu:after {
+    position: absolute;
+    display: block;
+    padding: inherit;
+    right: 0;
+    line-height: 1;
+    transition: all 0.2s ease-out;
+  }
+  button.menu::before {
+    content: "menu";
+    bottom: 0;
+  }
+  button.menu:after {
+    content: "close";
+    bottom: -100%;
+  }
+  button.menu.open {
+    &::before {
+      bottom: 100%;
+    }
+    &::after {
+      bottom: 0;
+    }
   }
 
   @media screen and (max-width: 550px) {
@@ -1164,19 +1191,20 @@ div#todo {
       font-size: 1.05rem;
       border-color: transparent;
       background-color: #c4c4c4;
+      transition: 0.15s ease-out;
     }
 
     button:focus {
-      background-color: #afadad;
-    }
-
-    button:hover {
       background-color: #b3b3b3;
     }
 
+    button:hover {
+      background-color: #b8b8b8;
+    }
+
     button:active {
-      background-color: #979797;
-      box-shadow: 0 0 5px 1px #666666;
+      background-color: #c0c0c0;
+      box-shadow: 0 4px 12px -6px #00000078;
     }
 
     @media screen and (max-width: 600px) {
