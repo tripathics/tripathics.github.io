@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section className="container">
-        <Heading id='skills' title="Technologies I work with" />
+        <Heading id='skills' title="Things I use daily" />
         <Skills />
       </section>
 

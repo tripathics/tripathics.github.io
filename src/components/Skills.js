@@ -24,7 +24,7 @@ const Skills = () => {
       sql: { id: 'cpp', name: 'SQL' }
     },
     categories: {
-      all: { id: 'all', name: 'All', skillsLs: ["angular", "bash", "cpp", "django", "firebase", "flask", "git", "html", "java", "javascript", "linux", "markdown", "nodejs", "powershell", "python", "react", "typescript", "sql"] },
+      all: { id: 'all', name: 'All', skillsLs: ["react", "bash", "cpp", "django", "firebase", "flask", "git", "html", "java", "javascript", "linux", "markdown", "nodejs", "powershell", "python", "angular", "typescript", "sql"] },
       linux: { id: 'linux', name: 'Linux', skillsLs: ['linux', 'bash'] },
       prog: { id: 'prog', name: 'Programming languages', skillsLs: ['cpp', 'java'] },
       script: { id: 'script', name: 'Scripting languages', skillsLs: ['python', 'javascript', 'powershell', 'typescript', 'bash'] },
