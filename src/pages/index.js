@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
       <header className="head-container hero">
         <h1 className="hero-heading" id="hello"><Link to="#hello">Hello!</Link></h1>
 
-        <p className="hero-description">I'm Chandrashekhar, a software developer and engineer who likes making projects from scratch and learning new technologies. I'm a computer science student pursuing B. Tech. from <Link to="https://www.nitap.ac.in/" target="_blank" rel="noreferrer">NIT Arunachal Pradesh</Link>. I like pop music, coding, sketching and shooting photos. Sometimes I write technical blogs.
+        <p className="hero-description">I'm Chandrashekhar, a software developer and engineer who likes making projects from scratch and learning new technologies. I'm a computer science student pursuing B. Tech. from <a href="https://www.nitap.ac.in/" target="_blank" rel="noreferrer">NIT Arunachal Pradesh</a>. I like pop music, coding, sketching and shooting photos. Sometimes I write technical blogs.
           <br /><br />
           This is the spot for finding my projects I share with the world &#128518;.</p>
       </header>

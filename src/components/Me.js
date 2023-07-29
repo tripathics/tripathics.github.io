@@ -8,7 +8,10 @@ const Me = ({ ghUsername, linkedinLink, instaHandle }) => {
                 <img src={DP} alt="Chandrashekhar Tripathi" height="200" width="200" />
             </div>
             <h1 className="profile-name">Chandrashekhar Tripathi</h1>
-            <p>A Full-Stack Developer by <span style={{ fontSize: '1.25rem' }}>☼</span> <br />and a learner by <span style={{ fontSize: '1.1rem' }}>☾</span></p>
+            <p className='bio' style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <span>A Full-Stack Developer by <span className='icon day'>☼</span></span>
+                <span>&nbsp;and a learner by <span className='icon night'>☾</span></span>
+            </p>
             <div className="social">
                 <a href={`https://github.com/${ghUsername}/`} target="_blank" rel="noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

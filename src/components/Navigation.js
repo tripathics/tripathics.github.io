@@ -10,26 +10,30 @@ const mainNavItems = [
 ]
 
 const Navigation = () => {
-  const toggleMenu = () => {
+  const handleMenu = (type) => {
     let navItems = document.getElementById('nav-exp-items');
-    navItems.classList.toggle('expand');
     let btn = document.getElementById('menu-btn');
 
-    if (navItems.className === 'expand') {
+    if (type === 'close') {
+      navItems.classList.remove('expand');
+      btn.classList.remove('open');
+    } else if (type === 'open') {
+      navItems.classList.add('expand');
       btn.classList.add('open');
     } else {
-      btn.classList.remove('open');
+      navItems.classList.toggle('expand');
+      btn.classList.toggle('open');
     }
   }
 
   return (
     <nav className="nav-component">
       <div id="nav-bar">
-        <button id="menu-btn" className="menu" onClick={toggleMenu} aria-label="Menu button">
+        <button id="menu-btn" className="menu" onClick={e => { handleMenu() }} aria-label="Menu button">
           <span className="menu-label" aria-hidden="true">CLOSE</span>
         </button>
         <div className="logo">
-          <Link to="/" aria-label='Home' activeClassName="active">{`{ \\ `}<span id='logoDash'>-</span> </Link>
+          <Link onClick={e => { handleMenu('close') }} to="/" aria-label='Home' activeClassName="active">{`{ \\ `}<span id='logoDash'>-</span> </Link>
         </div>
         <ul id="nav-colapse-items">
           {mainNavItems.map((item, i) => (
@@ -40,9 +44,12 @@ const Navigation = () => {
       <div id="nav-exp-items">
         <ul>
           {mainNavItems.map((item, i) => (
-            <li key={i}><Link onClick={toggleMenu} to={item.url} activeClassName="active">{item.label}</Link></li>
+            <li key={i}><Link onClick={e => { handleMenu('close') }} to={item.url} activeClassName="active">{item.label}</Link></li>
           ))}
         </ul>
+        <div className='nav-footer'>
+          <p>© 2021-Present Chandrashekhar Tripathi</p>
+        </div>
       </div>
     </nav>
   )
