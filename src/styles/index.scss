@@ -276,8 +276,49 @@ time {
     display: flex;
     flex-flow: row-reverse;
     align-items: center;
+    justify-content: space-between;
     padding: 0.2rem;
     height: var(--nav-height);
+
+    .logo {
+      display: none;
+      margin-left: 0.8rem;
+      font-weight: 800;
+      letter-spacing: -0.04ch;
+      user-select: none;
+
+      a {
+        color: var(--gray-4);
+        transition: 0.3s all ease-out;
+        position: relative;
+        font-size: 1.6rem;
+        #logoDash {
+          transform: translateX(0.3ch);
+          display: inline-block;
+          position: absolute;
+          transition: 0.3s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      a:active {
+        color: rgb(108, 202, 89);
+        #logoDash {
+          transform: translateX(0.4ch);
+        }
+      }
+      a.active {
+        color: rgb(141, 218, 126);
+        #logoDash {
+          transform: translateX(-0.3ch);
+        }
+      }
+
+      @media screen and (max-width: 550px) {
+        display: block;
+      }
+    }
   }
 
   /* Nav items within nav bar */
@@ -357,6 +398,11 @@ time {
     top: var(--main-offset);
     overflow: hidden;
     transition: height 0.3s ease;
+
+    ul {
+      padding-left: 1rem;
+      padding-top: 2rem;
+    }
 
     li {
       list-style-type: none;

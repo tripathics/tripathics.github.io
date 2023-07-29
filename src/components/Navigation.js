@@ -28,6 +28,9 @@ const Navigation = () => {
         <button id="menu-btn" className="menu" onClick={toggleMenu} aria-label="Menu button">
           <span className="menu-label" aria-hidden="true">CLOSE</span>
         </button>
+        <div className="logo">
+          <Link to="/" aria-label='Home' activeClassName="active">{`{ \\ `}<span id='logoDash'>-</span> </Link>
+        </div>
         <ul id="nav-colapse-items">
           {mainNavItems.map((item, i) => (
             <li key={i}><Link to={item.url} activeClassName="active">{item.label}</Link></li>
