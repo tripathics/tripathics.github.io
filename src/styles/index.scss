@@ -82,6 +82,11 @@ html * {
   -ms-text-size-adjust: auto;
 }
 
+@media screen and (min-width: 550px) {
+  body {
+    overflow: auto!important;
+  }
+}
 *,
 ::before,
 ::after {

@@ -17,12 +17,19 @@ const Navigation = () => {
     if (type === 'close') {
       navItems.classList.remove('expand');
       btn.classList.remove('open');
+      document.body.style.overflow = 'auto'
     } else if (type === 'open') {
       navItems.classList.add('expand');
       btn.classList.add('open');
+      document.body.style.overflow = 'hidden'
     } else {
       navItems.classList.toggle('expand');
       btn.classList.toggle('open');
+      if (document.body.style.overflow === 'hidden') {
+        document.body.style.overflow = 'auto'
+      } else {
+        document.body.style.overflow = 'hidden'
+      }
     }
   }
 
