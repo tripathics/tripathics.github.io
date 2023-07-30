@@ -56,7 +56,7 @@ export const projectsList = [
     date: '2022',
     slug: 'homepage',
     tagline: 'This website',
-    src: 'https://github.com/tripathics/homepage',
+    src: 'https://github.com/tripathics/tripathics.github.io',
   },
   {
     name: 'Typing Game',
