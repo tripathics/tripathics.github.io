@@ -290,6 +290,7 @@ time {
       margin-left: 0.8rem;
       font-weight: 800;
       letter-spacing: -0.04ch;
+      z-index: 9999999;
       user-select: none;
 
       a {
@@ -403,9 +404,10 @@ time {
     width: 100%;
     background-color: var(--gray-9);
     position: fixed;
-    top: var(--main-offset);
+    top: 0;
     width: 100%;
     bottom: 0;
+    padding-top: var(--main-offset);
     overflow: hidden;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: clip-path 0.3s ease;
@@ -456,6 +458,7 @@ time {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    z-index: 9999999;
 
     .menu-label {
       visibility: hidden;
