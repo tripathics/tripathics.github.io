@@ -9,7 +9,7 @@ const mainNavItems = [
   { url: '/contact', label: 'Contact' },
 ]
 
-const Navigation = ({ toggleTheme }) => {
+const Navigation = ({ theme = 'light', toggleTheme }) => {
   const handleMenu = (type) => {
     let navItems = document.getElementById('nav-exp-items');
     let btn = document.getElementById('menu-btn');
@@ -36,6 +36,9 @@ const Navigation = ({ toggleTheme }) => {
   return (
     <nav className="nav-component">
       <div id="nav-bar">
+        <button onClick={() => toggleTheme()} className="theme-toggle" aria-label="Theme toggle button">
+          {theme === 'light' ? '☾' : '☼'}
+        </button>
         <button id="menu-btn" className="menu" onClick={e => { handleMenu() }} aria-label="Menu button">
           <span className="menu-label" aria-hidden="true">CLOSE</span>
         </button>

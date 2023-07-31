@@ -24,7 +24,15 @@ const Layout = ({ children }) => {
         )}
       </Helmet>
 
-      <Navigation />
+      <Navigation theme={theme} toggleTheme={() => {
+        if (theme === 'light') {
+          window.localStorage.setItem('theme', 'dark');
+          setTheme('dark');
+        } else {
+          window.localStorage.setItem('theme', 'light');
+          setTheme('light');
+        }
+      }} />
       <Me
         ghUsername={'tripathics'}
         instaHandle={'c_strip.z'}

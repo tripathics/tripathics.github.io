@@ -355,6 +355,26 @@ time {
   background-color: var(--app-nav-bar-bg-color);
   top: 0;
 
+  .theme-toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 1rem;
+    border: none;
+    background-color: transparent;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--app-nav-active-color);
+    cursor: pointer;
+    z-index: 9999999;
+
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+
   /* Nav bar on top */
   #nav-bar {
     top: 0;
@@ -362,7 +382,7 @@ time {
     flex-flow: row-reverse;
     align-items: center;
     justify-content: space-between;
-    padding: 0.2rem;
+    padding-right: 2.8rem;
     height: var(--nav-height);
     color: var(--app-nav-color);
 
