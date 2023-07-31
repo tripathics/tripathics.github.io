@@ -50,9 +50,6 @@
   --indigo-muted: rgb(241, 242, 253);
   --color-neutral-muted: rgba(175, 184, 193, 0.2);
 
-  --font-color-base: rgb(58, 63, 68);
-  --font-color-muted: var(--gray-65);
-
   --font-family-monospace: "IBM Plex Mono", monospace;
   --inline-code-background-color: rgba(175, 184, 193, 0.2);
 
@@ -71,92 +68,83 @@
   --mobile-ctnr-side-padding: 1.5rem;
 
   scroll-padding-top: calc(var(--main-offset) + 0.8rem);
-}
 
-// default light theme
-$app-bg-color: var(--gray-2);
-$app-box-shadow: 0 0 8px 1px var(--gray-4);
-$page-bg-color: var(--gray-05);
-$heading-color: var(--gray-9);
+  /*********** light theme **************/
+  --app-bg-color: var(--gray-2);
+  --app-box-shadow: 0 0 8px 1px var(--gray-4);
+  --page-bg-color: var(--gray-05);
+  --heading-color: var(--gray-9);
 
-$font-color-base: var(--font-color-base);
-$font-color-muted: var(--font-color-muted);
-$link-color: #3e54cf;
-$footer-link-hover-color: var(--rainbow-2);
-$time-color: var(--gray-7);
+  --font-color-base: rgb(58, 63, 68);
+  --font-color-muted: var(--gray-65);
+  --link-color: #3e54cf;
+  --footer-link-hover-color: var(--rainbow-2);
+  --time-color: var(--gray-7);
 
-$btn-color: var(--gray-7);
-$btn-border: 2px solid var(--gray-5);
-$btn-hover-border: 2px solid var(--gray-6);
-$btn-active-border: 2px solid black;
+  --btn-color: var(--gray-7);
+  --btn-border: 2px solid var(--gray-5);
+  --btn-hover-border: 2px solid var(--gray-6);
+  --btn-active-border: 2px solid black;
 
-$app-nav-bar-bg-color: var(--gray-3);
-$app-nav-color: var(--gray-65);
-$app-nav-active-color: var(--gray-10);
-$app-nav-active-color: var(--green-3);
-$app-nav-active-dash-color: rgb(151 192 199);
+  --app-nav-bar-bg-color: var(--gray-3);
+  --app-nav-color: var(--gray-65);
+  --app-nav-active-color: var(--gray-10);
+  --app-nav-active-color: var(--green-3);
+  --app-nav-active-dash-color: rgb(151 192 199);
+  --app-nav-dash-border-color: var(--app-nav-color);
 
-$me-box-shadow: -10px 5px 15px var(--gray-5), 10px -5px 15px #ffffff;
+  --me-box-shadow: -10px 5px 15px var(--gray-5), 10px -5px 15px #ffffff;
 
-$scroll-bar-bg: var(--gray-3);
-$scroll-bar-thumb: var(--gray-45);
+  --scroll-bar-bg: var(--gray-3);
+  --scroll-bar-thumb: var(--gray-45);
 
-$skills-category-btn-color: var(--gray-6);
-$skills-category-btn-active-color: var(--gray-8);
-$skills-category-btn-hover-color: var(--blue-3);
-$skills-category-btn-border-color: var(--gray-4);
-$skills-category-btn-active-border-color: var(--blue-4);
-$skills-category-btn-active-bg: var(--gray-3);
+  --brand-dark: url(../assets/ct-dark.svg);
+  --brand-light: url(../assets/ct-light.svg)
 
-$home-post-bg: var(--gray-25);
+  --hero-bg-graphic: var(--brand-light);
+  --skills-category-btn-color: var(--gray-6);
+  --skills-category-btn-active-color: var(--gray-8);
+  --skills-category-btn-hover-color: var(--blue-3);
+  --skills-category-btn-border-color: var(--gray-4);
+  --skills-category-btn-active-border-color: var(--blue-4);
+  --skills-category-btn-active-bg: var(--gray-3);
 
-$resume-box-shadow: 0 0 2px rgb(255 255 255), 0 4px 12px -4px rgb(0 0 0 / 30%);
+  --home-post-bg: var(--gray-25);
 
-$posts-year-heading: rgb(121 154 77);
-$tag-bg: var(--gray-05);
-$tag-active-bg: #fff;
-$tag-color: var(--gray-7);
-$tag-hover-color: var(--blue-4);
-$tag-border-color: var(--gray-4);
-$tag-hover-border-color: var(--blue-4);
-$tag-active-border-color: var(--blue-4);
-$tag-active-color: var(--blue-4);
+  --resume-box-shadow: 0 0 2px rgb(255 255 255),
+    0 4px 12px -4px rgb(0 0 0 / 30%);
 
-$contact-input-bg: var(--gray-3);
-$contact-input-focus-bg: #fff;
-$contact-input-focus-border-color: var(--green-5);
-$contact-button-bg: #c4c4c4;
-$contact-button-focus-bg: #b3b3b3;
-$contact-button-hover-bg: #b8b8b8;
-$contact-button-active-bg: #c0c0c0;
-$contact-button-active-box-shadow: 0 4px 12px -6px #00000078;
+  --posts-year-heading: rgb(121 154 77);
+  --tag-bg: var(--gray-05);
+  --tag-active-bg: #fff;
+  --tag-color: var(--gray-7);
+  --tag-hover-color: var(--blue-4);
+  --tag-border-color: var(--gray-4);
+  --tag-hover-border-color: var(--blue-4);
+  --tag-active-border-color: var(--blue-4);
+  --tag-active-color: var(--blue-4);
 
-$blog-blockquote-color: $font-color-muted;
-$blog-blockquote-border-color: var(--gray-6);
-$blog-toc-a-color: var(--gray-7);
-$blog-toc-a-active-color: var(--blue-5);
+  --contact-input-bg: var(--gray-3);
+  --contact-input-color: var(--gray-10);
+  --contact-input-focus-bg: #fff;
+  --contact-input-focus-border-color: var(--green-5);
+  --contact-button-color: var(--gray-10);
+  --contact-button-bg: #c4c4c4;
+  --contact-button-focus-bg: #b3b3b3;
+  --contact-button-hover-bg: #b8b8b8;
+  --contact-button-active-bg: #c0c0c0;
+  --contact-button-active-box-shadow: 0 4px 12px -6px #00000078;
 
-$link-btn-bg: var(--gray-05);
-$link-btn-color: var(--gray-8);
-$link-btn-border-color: var(--gray-4);
-$link-btn-hover-border-color: var(--gray-6);
-$link-btn-active-border-color: #000;
+  --blog-blockquote-color: var(--font-color-muted);
+  --blog-blockquote-border-color: var(--gray-6);
+  --blog-toc-a-color: var(--gray-7);
+  --blog-toc-a-active-color: var(--blue-5);
 
-// dark theme
-.dark-theme {
-  $app-bg-color: var(--gray-8);
-  $page-bg-color: var(--gray-05);
-  $font-color-base: var(--font-color-base);
-  $font-color-muted: var(--font-color-muted);
-  $heading-color: var(--gray-9);
-  $app-box-shadow: 0 0 8px 1px var(--gray-9);
-  $app-nav-bar-bg-color: var(--gray-9);
-  $app-nav-color: var(--gray-4);
-  $app-nav-active-color: rgb(194, 252, 182);
-  $me-box-shadow: 0 0 4px 2px var(--gray-10);
-  $scroll-bar-bg: var(--gray-9);
-  $scroll-bar-thumb: var(--gray-7);
-  $footer-link-hover-color: var(--rainbow-5);
+  --link-btn-bg: var(--gray-05);
+  --link-btn-color: var(--gray-8);
+  --link-btn-border-color: var(--gray-4);
+  --link-btn-hover-border-color: var(--gray-6);
+  --link-btn-active-border-color: #000;
 }
 
 /* reset font boosting on mobile browsers */
@@ -202,11 +190,11 @@ a {
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-  background: $scroll-bar-bg;
+  background: var(--scroll-bar-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $scroll-bar-thumb;
+  background: var(--scroll-bar-thumb);
   border-radius: 2px;
 }
 
@@ -222,14 +210,14 @@ a {
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: $app-bg-color;
-  color: $font-color-base;
+  background-color: var(--app-bg-color);
+  color: var(--font-color-base);
 }
 
 #___gatsby {
   max-width: 1440px;
   margin: auto;
-  box-shadow: $app-box-shadow;
+  box-shadow: var(--app-box-shadow);
 }
 
 p,
@@ -267,7 +255,7 @@ h4 {
   font-family: "Open Sans", sans-serif;
   letter-spacing: -0.03rem;
   font-weight: 600;
-  color: $heading-color;
+  color: var(--heading-color);
 }
 
 h1 {
@@ -292,7 +280,7 @@ h4 {
 
 a {
   text-decoration: none;
-  color: $link-color;
+  color: var(--link-color);
 }
 
 a:hover {
@@ -315,30 +303,30 @@ h3 {
 time {
   font-family: monospace;
   font-size: 0.75rem;
-  color: $time-color;
+  color: var(--time-color);
 }
 
 .button {
   padding: 0.4rem 0.6rem;
   font-size: 0.8rem;
   // border: 2px solid var(--gray-5);
-  border: $btn-border;
+  border: var(--btn-border);
   background-color: transparent;
   // color: var(--gray-7);
-  color: $btn-color;
+  color: var(--btn-color);
   border-radius: 0.25rem;
   height: fit-content;
 }
 
 .button:hover {
   // border: 2px solid var(--gray-6);
-  border: $btn-hover-border;
+  border: var(--btn-hover-border);
   text-decoration: none;
 }
 
 .button:active {
   // border: 2px solid black;
-  border: $btn-active-border;
+  border: var(--btn-active-border);
 }
 
 .image-wrapper img {
@@ -364,7 +352,7 @@ time {
   font-size: 1.2rem;
   font-weight: 450;
   // background-color: var(--gray-9);
-  background-color: $app-nav-bar-bg-color;
+  background-color: var(--app-nav-bar-bg-color);
   top: 0;
 
   /* Nav bar on top */
@@ -376,7 +364,7 @@ time {
     justify-content: space-between;
     padding: 0.2rem;
     height: var(--nav-height);
-    color: $app-nav-color;
+    color: var(--app-nav-color);
 
     .logo {
       display: none;
@@ -405,14 +393,14 @@ time {
       }
       a:active {
         // color: rgb(108, 202, 89);
-        color: $app-nav-active-color;
+        color: var(--app-nav-active-color);
         #logoDash {
           transform: translateX(0.4ch);
         }
       }
       a.active {
         // color: rgb(141, 218, 126);
-        color: $app-nav-active-color;
+        color: var(--app-nav-active-color);
         #logoDash {
           transform: translateX(-0.3ch);
         }
@@ -460,7 +448,7 @@ time {
 
       a {
         // color: var(--gray-4);
-        color: $app-nav-color;
+        color: var(--app-nav-color);
       }
       a:hover {
         text-decoration: none;
@@ -478,7 +466,7 @@ time {
         color: inherit;
         background-color: currentColor;
         // border-bottom: solid 1px rgb(45, 78, 39);
-        border-bottom: solid 1px $app-nav-color;
+        border-bottom: solid 1px var(--app-nav-dash-border-color);
         transition: 0.3s all ease-out;
         pointer-events: none;
       }
@@ -486,13 +474,13 @@ time {
         opacity: 1;
       }
       a.active {
-        color: $app-nav-active-color;
+        color: var(--app-nav-active-color);
       }
       a.active:after {
         opacity: 1;
         bottom: calc(50% - 2px);
         // background-color: rgb(141, 218, 126);
-        background-color: $app-nav-active-dash-color;
+        background-color: var(--app-nav-active-dash-color);
       }
     }
   }
@@ -504,7 +492,7 @@ time {
     justify-content: space-between;
     width: 100%;
     // background-color: var(--gray-9);
-    background-color: $app-nav-bar-bg-color;
+    background-color: var(--app-nav-bar-bg-color);
     position: fixed;
     top: 0;
     width: 100%;
@@ -539,7 +527,7 @@ time {
       padding: 1rem;
       font-size: 1rem;
       text-align: center;
-      color: $font-color-muted;
+      color: var(--font-color-muted);
 
       p {
         text-align: left;
@@ -557,7 +545,7 @@ time {
     font-weight: 600;
     font-size: 1rem;
     // color: var(--gray-4);
-    color: $app-nav-color;
+    color: var(--app-nav-color);
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -623,7 +611,7 @@ time {
 .footer-component {
   padding: 1.2rem;
   background-color: transparent;
-  color: $font-color-muted;
+  color: var(--font-color-muted);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -640,7 +628,7 @@ time {
     }
 
     a:hover {
-      color: $footer-link-hover-color;
+      color: var(--footer-link-hover-color);
       text-decoration: none;
       border-bottom: solid 1px;
     }
@@ -654,7 +642,7 @@ time {
   padding: 1.5rem 2rem 1rem;
   text-align: center;
   font-size: 0.95rem;
-  color: $font-color-base;
+  color: var(--font-color-base);
 
   /* Profile picture */
   .pp {
@@ -665,11 +653,11 @@ time {
     max-height: 175px;
     overflow: hidden;
     margin: 0 auto;
-    box-shadow: $me-box-shadow;
+    box-shadow: var(--me-box-shadow);
   }
 
   h1.profile-name {
-    color: $heading-color;
+    color: var(--heading-color);
     margin: 1rem 0 0.8rem;
     font-size: 1.6rem;
     line-height: 1.05;
@@ -682,7 +670,7 @@ time {
 
     a svg {
       // fill: var(--gray-4);
-      color: $font-color-muted;
+      color: var(--font-color-muted);
       fill: currentColor;
       width: 1.5em;
       height: 1.5em;
@@ -692,7 +680,7 @@ time {
     a:active,
     a:hover {
       svg {
-        color: $font-color-base;
+        color: var(--font-color-base);
       }
     }
   }
@@ -728,7 +716,7 @@ img {
 /* Main */
 .layout-main {
   padding-bottom: 1px;
-  background-color: $page-bg-color;
+  background-color: var(--page-bg-color);
   min-height: calc(100vh - (317px + var(--main-offset) + 40px));
 }
 
@@ -761,7 +749,7 @@ header.hero {
   //     rgba(var(--gray-3-grad), 0) 95%,
   //     rgba(var(--gray-3-grad), 0) 100%
   //   );
-  background: no-repeat url(../assets/ct-light.svg);
+  background: no-repeat var(--hero-bg-graphic);
   background-size: contain;
   background-position: right top;
 }
@@ -772,7 +760,7 @@ p.hero-description {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: normal;
-  color: $font-color-muted;
+  color: var(--font-color-muted);
 }
 
 /* headings */
@@ -830,25 +818,25 @@ p.hero-description {
   padding: 0.5rem 1rem;
   margin: 0;
   // color: var(--gray-6);
-  color: $skills-category-btn-color;
+  color: var(--skills-category-btn-color);
   text-align: right;
   // border-right: 3px solid var(--gray-4);
-  border-right: 3px solid $skills-category-btn-border-color;
+  border-right: 3px solid var(--skills-category-btn-border-color);
 }
 
 .category li button:hover {
   cursor: pointer;
   // color: var(--blue-3);
-  color: $skills-category-btn-hover-color;
+  color: var(--skills-category-btn-hover-color);
 }
 
 .category li button.active {
   // color: var(--gray-8);
-  color: $skills-category-btn-active-color;
+  color: var(--skills-category-btn-active-color);
   // background-color: var(--gray-3);
-  background-color: $skills-category-btn-active-bg;
+  background-color: var(--skills-category-btn-active-bg);
   // border-right: 3px solid var(--blue-4);
-  border-right: 3px solid $skills-category-btn-active-border-color;
+  border-right: 3px solid var(--skills-category-btn-active-border-color);
 }
 
 .skills {
@@ -868,7 +856,7 @@ p.hero-description {
   text-align: left;
   font-size: 1.15rem;
   font-weight: 400;
-  color: $heading-color;
+  color: var(--heading-color);
 }
 
 .skill > img {
@@ -971,7 +959,7 @@ p.hero-description {
     li {
       button {
         border-right: none;
-        border-bottom: 2px solid $skills-category-btn-border-color;
+        border-bottom: 2px solid var(--skills-category-btn-border-color);
         min-width: fit-content;
         text-align: left;
         white-space: pre;
@@ -979,7 +967,7 @@ p.hero-description {
 
       button.active {
         border-right: none;
-        border-bottom: 2px solid $skills-category-btn-active-border-color;
+        border-bottom: 2px solid var(--skills-category-btn-active-border-color);
       }
     }
   }
@@ -1001,7 +989,7 @@ p.hero-description {
 /* Posts in home */
 .home-posts {
   .card {
-    background-color: $home-post-bg;
+    background-color: var(--home-post-bg);
     padding: 1.5rem;
     border-radius: 0.25rem;
   }
@@ -1041,8 +1029,8 @@ p.hero-description {
 /* Resume */
 .resume .image-wrapper img {
   max-width: 1200px;
-  mix-blend-mode: multiply;
-  box-shadow: $resume-box-shadow;
+  // mix-blend-mode: multiply;
+  box-shadow: var(--resume-box-shadow);
 }
 
 /* Todo */
@@ -1250,9 +1238,9 @@ div#todo {
       font-family: monospace;
       font-size: 0.7rem;
       // border: solid 1px var(--blue-1);
-      border: solid 1px $tag-border-color;
+      border: solid 1px var(--tag-border-color);
       // background-color: var(--gray-1);
-      background-color: $tag-bg;
+      background-color: var(--tag-bg);
       padding: 0.2rem 0.3rem;
       margin: 0.2rem 0.3rem 0.2rem 0;
       border-radius: 0.25rem;
@@ -1260,30 +1248,30 @@ div#todo {
 
     .tag:hover {
       // border: solid 1px var(--blue-4);
-      border: solid 1px $tag-hover-border-color;
+      border: solid 1px var(--tag-hover-border-color);
       // background-color: #fff;
-      background-color: $tag-active-bg;
+      background-color: var(--tag-active-bg);
       // color: #000;
-      color: $tag-hover-color;
+      color: var(--tag-hover-color);
       cursor: pointer;
     }
   }
 
   .links {
     .button {
-      background-color: $link-btn-bg;
-      color: $link-btn-color;
+      background-color: var(--link-btn-bg);
+      color: var(--link-btn-color);
       font-weight: 550;
-      border-color: $link-btn-border-color;
+      border-color: var(--link-btn-border-color);
       margin-right: 0.25rem;
     }
 
     .button:hover {
-      border-color: $link-btn-hover-border-color;
+      border-color: var(--link-btn-hover-border-color);
     }
 
     .button:active {
-      border-color: $link-btn-active-border-color;
+      border-color: var(--link-btn-active-border-color);
     }
 
     .button:last-child {
@@ -1356,7 +1344,7 @@ div#todo {
   h2.year {
     font-weight: 700;
     font-size: 1.9rem;
-    color: $posts-year-heading;
+    color: var(--posts-year-heading);
   }
 
   .tags-filter {
@@ -1367,24 +1355,24 @@ div#todo {
       .tag {
         font-family: monospace;
         font-size: 0.75rem;
-        border: solid 2px $tag-border-color;
-        background-color: $tag-bg;
-        color: $tag-color;
+        border: solid 2px var(--tag-border-color);
+        background-color: var(--tag-bg);
+        color: var(--tag-color);
         padding: 0.2rem 0.3rem;
         margin: 0.2rem 0.3rem 0.2rem 0;
         border-radius: 0.25rem;
       }
 
       .tag:hover {
-        border: solid 2px $tag-hover-border-color;
-        background-color: $tag-active-bg;
-        color: $tag-hover-color;
+        border: solid 2px var(--tag-hover-border-color);
+        background-color: var(--tag-active-bg);
+        color: var(--tag-hover-color);
         cursor: pointer;
       }
       .tag.active {
-        border: solid 2px $tag-active-border-color;
-        background-color: $tag-active-bg;
-        color: $tag-active-color;
+        border: solid 2px var(--tag-active-border-color);
+        background-color: var(--tag-active-bg);
+        color: var(--tag-active-color);
       }
     }
   }
@@ -1442,7 +1430,8 @@ div#todo {
       margin-top: 0.35rem;
       padding: 0.45rem 0.75rem;
       border: none;
-      background-color: $contact-input-bg;
+      color: var(--contact-input-color);
+      background-color: var(--contact-input-bg);
       display: block;
       width: 100%;
       border-bottom: 2px solid transparent;
@@ -1450,12 +1439,16 @@ div#todo {
 
     textarea {
       resize: vertical;
+      border: 2px solid transparent;
     }
 
     input:focus,
     textarea:focus {
-      background-color: $contact-input-focus-bg;
-      border-bottom: 2px solid $contact-input-focus-border-color;
+      background-color: var(--contact-input-focus-bg);
+      border-bottom: 2px solid var(--contact-input-focus-border-color);
+    }
+    textarea:focus {
+      border: 2px solid var(--contact-input-focus-border-color);
     }
 
     button {
@@ -1463,21 +1456,22 @@ div#todo {
       margin: 0.4rem auto;
       font-size: 1.05rem;
       border-color: transparent;
-      background-color: $contact-button-bg;
+      color: var(--contact-button-color);
+      background-color: var(--contact-button-bg);
       transition: 0.15s ease-out;
     }
 
     button:focus {
-      background-color: $contact-button-focus-bg;
+      background-color: var(--contact-button-focus-bg);
     }
 
     button:hover {
-      background-color: $contact-button-hover-bg;
+      background-color: var(--contact-button-hover-bg);
     }
 
     button:active {
-      background-color: $contact-button-active-bg;
-      box-shadow: $contact-button-active-box-shadow;
+      background-color: var(--contact-button-active-bg);
+      box-shadow: var(--contact-button-active-box-shadow);
     }
 
     @media screen and (max-width: 600px) {
@@ -1544,8 +1538,8 @@ div#todo {
   blockquote {
     margin: 1rem 0;
     padding: 0.5rem 1rem;
-    border-left: 4px solid $blog-blockquote-border-color;
-    color: $blog-blockquote-color;
+    border-left: 4px solid var(--blog-blockquote-border-color);
+    color: var(--blog-blockquote-color);
     p {
       margin: 0;
     }
@@ -1593,18 +1587,18 @@ div#todo {
               padding-left: 0;
 
               a {
-                color: $blog-toc-a-color;
+                color: var(--blog-toc-a-color);
                 border-bottom: solid 1px transparent;
               }
 
               a:hover {
-                color: $blog-toc-a-active-color;
+                color: var(--blog-toc-a-active-color);
                 text-decoration: none;
                 border-bottom: solid 1px;
               }
 
               p.active a {
-                color: $blog-toc-a-active-color;
+                color: var(--blog-toc-a-active-color);
               }
             }
           }

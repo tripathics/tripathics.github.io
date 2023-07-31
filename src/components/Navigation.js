@@ -9,7 +9,7 @@ const mainNavItems = [
   { url: '/contact', label: 'Contact' },
 ]
 
-const Navigation = () => {
+const Navigation = ({ toggleTheme }) => {
   const handleMenu = (type) => {
     let navItems = document.getElementById('nav-exp-items');
     let btn = document.getElementById('menu-btn');
