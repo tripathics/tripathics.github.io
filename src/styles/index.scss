@@ -73,6 +73,51 @@
   scroll-padding-top: calc(var(--main-offset) + 0.8rem);
 }
 
+// default light theme
+$app-bg-color: var(--gray-2);
+$app-box-shadow: 0 0 8px 1px var(--gray-4);
+$page-bg-color: var(--gray-05);
+$heading-color: var(--gray-9);
+
+$font-color-base: var(--font-color-base);
+$font-color-muted: var(--font-color-muted);
+$link-color: #3e54cf;
+$footer-link-hover-color: var(--rainbow-2);
+$time-color: var(--gray-7);
+
+$btn-color: var(--gray-7);
+$btn-border: 2px solid var(--gray-5);
+$btn-hover-border: 2px solid var(--gray-6);
+$btn-active-border: 2px solid black;
+
+$app-nav-bar-bg-color: var(--gray-3);
+$app-nav-color: var(--gray-65);
+$app-nav-active-color: var(--gray-10);
+$app-nav-active-color: var(--green-3);
+$app-nav-active-dash-color: rgb(151 192 199);
+
+$me-box-shadow: -10px 5px 15px var(--gray-5), 10px -5px 15px #ffffff;
+
+$scroll-bar-bg: var(--gray-3);
+$scroll-bar-thumb: var(--gray-45);
+
+// dark theme
+.dark-theme {
+  $app-bg-color: var(--gray-8);
+  $page-bg-color: var(--gray-05);
+  $font-color-base: var(--font-color-base);
+  $font-color-muted: var(--font-color-muted);
+  $heading-color: var(--gray-9);
+  $app-box-shadow: 0 0 8px 1px var(--gray-9);
+  $app-nav-bar-bg-color: var(--gray-9);
+  $app-nav-color: var(--gray-4);
+  $app-nav-active-color: rgb(194, 252, 182);
+  $me-box-shadow: 0 0 4px 2px var(--gray-10);
+  $scroll-bar-bg: var(--gray-9);
+  $scroll-bar-thumb: var(--gray-7);
+  $footer-link-hover-color: var(--rainbow-5);
+}
+
 /* reset font boosting on mobile browsers */
 html * {
   max-height: 1000000px;
@@ -116,34 +161,34 @@ a {
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-  background: var(--gray-9);
+  background: $scroll-bar-bg;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gray-7);
+  background: $scroll-bar-thumb;
   border-radius: 2px;
 }
 
-.layout-main {
-  ::-webkit-scrollbar {
-    background: var(--gray-4);
-  }
+// .layout-main {
+//   ::-webkit-scrollbar {
+//     background: var(--gray-4);
+//   }
 
-  ::-webkit-scrollbar-thumb {
-    background: var(--gray-2);
-  }
-}
+//   ::-webkit-scrollbar-thumb {
+//     background: var(--gray-2);
+//   }
+// }
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: var(--gray-8);
-  color: var(--font-color-base);
+  background-color: $app-bg-color;
+  color: $font-color-base;
 }
 
 #___gatsby {
   max-width: 1440px;
   margin: auto;
-  box-shadow: 0 0 8px 1px var(--gray-9);
+  box-shadow: $app-box-shadow;
 }
 
 p,
@@ -181,7 +226,7 @@ h4 {
   font-family: "Open Sans", sans-serif;
   letter-spacing: -0.03rem;
   font-weight: 600;
-  color: var(--gray-9);
+  color: $heading-color;
 }
 
 h1 {
@@ -206,7 +251,7 @@ h4 {
 
 a {
   text-decoration: none;
-  color: #3e54cf;
+  color: $link-color;
 }
 
 a:hover {
@@ -217,7 +262,8 @@ h1,
 h2,
 h3 {
   a {
-    color: black;
+    // color: black;
+    color: inherit;
   }
 
   a:hover {
@@ -228,26 +274,30 @@ h3 {
 time {
   font-family: monospace;
   font-size: 0.75rem;
-  color: var(--gray-7);
+  color: $time-color;
 }
 
 .button {
   padding: 0.4rem 0.6rem;
   font-size: 0.8rem;
-  border: 2px solid var(--gray-5);
+  // border: 2px solid var(--gray-5);
+  border: $btn-border;
   background-color: transparent;
-  color: var(--gray-7);
+  // color: var(--gray-7);
+  color: $btn-color;
   border-radius: 0.25rem;
   height: fit-content;
 }
 
 .button:hover {
-  border: 2px solid var(--gray-6);
+  // border: 2px solid var(--gray-6);
+  border: $btn-hover-border;
   text-decoration: none;
 }
 
 .button:active {
-  border: 2px solid black;
+  // border: 2px solid black;
+  border: $btn-active-border;
 }
 
 .image-wrapper img {
@@ -272,7 +322,8 @@ time {
   z-index: 1;
   font-size: 1.2rem;
   font-weight: 450;
-  background-color: var(--gray-9);
+  // background-color: var(--gray-9);
+  background-color: $app-nav-bar-bg-color;
   top: 0;
 
   /* Nav bar on top */
@@ -284,6 +335,7 @@ time {
     justify-content: space-between;
     padding: 0.2rem;
     height: var(--nav-height);
+    color: $app-nav-color;
 
     .logo {
       display: none;
@@ -292,9 +344,10 @@ time {
       letter-spacing: -0.04ch;
       z-index: 9999999;
       user-select: none;
+      color: inherit;
 
       a {
-        color: var(--gray-4);
+        color: inherit;
         transition: 0.3s all ease-out;
         position: relative;
         font-size: 1.6rem;
@@ -310,13 +363,15 @@ time {
         text-decoration: none;
       }
       a:active {
-        color: rgb(108, 202, 89);
+        // color: rgb(108, 202, 89);
+        color: $app-nav-active-color;
         #logoDash {
           transform: translateX(0.4ch);
         }
       }
       a.active {
-        color: rgb(141, 218, 126);
+        // color: rgb(141, 218, 126);
+        color: $app-nav-active-color;
         #logoDash {
           transform: translateX(-0.3ch);
         }
@@ -363,7 +418,8 @@ time {
       font-weight: 600;
 
       a {
-        color: var(--gray-4);
+        // color: var(--gray-4);
+        color: $app-nav-color;
       }
       a:hover {
         text-decoration: none;
@@ -377,8 +433,11 @@ time {
         transform-origin: left;
         height: 4px;
         opacity: 0;
-        background-color: var(--gray-4);
-        border-bottom: solid 2px rgb(45, 78, 39);
+        // background-color: var(--gray-4);
+        color: inherit;
+        background-color: currentColor;
+        // border-bottom: solid 1px rgb(45, 78, 39);
+        border-bottom: solid 1px $app-nav-color;
         transition: 0.3s all ease-out;
         pointer-events: none;
       }
@@ -386,12 +445,13 @@ time {
         opacity: 1;
       }
       a.active {
-        color: rgb(194, 252, 182);
+        color: $app-nav-active-color;
       }
       a.active:after {
         opacity: 1;
         bottom: calc(50% - 2px);
-        background-color: rgb(141, 218, 126);
+        // background-color: rgb(141, 218, 126);
+        background-color: $app-nav-active-dash-color;
       }
     }
   }
@@ -402,7 +462,8 @@ time {
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    background-color: var(--gray-9);
+    // background-color: var(--gray-9);
+    background-color: $app-nav-bar-bg-color;
     position: fixed;
     top: 0;
     width: 100%;
@@ -437,7 +498,7 @@ time {
       padding: 1rem;
       font-size: 1rem;
       text-align: center;
-      color: var(--gray-4);
+      color: $font-color-muted;
 
       p {
         text-align: left;
@@ -454,7 +515,8 @@ time {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1rem;
-    color: var(--gray-4);
+    // color: var(--gray-4);
+    color: $app-nav-color;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -520,7 +582,7 @@ time {
 .footer-component {
   padding: 1.2rem;
   background-color: transparent;
-  color: #ededed;
+  color: $font-color-muted;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -537,7 +599,7 @@ time {
     }
 
     a:hover {
-      color: var(--rainbow-5);
+      color: $footer-link-hover-color;
       text-decoration: none;
       border-bottom: solid 1px;
     }
@@ -551,6 +613,7 @@ time {
   padding: 1.5rem 2rem 1rem;
   text-align: center;
   font-size: 0.95rem;
+  color: $font-color-base;
 
   /* Profile picture */
   .pp {
@@ -561,11 +624,11 @@ time {
     max-height: 175px;
     overflow: hidden;
     margin: 0 auto;
-    box-shadow: 0 0 4px 2px var(--gray-10);
+    box-shadow: $me-box-shadow;
   }
 
   h1.profile-name {
-    color: white;
+    color: $heading-color;
     margin: 1rem 0 0.8rem;
     font-size: 1.6rem;
     line-height: 1.05;
@@ -577,7 +640,9 @@ time {
     justify-content: center;
 
     a svg {
-      fill: var(--gray-4);
+      // fill: var(--gray-4);
+      color: $font-color-muted;
+      fill: currentColor;
       width: 1.5em;
       height: 1.5em;
       margin: 0px 5px;
@@ -586,7 +651,7 @@ time {
     a:active,
     a:hover {
       svg {
-        fill: white;
+        color: $font-color-base;
       }
     }
   }
@@ -596,7 +661,8 @@ time {
     flex-flow: wrap;
     justify-content: center;
     align-items: flex-end;
-    color: var(--gray-3);
+    // color: var(--gray-3);
+    color: inherit;
     margin: 0 0 0.8rem;
     line-height: 1.2;
     font-size: 0.9rem;
@@ -621,7 +687,7 @@ img {
 /* Main */
 .layout-main {
   padding-bottom: 1px;
-  background-color: var(--gray-05);
+  background-color: $page-bg-color;
   min-height: calc(100vh - (317px + var(--main-offset) + 40px));
 }
 
@@ -645,15 +711,16 @@ img {
 
 /* hero section */
 header.hero {
-  background: no-repeat url(../assets/hero.svg),
-    linear-gradient(
-      180deg,
-      rgba(var(--gray-3-grad), 1) 0%,
-      rgba(var(--gray-3-grad), 0.75) 50%,
-      rgba(var(--gray-3-grad), 0.5) 75%,
-      rgba(var(--gray-3-grad), 0) 95%,
-      rgba(var(--gray-3-grad), 0) 100%
-    );
+  // background: no-repeat url(../assets/hero.svg),
+  //   linear-gradient(
+  //     180deg,
+  //     rgba(var(--gray-3-grad), 1) 0%,
+  //     rgba(var(--gray-3-grad), 0.75) 50%,
+  //     rgba(var(--gray-3-grad), 0.5) 75%,
+  //     rgba(var(--gray-3-grad), 0) 95%,
+  //     rgba(var(--gray-3-grad), 0) 100%
+  //   );
+  background: no-repeat url(../assets/ct-light.svg);
   background-size: contain;
   background-position: right top;
 }
@@ -664,7 +731,7 @@ p.hero-description {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: normal;
-  color: var(--font-color-muted);
+  color: $font-color-muted;
 }
 
 /* headings */
