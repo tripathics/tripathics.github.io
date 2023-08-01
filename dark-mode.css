@@ -75,7 +75,7 @@
 
   --code-font-color: #b3b9c5;
   --code-background-color: #131313;
-  --code-border-color: var(--gray-7);
+  --code-border-color: var(--gray-85);
   --terminal-background-color: #111;
   --terminal-color: white;
   --terminal-bar: -webkit-linear-gradient(top, #282828, #222);
