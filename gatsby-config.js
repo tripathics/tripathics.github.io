@@ -15,10 +15,10 @@ module.exports = {
         name: 'Chandrashekhar Tripathi',
         short_name: 'Chandrashekhar Tripathi',
         description:
-          'CS Undergrad at NIT Arunachal Pradesh. This is my homepage.',
+          'Homepage of Chandrashekhar Tripathi, a CS Undergrad at NIT Arunachal Pradesh.',
         start_url: '/',
-        background_color: '#31363b',
-        theme_color: '#31363b',
+        background_color: '#212529',
+        theme_color: '#212529',
         display: 'minimal-ui',
         icon: `static/logo.png`,
       },

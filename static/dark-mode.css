@@ -6,7 +6,7 @@
 
   /* --font-color-base: rgb(58, 63, 68); */
   --font-color-base: var(--gray-05);
-  --font-color-muted: var(--gray-2);
+  --font-color-muted: var(--gray-4);
   --link-color: var(--blue-2);
   --footer-link-hover-color: var(--rainbow-5);
   /* --time-color: var(--gray-25); */
@@ -23,7 +23,7 @@
   --app-nav-active-color: #c2fcb6;
   --app-nav-active-dash-color: #8dda7e;
 
-  --me-box-shadow: 0 0 4px 2px var(--gray-10);
+  --me-box-shadow: -10px 5px 15px #0d0e0f,10px -5px 15px #35393c;
 
   --scroll-bar-bg: var(--gray-9);
   --scroll-bar-thumb: var(--gray-7);
@@ -75,7 +75,7 @@
 
   --code-font-color: #b3b9c5;
   --code-background-color: #131313;
-  --code-border-color: var(--gray-7);
+  --code-border-color: var(--gray-85);
   --terminal-background-color: #111;
   --terminal-color: white;
   --terminal-bar: -webkit-linear-gradient(top, #282828, #222);

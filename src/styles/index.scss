@@ -14,7 +14,8 @@
   --gray-6: rgb(134, 142, 150);
   --gray-65: rgb(90, 100, 108);
   --gray-7: rgb(75, 80, 86);
-  --gray-8: rgb(49, 54, 59);
+  --gray-8: rgb(42, 47, 51);
+  --gray-85: rgb(49, 54, 59);
   --gray-9: rgb(33, 37, 41);
   --gray-10: rgb(22, 25, 28);
   --green: rgb(81, 182, 129);
@@ -70,7 +71,7 @@
   scroll-padding-top: calc(var(--main-offset) + 0.8rem);
 
   /*********** light theme **************/
-  --app-bg-color: var(--gray-2);
+  --app-bg-color: var(--gray-3);
   --app-box-shadow: 0 0 8px 1px var(--gray-4);
   --page-bg-color: var(--gray-1);
   --heading-color: var(--gray-9);
@@ -282,7 +283,6 @@ h1,
 h2,
 h3 {
   a {
-    // color: black;
     color: inherit;
   }
 
