@@ -72,6 +72,30 @@
   --link-btn-border-color: var(--gray-8);
   --link-btn-hover-border-color: var(--gray-65);
   --link-btn-active-border-color: #000;
+
+  --code-font-color: #b3b9c5;
+  --code-background-color: #131313;
+  --code-border-color: var(--gray-7);
+  --terminal-background-color: #111;
+  --terminal-color: white;
+  --terminal-bar: -webkit-linear-gradient(top, #282828, #222);
+  --terminal-border: var(--border-color);
+  --terminal-accent: var(--gray-6);
+  --string: var(--rainbow-4);
+  --variable: var(--rainbow-2);
+  --property: #b3b9c5;
+  --number: #fca369;
+  --operator: #637187;
+  --punctuation: #c7cdd7;
+  --comment: #777c85;
+  --function: #28e3e6;
+  --keyword: var(--rainbow-2);
+  --attribute: #fed06d;
+  --class: var(--rainbow-1);
+  --tag: var(--rainbow-3);
+  --error: #b0292c;
+  --code-link-hover: var(--link-hover-color);
+  --highlight-code-color: rgb(116, 207, 136, 0.1);
 }
 
 /* dark theme */
