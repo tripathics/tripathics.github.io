@@ -144,6 +144,8 @@
   --link-btn-border-color: var(--gray-4);
   --link-btn-hover-border-color: var(--gray-6);
   --link-btn-active-border-color: #000;
+
+  --todo-filter: none;
 }
 
 /* reset font boosting on mobile browsers */
@@ -196,16 +198,6 @@ a {
   background: var(--scroll-bar-thumb);
   border-radius: 2px;
 }
-
-// .layout-main {
-//   ::-webkit-scrollbar {
-//     background: var(--gray-4);
-//   }
-
-//   ::-webkit-scrollbar-thumb {
-//     background: var(--gray-2);
-//   }
-// }
 
 body {
   font-family: "Inter", sans-serif;
@@ -350,7 +342,6 @@ time {
   z-index: 1;
   font-size: 1.2rem;
   font-weight: 450;
-  // background-color: var(--gray-9);
   background-color: var(--app-nav-bar-bg-color);
   top: 0;
 
@@ -367,10 +358,31 @@ time {
     color: var(--app-nav-active-color);
     cursor: pointer;
     z-index: 9999999;
+    height: 1.4rem;
 
     svg {
-      width: 1.5em;
-      height: 1.5em;
+      width: 1.4rem;
+      height: 1.4rem;
+
+      #inner {
+        transform: translate(0, 0);
+        transition: 0.5s transform cubic-bezier(0.41, 0.47, 0.75, 1.15),
+          0.3s color ease-in-out;
+      }
+      #outer {
+        transform: rotate(0);
+        transform-origin: center;
+        transition: 0.5s transform cubic-bezier(0.41, 0.47, 0.75, 1.15),
+          0.3s color ease-in-out;
+      }
+    }
+  }
+  .theme-toggle.dark svg {
+    #inner {
+      transform: translate(13%, 0);
+    }
+    #outer {
+      transform: rotate(180deg);
     }
   }
 
@@ -1060,6 +1072,7 @@ div#todo {
 
   img {
     width: 100%;
+    filter: var(--todo-filter);
   }
 }
 

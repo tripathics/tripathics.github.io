@@ -7,7 +7,7 @@ import Footer from "../components/Footer"
 import { Helmet } from "react-helmet"
 
 const Layout = ({ children }) => {
-  const [theme, setTheme] = React.useState('light');
+  const [theme, setTheme] = React.useState('dark');
 
   React.useEffect(() => {
     const savedTheme = window.localStorage.getItem('theme');
