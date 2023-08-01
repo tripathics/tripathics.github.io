@@ -96,21 +96,6 @@
   --error: #b0292c;
   --code-link-hover: var(--link-hover-color);
   --highlight-code-color: rgb(116, 207, 136, 0.1);
-}
 
-/* dark theme */
-/* .dark-theme {
-  $app-bg-color: var(--gray-8);
-  $page-bg-color: var(--gray-05);
-  $font-color-base: var(--font-color-base);
-  $font-color-muted: var(--font-color-muted);
-  $heading-color: var(--gray-9);
-  $app-box-shadow: 0 0 8px 1px var(--gray-9);
-  $app-nav-bar-bg-color: var(--gray-9);
-  $app-nav-color: var(--gray-4);
-  $app-nav-active-color: rgb(194, 252, 182);
-  $me-box-shadow: 0 0 4px 2px var(--gray-10);
-  $scroll-bar-bg: var(--gray-9);
-  $scroll-bar-thumb: var(--gray-7);
-  $footer-link-hover-color: var(--rainbow-5);
-} */
+  --todo-filter: invert(1);
+}
