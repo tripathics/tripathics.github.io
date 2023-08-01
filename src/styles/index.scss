@@ -72,7 +72,7 @@
   /*********** light theme **************/
   --app-bg-color: var(--gray-2);
   --app-box-shadow: 0 0 8px 1px var(--gray-4);
-  --page-bg-color: var(--gray-05);
+  --page-bg-color: var(--gray-1);
   --heading-color: var(--gray-9);
 
   --font-color-base: rgb(58, 63, 68);
@@ -88,9 +88,8 @@
 
   --app-nav-bar-bg-color: var(--gray-3);
   --app-nav-color: var(--gray-65);
-  --app-nav-active-color: var(--gray-10);
-  --app-nav-active-color: var(--green-3);
-  --app-nav-active-dash-color: rgb(151 192 199);
+  --app-nav-active-color: var(--green-4);
+  --app-nav-active-dash-color: var(--rainbow-1);
   --app-nav-dash-border-color: var(--app-nav-color);
 
   --me-box-shadow: -10px 5px 15px var(--gray-5), 10px -5px 15px #ffffff;
@@ -98,8 +97,8 @@
   --scroll-bar-bg: var(--gray-3);
   --scroll-bar-thumb: var(--gray-45);
 
-  --brand-dark: url(../assets/ct-dark.svg);
-  --brand-light: url(../assets/ct-light.svg);
+  --brand-dark: url(../assets/ct-dark-new.svg);
+  --brand-light: url(../assets/ct-light-new.svg);
 
   --hero-bg-graphic: var(--brand-light);
   --skills-category-btn-color: var(--gray-6);
@@ -1534,6 +1533,17 @@ div#todo {
 }
 
 .blog-component {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    a svg {
+      fill: currentColor;
+    }
+  }
+
   h1:not(:first-child),
   h2:not(:first-child) {
     margin-top: 3rem;
