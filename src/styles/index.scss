@@ -18,6 +18,7 @@
   --gray-85: rgb(49, 54, 59);
   --gray-9: rgb(33, 37, 41);
   --gray-10: rgb(22, 25, 28);
+  --gray-11: rgb(16 18 20);
   --green: rgb(81, 182, 129);
   --green-1: rgb(149, 205, 127);
   --green-2: rgb(115, 177, 138);
@@ -92,6 +93,7 @@
   --app-nav-active-color: var(--green-4);
   --app-nav-active-dash-color: var(--rainbow-1);
   --app-nav-dash-border-color: var(--app-nav-color);
+  --app-mobile-nav-bg: var(--gray-0);
 
   --me-box-shadow: -10px 5px 15px var(--gray-5), 10px -5px 15px #ffffff;
 
@@ -377,9 +379,9 @@ time {
       }
     }
   }
-  .theme-toggle.dark svg {
+  .theme-toggle.light svg {
     #inner {
-      transform: translate(13%, 0);
+      transform: translate(-15%, 0);
     }
     #outer {
       transform: rotate(180deg);
@@ -523,7 +525,8 @@ time {
     justify-content: space-between;
     width: 100%;
     // background-color: var(--gray-9);
-    background-color: var(--app-nav-bar-bg-color);
+    // background-color: var(--app-nav-bar-bg-color);
+    background-color: var(--app-mobile-nav-bg);
     position: fixed;
     top: 0;
     width: 100%;
