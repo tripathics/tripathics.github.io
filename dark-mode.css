@@ -17,6 +17,7 @@
   --btn-hover-border: 1px solid var(--gray-6);
   --btn-active-border: 1px solid var(--gray-5);
   --app-nav-dash-border-color: var(--app-nav-bar-bg-color);
+  --app-mobile-nav-bg: var(--gray-11);
 
   --app-nav-bar-bg-color: var(--gray-9);
   --app-nav-color: var(--gray-4);
