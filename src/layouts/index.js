@@ -16,35 +16,35 @@ const Layout = ({ children }) => {
     if (savedTheme) {
       setTheme(savedTheme);
     }
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+    setIsLoading(false);
   }, [])
 
   return (<>
+    <Helmet>
+      {theme === 'dark' && <link rel="stylesheet" href="/dark-mode.css" />}
+    </Helmet>
     <Loading isLoading={isLoading} />
-    <div className={`layout-component`}>
-      <Helmet>
-        {theme === 'dark' && <link rel="stylesheet" href="/dark-mode.css" />}
-      </Helmet>
+    {!isLoading && (
+      <div className={`layout-component`}>
 
-      <Navigation theme={theme} toggleTheme={() => {
-        if (theme === 'light') {
-          window.localStorage.setItem('theme', 'dark');
-          setTheme('dark');
-        } else {
-          window.localStorage.setItem('theme', 'light');
-          setTheme('light');
-        }
-      }} />
-      <Me
-        ghUsername={'tripathics'}
-        instaHandle={'c_strip.z'}
-        linkedinLink={'tripathics'}
-      />
-      <main className="layout-main">{children}</main>
-      <Footer />
-    </div>
+        <Navigation theme={theme} toggleTheme={() => {
+          if (theme === 'light') {
+            window.localStorage.setItem('theme', 'dark');
+            setTheme('dark');
+          } else {
+            window.localStorage.setItem('theme', 'light');
+            setTheme('light');
+          }
+        }} />
+        <Me
+          ghUsername={'tripathics'}
+          instaHandle={'c_strip.z'}
+          linkedinLink={'tripathics'}
+        />
+        <main className="layout-main">{children}</main>
+        <Footer />
+      </div>
+    )}
   </>)
 }
 

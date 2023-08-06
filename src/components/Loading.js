@@ -1,16 +1,19 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 export default function Loading({ isLoading = true }) {
-  React.useEffect(() => {
-    document.body.style.overflow = isLoading ? 'hidden' : 'auto';
+  const [isVisible, setIsVisible] = React.useState(isLoading);
 
-    return () => {
+  useEffect(() => {
+    if (isVisible) document.body.style.overflow = 'hidden';
+    const timer = setTimeout(() => {
       document.body.style.overflow = 'auto';
-    }
-  }, [isLoading])
+      setIsVisible(false);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div className={`loading-component ${isLoading ? '' : 'inactive'}`} >
+    <div className={`loading-component ${isVisible ? '' : 'inactive'}`} >
       <div className="loading">
         <svg width="185" height="88" viewBox="0 0 185 88" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="loading" clipPath="url(#clip0_207_2)">

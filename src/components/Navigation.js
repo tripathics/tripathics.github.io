@@ -36,23 +36,29 @@ const ThemeToggle = ({ theme = 'light', toggleTheme }) => {
 const Navigation = ({ theme = 'light', toggleTheme }) => {
   const handleMenu = (type) => {
     let navItems = document.getElementById('nav-exp-items');
-    let btn = document.getElementById('menu-btn');
+    let menuBtns = [].slice.apply(document.getElementsByClassName('menu'));
 
     if (type === 'close') {
       navItems.classList.remove('expand');
-      btn.classList.remove('open');
+      menuBtns.forEach(btn => {
+        btn.classList.remove('open');
+      })
       document.body.style.overflow = 'auto'
     } else if (type === 'open') {
       navItems.classList.add('expand');
-      btn.classList.add('open');
+      menuBtns.forEach(btn => {
+        btn.classList.add('open');
+      })
       document.body.style.overflow = 'hidden'
     } else {
       navItems.classList.toggle('expand');
-      btn.classList.toggle('open');
-      if (document.body.style.overflow === 'hidden') {
-        document.body.style.overflow = 'auto'
-      } else {
+      menuBtns.forEach(btn => {
+        btn.classList.toggle('open');
+      })
+      if (navItems.classList.contains('expand')) {
         document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = 'auto'
       }
     }
   }
@@ -60,20 +66,31 @@ const Navigation = ({ theme = 'light', toggleTheme }) => {
   return (
     <nav className="nav-component">
       <div id="nav-bar">
-        <ThemeToggle toggleTheme={toggleTheme} theme={theme} />
-        <button id="menu-btn" className="menu" onClick={e => { handleMenu() }} aria-label="Menu button">
-          <span className="menu-label" aria-hidden="true">CLOSE</span>
-        </button>
-        <div className="logo">
-          <Link onClick={e => { handleMenu('close') }} to="/" aria-label='Home' activeClassName="active">{`{ \\ `}<span id='logoDash'>-</span> </Link>
+        <div className="nav-header" id="nav-colapse-items">
+          <ul>
+            {mainNavItems.map((item, i) => (
+              <li key={i}><Link to={item.url} activeClassName="active">{item.label}</Link></li>
+            ))}
+          </ul>
+          <div className="logo">
+            <Link onClick={e => { handleMenu('close') }} to="/" aria-label='Home' activeClassName="active">{`{ \\ `}<span id='logoDash'>-</span> </Link>
+          </div>
+          <button id="menu-btn" className="menu" onClick={e => { handleMenu() }} aria-label="Menu button">
+            <span className="menu-label" aria-hidden="true">CLOSE</span>
+          </button>
+          <ThemeToggle toggleTheme={toggleTheme} theme={theme} />
         </div>
-        <ul id="nav-colapse-items">
-          {mainNavItems.map((item, i) => (
-            <li key={i}><Link to={item.url} activeClassName="active">{item.label}</Link></li>
-          ))}
-        </ul>
       </div>
       <div id="nav-exp-items">
+        <div className="nav-header">
+          <div className="logo">
+            <Link onClick={e => { handleMenu('close') }} to="/" aria-label='Home' activeClassName="active">{`{ \\ `}<span id='logoDash'>-</span> </Link>
+          </div>
+          <button id="menu-btn" className="menu" onClick={e => { handleMenu() }} aria-label="Menu button">
+            <span className="menu-label" aria-hidden="true">CLOSE</span>
+          </button>
+          <ThemeToggle toggleTheme={toggleTheme} theme={theme} />
+        </div>
         <ul>
           {mainNavItems.map((item, i) => (
             <li key={i}><Link onClick={e => { handleMenu('close') }} to={item.url} activeClassName="active">{item.label}</Link></li>

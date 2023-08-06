@@ -160,11 +160,6 @@ html * {
   -ms-text-size-adjust: auto;
 }
 
-@media screen and (min-width: 550px) {
-  body {
-    overflow: auto !important;
-  }
-}
 *,
 ::before,
 ::after {
@@ -347,6 +342,43 @@ time {
   background-color: var(--app-nav-bar-bg-color);
   top: 0;
 
+  .logo {
+    margin-left: 0.8rem;
+    font-weight: 800;
+    letter-spacing: -0.04ch;
+    user-select: none;
+    color: inherit;
+
+    a {
+      color: inherit;
+      transition: 0.3s all ease-out;
+      position: relative;
+      font-size: 1.6rem;
+      line-height: 0.85;
+      #logoDash {
+        transform: translateX(0.3ch);
+        display: inline-block;
+        position: absolute;
+        transition: 0.3s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    a:active {
+      color: var(--app-nav-active-color);
+      #logoDash {
+        transform: translateX(0.4ch);
+      }
+    }
+    a.active {
+      color: var(--app-nav-active-color);
+      #logoDash {
+        transform: translateX(-0.3ch);
+      }
+    }
+  }
+
   .theme-toggle {
     position: absolute;
     right: 0;
@@ -359,7 +391,6 @@ time {
     line-height: 1;
     color: var(--app-nav-active-color);
     cursor: pointer;
-    z-index: 9999999;
     height: 1.4rem;
 
     svg {
@@ -388,85 +419,22 @@ time {
     }
   }
 
-  /* Nav bar on top */
-  #nav-bar {
+  .nav-header {
     top: 0;
     display: flex;
-    flex-flow: row-reverse;
+    flex-flow: row;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     padding-right: 2.8rem;
-    height: var(--nav-height);
+    min-height: var(--nav-height);
     color: var(--app-nav-color);
-
-    .logo {
-      display: none;
-      margin-left: 0.8rem;
-      font-weight: 800;
-      letter-spacing: -0.04ch;
-      z-index: 9999999;
-      user-select: none;
-      color: inherit;
-
-      a {
-        color: inherit;
-        transition: 0.3s all ease-out;
-        position: relative;
-        font-size: 1.6rem;
-        line-height: 0.85;
-        #logoDash {
-          transform: translateX(0.3ch);
-          display: inline-block;
-          position: absolute;
-          transition: 0.3s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-      }
-      a:hover {
-        text-decoration: none;
-      }
-      a:active {
-        // color: rgb(108, 202, 89);
-        color: var(--app-nav-active-color);
-        #logoDash {
-          transform: translateX(0.4ch);
-        }
-      }
-      a.active {
-        // color: rgb(141, 218, 126);
-        color: var(--app-nav-active-color);
-        #logoDash {
-          transform: translateX(-0.3ch);
-        }
-      }
-
-      @media screen and (max-width: 550px) {
-        display: block;
-      }
-    }
   }
 
-  /* Nav items within nav bar */
-  #nav-colapse-items {
-    display: flex;
-    height: 100%;
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-    margin-right: 1rem;
-    margin-top: 0;
-    margin-bottom: 0;
-
-    li {
-      display: inline-block;
-      list-style-type: none;
-      margin: 0 0 0 2rem;
-      padding: 0;
-      font-size: 1rem;
-    }
-
-    li:first-child {
-      margin-left: 0;
-    }
+  /* Nav bar on top */
+  #nav-bar {
+    height: var(--nav-height);
+    color: var(--app-nav-color);
   }
 
   #nav-colapse-items,
@@ -480,7 +448,6 @@ time {
       font-weight: 600;
 
       a {
-        // color: var(--gray-4);
         color: var(--app-nav-color);
       }
       a:hover {
@@ -495,10 +462,8 @@ time {
         transform-origin: left;
         height: 4px;
         opacity: 0;
-        // background-color: var(--gray-4);
         color: inherit;
         background-color: currentColor;
-        // border-bottom: solid 1px rgb(45, 78, 39);
         border-bottom: solid 1px var(--app-nav-dash-border-color);
         transition: 0.3s all ease-out;
         pointer-events: none;
@@ -512,9 +477,36 @@ time {
       a.active:after {
         opacity: 1;
         bottom: calc(50% - 2px);
-        // background-color: rgb(141, 218, 126);
         background-color: var(--app-nav-active-dash-color);
       }
+    }
+  }
+
+  /* Nav items within nav bar */
+  #nav-colapse-items {
+    ul {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      padding: 0;
+      margin-right: 1rem;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    li {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0 0 0 2rem;
+      padding: 0;
+      font-size: 1rem;
+    }
+
+    li:first-child {
+      margin-left: 0;
     }
   }
 
@@ -523,16 +515,13 @@ time {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
-    // background-color: var(--gray-9);
-    // background-color: var(--app-nav-bar-bg-color);
     background-color: var(--app-mobile-nav-bg);
     position: fixed;
     top: 0;
-    width: 100%;
+    right: 0;
+    left: 0;
     bottom: 0;
-    padding-top: var(--main-offset);
-    overflow: hidden;
+    overflow-x: hidden;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: clip-path 0.3s ease;
 
@@ -570,7 +559,6 @@ time {
   }
 
   button.menu {
-    display: none;
     margin-right: 0.8rem;
     border: none;
     background-color: transparent;
@@ -578,12 +566,10 @@ time {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1rem;
-    // color: var(--gray-4);
     color: var(--app-nav-color);
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    z-index: 9999999;
 
     .menu-label {
       visibility: hidden;
@@ -620,19 +606,19 @@ time {
     transition: clip-path 0.3s ease;
   }
 
-  @media screen and (max-width: 550px) {
+  @media screen and (min-width: 550px) {
     #nav-colapse-items {
-      display: none;
-    }
-
-    button.menu {
-      display: block;
+      button.menu,
+      .logo {
+        display: none;
+      }
     }
   }
-
-  @media screen and (min-width: 550px) {
-    #nav-exp-items {
-      display: none;
+  @media screen and (max-width: 550px) {
+    #nav-colapse-items {
+      ul {
+        display: none;
+      }
     }
   }
 }
@@ -1704,14 +1690,14 @@ div#todo {
       #dash {
         color: var(--letter-color);
         opacity: 0;
-        animation: typewriter 1s steps(1) forwards;
+        animation: typewriter calc(var(--typing-rate)) steps(1) forwards;
       }
 
       // move the cursor as the text is typed
       #cursor {
         transform: translateX(calc(var(--letter-width) * -3));
         animation: typeforwards calc(2 * var(--typing-rate)) steps(1) forwards;
-        animation-delay: calc(6 * var(--typing-rate));
+        animation-delay: var(--typing-rate);
         color: var(--cursor-color);
         opacity: 1;
 
@@ -1729,15 +1715,15 @@ div#todo {
       }
 
       #c {
-        animation-delay: var(--typing-rate);
+        animation-delay: 0;
       }
 
       #t {
-        animation-delay: calc(2 * var(--typing-rate));
+        animation-delay: var(--typing-rate);
       }
 
       #dash {
-        animation-delay: calc(3 * var(--typing-rate));
+        animation-delay: calc(2 * var(--typing-rate));
       }
 
       @keyframes typewriter {
