@@ -26,7 +26,6 @@ const Layout = ({ children }) => {
     <Loading isLoading={isLoading} />
     {!isLoading && (
       <div className={`layout-component`}>
-
         <Navigation theme={theme} toggleTheme={() => {
           if (theme === 'light') {
             window.localStorage.setItem('theme', 'dark');

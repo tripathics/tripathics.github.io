@@ -1689,8 +1689,6 @@ div#todo {
       #t,
       #dash {
         color: var(--letter-color);
-        opacity: 0;
-        animation: typewriter calc(var(--typing-rate)) steps(1) forwards;
       }
 
       // move the cursor as the text is typed
@@ -1738,6 +1736,50 @@ div#todo {
   }
 }
 .loading-component.inactive {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-out;
+}
+
+.loading-component2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999999;
+  opacity: 1;
+  background-color: var(--gray-8);
+  --letter-color: #c2fcb6;
+  --cursor-color: var(--gray-3);
+  --letter-width: 48.4px;
+
+  .loading {
+    width: 128px;
+
+    svg {
+      width: 128px;
+
+      #c,
+      #t,
+      #dash {
+        color: var(--letter-color);
+        opacity: 0;
+      }
+
+      // move the cursor as the text is typed
+      #cursor {
+        transform: translateX(calc(var(--letter-width) * -3));
+        color: var(--cursor-color);
+        opacity: 1;
+      }
+    }
+  }
+}
+.loading-component2.inactive {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease-out;
