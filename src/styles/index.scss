@@ -208,7 +208,7 @@ body {
   color: var(--font-color-base);
 }
 
-#___gatsby {
+.layout-component {
   max-width: 1440px;
   margin: auto;
   box-shadow: var(--app-box-shadow);
@@ -1674,4 +1674,85 @@ div#todo {
       display: block;
     }
   }
+}
+
+.loading-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999999;
+  opacity: 1;
+  background-color: var(--gray-8);
+  --letter-color: #c2fcb6;
+  --cursor-color: var(--gray-3);
+  --letter-width: 48.4px;
+  --typing-rate: 0.2s;
+
+  .loading {
+    width: 128px;
+
+    svg {
+      width: 128px;
+
+      #c,
+      #t,
+      #dash {
+        color: var(--letter-color);
+        opacity: 0;
+        animation: typewriter 1s steps(1) forwards;
+      }
+
+      // move the cursor as the text is typed
+      #cursor {
+        transform: translateX(calc(var(--letter-width) * -3));
+        animation: typeforwards calc(2 * var(--typing-rate)) steps(1) forwards;
+        animation-delay: calc(6 * var(--typing-rate));
+        color: var(--cursor-color);
+        opacity: 1;
+
+        @keyframes typeforwards {
+          0% {
+            transform: translateX(calc(var(--letter-width) * -2));
+          }
+          50% {
+            transform: translateX(calc(var(--letter-width) * -1));
+          }
+          100% {
+            transform: translateX(calc(var(--letter-width) * 0));
+          }
+        }
+      }
+
+      #c {
+        animation-delay: var(--typing-rate);
+      }
+
+      #t {
+        animation-delay: calc(2 * var(--typing-rate));
+      }
+
+      #dash {
+        animation-delay: calc(3 * var(--typing-rate));
+      }
+
+      @keyframes typewriter {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+.loading-component.inactive {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-out;
 }

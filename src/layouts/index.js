@@ -5,23 +5,27 @@ import Navigation from "../components/Navigation"
 import Me from "../components/Me"
 import Footer from "../components/Footer"
 import { Helmet } from "react-helmet"
+import Loading from "../components/Loading"
 
 const Layout = ({ children }) => {
   const [theme, setTheme] = React.useState('dark');
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
     const savedTheme = window.localStorage.getItem('theme');
     if (savedTheme) {
       setTheme(savedTheme);
     }
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
   }, [])
 
-  return (
-    <div className="layout-component">
+  return (<>
+    <Loading isLoading={isLoading} />
+    <div className={`layout-component`}>
       <Helmet>
-        {theme === 'dark' && (
-          <link rel="stylesheet" href="/dark-mode.css" />
-        )}
+        {theme === 'dark' && <link rel="stylesheet" href="/dark-mode.css" />}
       </Helmet>
 
       <Navigation theme={theme} toggleTheme={() => {
@@ -41,7 +45,7 @@ const Layout = ({ children }) => {
       <main className="layout-main">{children}</main>
       <Footer />
     </div>
-  )
+  </>)
 }
 
 export default Layout
