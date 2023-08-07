@@ -51,13 +51,20 @@ export default function Loading({ isLoading = true }) {
           console.log('interval should clear');
           clearInterval(intervalId);
         }
-      }, 200);
+      }, 300);
       return () => clearInterval(intervalId);
     }
   }, []);
 
   return (
-    counter > -2 && (
+    counter > -2 && (<>
+      <noscript>
+        <style>{`
+          .loading-component2 {
+            display: none;
+          }
+        `}</style>
+      </noscript>
       <div className={`loading-component2 ${counter < 0 ? 'inactive' : ''}`} >
         <div className="loading">
           <svg width="185" height="88" viewBox="0 0 185 88" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,6 +90,6 @@ export default function Loading({ isLoading = true }) {
           </svg>
         </div>
       </div >
-    )
+    </>)
   )
 }
