@@ -35,24 +35,24 @@ export function LoadingOld({ isLoading = true }) {
 
 export default function Loading({ isLoading = true }) {
   const [counter, setCounter] = React.useState(4);
+  const [intervalId, setIntervalId] = React.useState(null);
 
   useEffect(() => {
-    if (counter < -1) {
+    if (intervalId && counter < -1) {
       document.body.style.overflow = 'auto';
+      clearInterval(intervalId);
+      setIntervalId(null);
     }
   }, [counter])
 
   useEffect(() => {
     if (isLoading) {
       document.body.style.overflow = 'hidden';
-      var intervalId = setInterval(() => {
+      var id = setInterval(() => {
         setCounter(prevValue => prevValue - 1);
-        if (counter < 0) {
-          console.log('interval should clear');
-          clearInterval(intervalId);
-        }
       }, 300);
-      return () => clearInterval(intervalId);
+      setIntervalId(id);
+      return () => clearInterval(id);
     }
   }, []);
 
