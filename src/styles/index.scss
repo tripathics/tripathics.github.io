@@ -116,7 +116,7 @@
   --resume-box-shadow: 0 0 2px rgb(255 255 255),
     0 4px 12px -4px rgb(0 0 0 / 30%);
 
-  --posts-year-heading: rgb(121 154 77);
+  --posts-year-heading: rgb(115 145 74);
   --tag-bg: var(--gray-05);
   --tag-active-bg: #fff;
   --tag-color: var(--gray-7);
@@ -351,7 +351,7 @@ time {
 
     a {
       color: inherit;
-      transition: 0.3s all ease-out;
+      // transition: 0.3s all ease-out;
       position: relative;
       font-size: 1.6rem;
       line-height: 0.85;
@@ -359,7 +359,7 @@ time {
         transform: translateX(0.3ch);
         display: inline-block;
         position: absolute;
-        transition: 0.3s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: transform 0.35s cubic-bezier(0.86, 0, 0.07, 0.995);
       }
     }
     a:hover {
@@ -523,7 +523,7 @@ time {
     bottom: 0;
     overflow-x: hidden;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path 0.3s ease;
+    transition: clip-path 0.75s ease;
 
     ul {
       padding-left: 1rem;
@@ -543,8 +543,6 @@ time {
         height: 8px;
       }
     }
-
-    transition: clip-path 0.3s ease 0.3s;
 
     .nav-footer {
       padding: 1rem;
@@ -582,7 +580,8 @@ time {
     padding: inherit;
     right: 0;
     line-height: 1;
-    transition: all 0.2s ease-out;
+    transition: all 0.35s cubic-bezier(0.86, 0, 0.07, 0.995);
+    // transition: all 0.2s ease-out;
   }
   button.menu::before {
     content: "menu";
@@ -603,7 +602,7 @@ time {
 
   #nav-exp-items.expand {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    transition: clip-path 0.3s ease;
+    transition: clip-path 0.75s ease;
   }
 
   @media screen and (min-width: 550px) {
