@@ -20,4 +20,4 @@
 :HL["/projects/technodaya-website.webp","image"]
 :HL["/projects/airavat.webp","image"]
 :HL["/resume.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"72D6BpkMBswml786ks8AC"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"VP4fmwmlwQK5j-HWkQ-z4"}

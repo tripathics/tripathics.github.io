@@ -8,4 +8,4 @@
 :HL["/projects/homepage.webp","image"]
 :HL["/projects/typing-game.webp","image"]
 :HL["/projects/todo-list.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"projects","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"72D6BpkMBswml786ks8AC"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"projects","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"VP4fmwmlwQK5j-HWkQ-z4"}
