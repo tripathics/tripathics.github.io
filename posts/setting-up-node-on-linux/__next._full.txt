@@ -1,0 +1,93 @@
+1:"$Sreact.fragment"
+2:I[99214,["/_next/static/chunks/2l33f8zmnefev.js"],"default"]
+3:I[13275,["/_next/static/chunks/2l33f8zmnefev.js"],"default"]
+4:I[96423,["/_next/static/chunks/2l33f8zmnefev.js"],"default"]
+5:I[88052,["/_next/static/chunks/2l33f8zmnefev.js"],""]
+7:I[7679,["/_next/static/chunks/2l33f8zmnefev.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
+b:I[7679,["/_next/static/chunks/2l33f8zmnefev.js"],"ViewportBoundary"]
+d:I[7679,["/_next/static/chunks/2l33f8zmnefev.js"],"MetadataBoundary"]
+f:I[26837,["/_next/static/chunks/2l33f8zmnefev.js"],"default",1]
+:HL["/_next/static/chunks/0h5fgvknm6jl9.css","style"]
+a:X
+0:{"P":null,"c":["","posts","setting-up-node-on-linux"],"q":"","i":false,"f":[[["",{"children":["posts",{"children":[["slug","setting-up-node-on-linux","d",[]],{"children":["__PAGE__",{},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4624],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0h5fgvknm6jl9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/2l33f8zmnefev.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"error-404","children":[["$","header",null,{"className":"head-container","children":["$","h1",null,{"id":"","children":"404"}]}],["$","section",null,{"className":"container","children":[["$","p",null,{"children":"This is not the web page you are looking for."}],["$","$L5",null,{"href":"/","children":"Back to home"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L6",null,["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],{},null,false,null]},null,false,"$a"]},null,false,"$a"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$8",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}],false]],"m":"$undefined","G":["$f",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0h5fgvknm6jl9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"72D6BpkMBswml786ks8AC"}
+a:C
+10:T2e44,<h2 id="introduction">Introduction<a href="#introduction" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>NodeJS is a runtime environment to execute JavaScript code outside the web browser.</p>
+<p>Continuing with the earlier discussion, after successfully installing node and npm, I went on to install "http-server" from <code>npm</code> globally only to get this <code>EACCESS</code> error.</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line"><span class="token function">npm</span> <span class="token parameter variable">-g</span> <span class="token function">install</span> http-server
+</span><span class="code-line">
+</span></code></pre>
+<p>In this blog, first I'll install Node and npm system wide. Then I'll tell <code>npm</code> where to install global packages. Next, I will install <code>n</code> to manage multiple versions of node.</p>
+<h2 id="installing-node-and-npm-globally">Installing Node and npm globally<a href="#installing-node-and-npm-globally" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>First update the local package list to see if there's any update available using <code>apt-get</code></p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
+</span></code></pre>
+<p>Then install <code>nodejs</code> and <code>npm</code> packages</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> nodejs <span class="token function">npm</span>
+</span></code></pre>
+<p>To verify the install, check their versions</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line"><span class="token function">node</span> <span class="token parameter variable">-v</span>
+</span><span class="code-line">v18.7.0
+</span></code></pre>
+<h2 id="configuring-global-install-paths-for-npm">Configuring global install paths for npm<a href="#configuring-global-install-paths-for-npm" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><code>npm</code> uses the <code>prefix</code> option to set its global install path. I can set this to a directory inside my home. Being inside my home directory, this gets rid of that <code>EACCESS</code> error when installing global packages as I have read/write access to a directory inside my home folder.</p>
+<p>First I will <code>cd</code> into my home directory</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line"><span class="token builtin class-name">cd</span> ~
+</span></code></pre>
+<p>Then create a folder named "global-node-modules"</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line"><span class="token function">mkdir</span> global-node-modules
+</span></code></pre>
+<p>Now to install any global package to this directory, we can use that <code>prefix</code> option like so</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line"><span class="token function">npm</span> <span class="token parameter variable">--prefix</span><span class="token operator">=</span><span class="token environment constant">$HOME</span>/.global-node-modules <span class="token function">install</span> <span class="token parameter variable">-g</span> http-server
+</span></code></pre>
+<p>I can specify this option as default in <code>.npmrc</code> file in my home directory so that I don't need to specify it every time I'm doing <code>npm install -g</code>. My <code>.npmrc</code> file looks like this.</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token assign-left variable">prefix</span><span class="token operator">=</span>/home/shyam/.global-node-modules
+</span></code></pre>
+<p>Now that the prefix is set, I need to include the modules to my <code>PATH</code> so that I can run the globally installed modules from anywhere. For this, add</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.global-node-modules/bin:<span class="token environment constant">$PATH</span>"</span>
+</span></code></pre>
+<p>to the end of your <code>.bashrc</code>, <code>.zshrc</code> or equivalent file. After all, the modules will be located inside the <code>.global-node-modules/bin</code> folder.</p>
+<h2 id="n---managing-node-versions">`n` - Managing node versions<a href="#n---managing-node-versions" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="installing-n">Installing `n`<a href="#installing-n" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Now that <code>npm</code> is available after installing node and npm in the first step, I can install <code>n</code> <em>globally</em> using <code>npm</code>.</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> n
+</span></code></pre>
+<p><code>n</code> also like <code>npm</code> tries to install packages to <code>/usr/local</code> by default. This behaviour can be changed by updating the <code>N_PREFIX</code> to a folder inside the home directory.<br>
+I can set it to a directory inside home like <code>.n</code> using <code>export N_PREFIX=$HOME/.n</code>. This line also need to be added to the <code>.bashrc</code> or similar configuration file for your shell.</p>
+<p>After doing this, I must also add the <code>N_PREFIX/bin</code> folder to <code>PATH</code> to be able to execute the current version of node selected using <code>n</code>.</p>
+<p>Thus if you are using bash, the following lines need to be added to <code>.bashrc</code> file</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token punctuation">..</span>.
+</span><span class="code-line"><span class="token builtin class-name">export</span> <span class="token assign-left variable">N_PREFIX</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.n"</span>
+</span><span class="code-line"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$PATH</span>:<span class="token variable">$N_PREFIX</span>/bin"</span>
+</span></code></pre>
+<h3 id="using-n">Using `n`<a href="#using-n" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>I can now install the latest and lts version of node using <code>n</code></p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">n latest
+</span><span class="code-line">  installing <span class="token builtin class-name">:</span> node-v19.4.0
+</span><span class="code-line">       <span class="token function">mkdir</span> <span class="token builtin class-name">:</span> /home/test/.n/n/versions/node/19.4.0
+</span><span class="code-line">       fetch <span class="token builtin class-name">:</span> https://nodejs.org/dist/v19.4.0/node-v19.4.0-linux-x64.tar.xz
+</span><span class="code-line">     copying <span class="token builtin class-name">:</span> node/19.4.0
+</span><span class="code-line">   installed <span class="token builtin class-name">:</span> v19.4.0 to /home/test/.n/bin/node
+</span><span class="code-line">      active <span class="token builtin class-name">:</span> v18.7.0 at /usr/bin/node
+</span></code></pre>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">n lts
+</span><span class="code-line">  installing <span class="token builtin class-name">:</span> node-v18.13.0
+</span><span class="code-line">       <span class="token function">mkdir</span> <span class="token builtin class-name">:</span> /home/test/.n/n/versions/node/18.13.0
+</span><span class="code-line">       fetch <span class="token builtin class-name">:</span> https://nodejs.org/dist/v18.13.0/node-v18.13.0-linux-x64.tar.xz
+</span><span class="code-line">     copying <span class="token builtin class-name">:</span> node/18.13.0
+</span><span class="code-line">   installed <span class="token builtin class-name">:</span> v18.13.0 to /home/test/.n/bin/node
+</span><span class="code-line">      active <span class="token builtin class-name">:</span> v18.7.0 at /usr/bin/node
+</span></code></pre>
+<p>and change the active node version to the latest one by simply executing <code>n</code> and selecting from the list of installed versions</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">
+</span><span class="code-line">  ο node/18.13.0
+</span><span class="code-line">    node/19.4.0
+</span><span class="code-line">
+</span><span class="code-line">Use up/down arrow keys to <span class="token keyword">select</span> a version, <span class="token builtin class-name">return</span> key to install, d to delete, q to quit
+</span></code></pre>
+<p>At this point, you're all setup for developing node applications and installing npm packages!</p>6:["$","div",null,{"className":"blog-component","children":[["$","header",null,{"className":"head-container","children":[["$","h1",null,{"children":"Setting up Node on Linux"}],["$","section",null,{"className":"segment","children":[["$","p",null,{"dangerouslySetInnerHTML":{"__html":"When I started learning web dev, I used to open HTML files directly inside chrome. Later, I got to know about \"http-server\", a simple command-line static HTTP server, which comes as an \"npm\" package. So in order to install that, I had to install npm first which inturn needs Node. "}}],[["$","h4",null,{"children":"Prerequisites"}],["$","ul",null,{"children":[["$","li","0",{"children":"Familiarity with the linux terminal."}],["$","li","1",{"children":"Knowing how to install packages from package managers (apt etc)"}]]}]],[["$","h4",null,{"children":"What you'll need"}],["$","ul",null,{"children":[["$","li","0",{"children":"A linux machine (preferrably Ubuntu or an Ubuntu based distro)"}],["$","li","1",{"children":"An active internet connection."}]]}]],[["$","h4",null,{"children":"After reading this article, you'll be able to"}],["$","ul",null,{"children":[["$","li","0",{"children":"Install NodeJS and npm on your machine."}],["$","li","1",{"children":"Manage multiple node versions using a version manager."}],["$","li","2",{"children":"Set up directory for global npm packages."}]]}]]]}]]}],["$","main",null,{"className":"grid","children":[["$","aside",null,{"className":"container","children":["$","div",null,{"className":"toc-sidebar","children":[["$","h2",null,{"children":"Table of contents"}],["$","div",null,{"className":"toc","dangerouslySetInnerHTML":{"__html":"<ul><li><a href=\"#introduction\">Introduction</a></li><li><a href=\"#installing-node-and-npm-globally\">Installing Node and npm globally</a></li><li><a href=\"#configuring-global-install-paths-for-npm\">Configuring global install paths for npm</a></li><li><a href=\"#n---managing-node-versions\">`n` - Managing node versions</a><ul><li><a href=\"#installing-n\">Installing `n`</a></li><li><a href=\"#using-n\">Using `n`</a></li></ul></li></ul>"}}]]}]}],["$","article",null,{"className":"container","dangerouslySetInnerHTML":{"__html":"$10"}}]]}]]}]
+c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#212529"}]]
+11:I[50105,["/_next/static/chunks/2l33f8zmnefev.js"],"IconMark"]
+9:null
+e:[["$","title","0",{"children":"Setting up Node on Linux | Chandrashekhar Tripathi"}],["$","meta","1",{"name":"description","content":"CS Undergrad at NIT Arunachal Pradesh. This is my homepage."}],["$","link","2",{"rel":"icon","href":"/logo.png"}],["$","$L11","3",{}]]

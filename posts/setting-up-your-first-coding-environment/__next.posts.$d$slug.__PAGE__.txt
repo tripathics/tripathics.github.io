@@ -1,0 +1,204 @@
+1:"$Sreact.fragment"
+2:T4fd,<ul><li><a href="#introduction">Introduction</a></li><li><a href="#downloading-and-installing-vscode">Downloading and Installing VSCode</a></li><li><a href="#installing-cc-compilers">Installing C/C++ compilers</a><ul><li><a href="#gcc-on-linux-ubuntu-or-debian">GCC on Linux (Ubuntu or Debian)</a></li><li><a href="#gcc-on-windows-using-msys">GCC on Windows using MSYS</a></li><li><a href="#clang-on-macos">Clang on MacOS</a></li></ul></li><li><a href="#getting-familiar-with-vscode">Getting familiar with VSCode</a><ul><li><a href="#vs-code-user-interface">VS Code User Interface</a></li><li><a href="#activity-bar">Activity Bar</a></li><li><a href="#command-palette">Command palette</a></li></ul></li><li><a href="#configuring-vscode">Configuring VSCode</a><ul><li><a href="#install-the-extensions">Install the extensions</a></li><li><a href="#create-projects-folder">Create projects folder</a></li></ul></li><li><a href="#writing-your-first-program">Writing your first program</a><ul><li><a href="#writing-code">Writing code</a></li><li><a href="#compilation">Compilation</a></li><li><a href="#executing-the-program">Executing the program</a></li></ul></li><li><a href="#writing-more-programs">Writing more programs</a></li><li><a href="#references">References</a></li></ul>3:T6490,<h2 id="introduction">Introduction<a href="#introduction" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>To make a computer program, one typically starts by writing the <a href="https://en.wikipedia.org/wiki/Source_code">source code</a> in a text editor, compiling it into a binary and finally running the program.<br>
+Now all of this can be done if you have:</p>
+<ul>
+<li>a text editor (like Notepad in windows)</li>
+<li>a command line terminal (command prompt) and</li>
+<li>a compiler or interpreter depending on the language.</li>
+</ul>
+<p>An <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">Integrated Development Environment (IDE)</a> is an application that provides all these tools in a single place. A typical IDE contains source code editor, terminal, file browser and a debugger. There are many IDEs available out there but I will be installing <a href="https://code.visualstudio.com/">Visual Studio Code</a> which is free and open-source and developed by Microsoft.</p>
+<h2 id="downloading-and-installing-vscode">Downloading and Installing VSCode<a href="#downloading-and-installing-vscode" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>VSCode is available on Windows, Linux and MacOS platforms. <a href="https://code.visualstudio.com/Download">Download the vscode installer</a> for your platform.</p>
+<p>In windows, you need to run the installer and follow the wizard, in MacOS, you have to move the application downloaded to the applications folder.</p>
+<p>For Ubuntu or other Debian based systems, you can install using <code>apt</code> in the terminal.</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line"><span class="token builtin class-name">cd</span> Downloads
+</span><span class="code-line"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> ./code_<span class="token operator">&#x3C;</span>version<span class="token operator">></span>.deb
+</span></code></pre>
+<h2 id="installing-cc-compilers">Installing C/C++ compilers<a href="#installing-cc-compilers" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Now that you have vscode installed, you will be able to write your code. All you need is a compiler to compile that source code into machine language program which will then run on the computer.</p>
+<p>For C/C++, we will be using the <a href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection">GNU Compilers (<code>gcc</code> and <code>g++</code>)</a> on Windows and Linux.</p>
+<h3 id="gcc-on-linux-ubuntu-or-debian">GCC on Linux (Ubuntu or Debian)<a href="#gcc-on-linux-ubuntu-or-debian" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>To verity whether GCC is installed, open a terminal window and enter the command</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">gcc <span class="token parameter variable">-v</span>
+</span></code></pre>
+<p>If GCC isn't installed, update your system's package list and install the GNU compiler tools and the GDB debugger with this command:</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
+</span><span class="code-line"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> build-essential gdb
+</span></code></pre>
+<h3 id="gcc-on-windows-using-msys">GCC on Windows using MSYS<a href="#gcc-on-windows-using-msys" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Get the latest version of Mingw-w64 (Minimal GNU for Windows) via MSYS2. Mingw is a toolset which provides GNU softwares for windows including GCC. <a href="https://github.com/msys2/msys2-installer/releases/download/2022-01-18/msys2-x86_64-20220118.exe">Download the MSYS2 installer</a>. Open the installer and follow the wizard to complete installation. Check the <em>run MSYS2 64bit now</em> checkbox in the end and click on Finish.</p>
+<p>In the MSYS command line window, update package databases and base packages.</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">pacman <span class="token parameter variable">-Syu</span>
+</span></code></pre>
+<p>Run "MSYS2 MSYS" from start menu and update the rest of the base packages.</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">pacman <span class="token parameter variable">-Syu</span>
+</span></code></pre>
+<p>Now MSYS2 is ready to install packages. Install mingw-w64 GCC to start compiling:</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">pacman <span class="token parameter variable">-S</span> <span class="token parameter variable">--needed</span> base-devel mingw-w64-x86_64-toolchain
+</span></code></pre>
+<h3 id="clang-on-macos">Clang on MacOS<a href="#clang-on-macos" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>In MacOS, we will use Clans/LLVM compiler. To check whether it is installed, run the following command in terminal</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">clang <span class="token parameter variable">--version</span>
+</span></code></pre>
+<p>If Clang isn't installed, install the command line developer tools by entering the command in terminal</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">xcode-select <span class="token parameter variable">--install</span>
+</span></code></pre>
+<h2 id="getting-familiar-with-vscode">Getting familiar with VSCode<a href="#getting-familiar-with-vscode" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="vs-code-user-interface">VS Code User Interface<a href="#vs-code-user-interface" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><img src="/blog-images/vscode-ui-overview.png" alt="VS Code UI"></p>
+<p>VS Code UI is divided into five areas:</p>
+<ul>
+<li><strong>Editor</strong> - The main area to edit your files. Multiple editors (files) can be opened side by side.</li>
+<li><strong>Side bar</strong> - Contains different views like Explorer, Source Control, Search, Run and Debug, Extensions</li>
+<li><strong>Status Bar</strong> - Information about opened project and files you edit.</li>
+<li><strong>Activity Bar</strong> - Enables to switch between different views.</li>
+<li><strong>Panels</strong> - Contains the integrated terminal, output panel, debug console and problems panel which shows errors and warnings. It can be moved to right.</li>
+</ul>
+<blockquote>
+<p><strong>Tip:</strong> Toggle the panel using Ctrl-J or ⌘-J shortcut.<br>
+Toggle the <strong>integrated terminal</strong>, using Ctrl-` or ⌘-` shortcut.</p>
+</blockquote>
+<h3 id="activity-bar">Activity Bar<a href="#activity-bar" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><img src="/blog-images/activity-bar-context-menu.png" alt="Activity bar context menu"></p>
+<p>It lets you switch between different views. Buttons can be added or removed and their order can be changed by dragging them. To hide the view (side bar) from screen, press Ctrl-B on Windows or ⌘-B on MacOS.</p>
+<h3 id="command-palette">Command palette<a href="#command-palette" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><img src="/blog-images/command-palette.png" alt="Command Palette"></p>
+<p>Anything on vscode can be done with the Command Palette which can be accessed with Ctrl-Shift-P on Windows or with ⌘-Shift-P on MacOS.</p>
+<blockquote>
+<p><strong>Tip:</strong> Using Ctrl-P on windows or ⌘-P on MacOS can be used for navigating to any file or symbol by typing its name</p>
+</blockquote>
+<h2 id="configuring-vscode">Configuring VSCode<a href="#configuring-vscode" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="install-the-extensions">Install the extensions<a href="#install-the-extensions" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Install C/C++ extension to enable support for C/C++ development which includes syntax highlighting, autocomplete suggestions, automated build and debugging etc.</p>
+<h4 id="installing-from-command-pallete">Installing from command pallete<a href="#installing-from-command-pallete" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Open vscode. The extension can also be installed by the command in the command pallete (Ctrl-Shift-P):</p>
+<pre><code class="code-highlight"><span class="code-line">ext install ms-vscode
+</span></code></pre>
+<h4 id="installing-from-the-extensions-view">Installing from the Extensions view<a href="#installing-from-the-extensions-view" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Open VSCode</li>
+<li>Select extensions view from the activity bar in the left</li>
+<li>Search for <strong>C/C++</strong> in the extensions view and select the one provided by Microsoft.</li>
+<li>Install the extension by clicking on the install button.</li>
+</ol>
+<h3 id="create-projects-folder">Create projects folder<a href="#create-projects-folder" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Create a folder (say projects/) where you'll be saving all your codes and open that folder in vscode.</p>
+<ol>
+<li>Open vscode</li>
+<li>In the menu bar, select the <strong>File</strong> option.</li>
+<li>Click on <strong>Open Folder...</strong></li>
+<li>Browse the system to open the folder you just created. This folder now becomes your workspace.</li>
+</ol>
+<h2 id="writing-your-first-program">Writing your first program<a href="#writing-your-first-program" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="writing-code">Writing code<a href="#writing-code" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>In the <strong>File Explorer</strong> view, hover over your folder name and four action icons will appear. Click on the 'New file' icon.
+Set the filename to <code>hello.c</code>.
+Write the hello world program in C in <code>hello.c</code> file.</p>
+<pre class="language-c"><code class="language-C code-highlight"><span class="code-line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;stdio.h></span></span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"hello, world\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p>When writing the code you'll notice that vscode is showing you autocomplete suggestions and syntax highlighting. C/C++ extension provides this feature.</p>
+<p>Save changes to your file (Ctrl-S in windows and ⌘-S in macos).</p>
+<h3 id="compilation">Compilation<a href="#compilation" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="using-gcc-cli-from-vscode-terminal-recommended-for-learners">Using <code>gcc</code> CLI from vscode terminal (recommended for learners)<a href="#using-gcc-cli-from-vscode-terminal-recommended-for-learners" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>In the menu bar, click on <strong>Terminal</strong> followed by <strong>New Terminal</strong> (Ctrl-` in windows or ⌘-` on macos). This will open a new terminal within the folder currently opened in vscode.<br>
+The most basic syntax for <code>gcc</code> cli is</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">gcc srcfile.c <span class="token parameter variable">-o</span> outfile
+</span></code></pre>
+<ul>
+<li>
+<p><code>srcfile.c</code> is the source file, which is <code>hello.c</code> here</p>
+</li>
+<li>
+<p><code>-o</code> meaning 'out' is an option to gcc. It places the compilation output into the filename which follows it i.e. <code>outfile</code>.</p>
+</li>
+<li>
+<p><code>outfile</code> is the executable of binary file which is the final program that runs on the machine.</p>
+<ul>
+<li>
+<p>In windows, every executable has a .exe <a href="https://en.wikipedia.org/wiki/Filename_extension">filename extension</a>. So if you are using windows, compile using</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">gcc hello.c <span class="token parameter variable">-o</span> hello.exe
+</span></code></pre>
+<p>The output file in windows will thus be <code>hello.exe</code></p>
+</li>
+<li>
+<p>In Linux or MacOS, there is no need for a filename extension. Compile using</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">gcc hello.c <span class="token parameter variable">-o</span> hello
+</span></code></pre>
+<p>The output file is <code>hello</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="compilation-using-vscode-tasks">Compilation using <strong>vscode tasks</strong><a href="#compilation-using-vscode-tasks" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>In the menu bar, select <strong>Terminal</strong> followed by <strong>Configure Default Build Task...</strong></li>
+<li>Select the default compiler for compiling all C source codes i.e. <code>gcc</code> in this case.</li>
+<li>A new <code>task.json</code> file will be created in <code>.vscode</code> folder where the default compiler and some other configurations will be set. Compilation can be customized further from this file. Close this file and return to <code>hello.c</code> in vscode.</li>
+<li>Now you can compile any C source code by keeping it open in vscode and pressing Ctrl-Shift-B in windows or ⌘-Shift-B in macos.</li>
+</ol>
+<p>After compilation, notice in the <strong>Explorer</strong> view (Ctrl-Shift-E in windows or ⌘-Shift-E in macos if it is not open), the executable file has been created.</p>
+<h3 id="executing-the-program">Executing the program<a href="#executing-the-program" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Open the vscode integrated terminal Ctrl-` or ⌘-` and run the executable file, the output will print just below the prompt:</p>
+<p>In Linux/MacOS:</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">./hello
+</span><span class="code-line">hello world
+</span></code></pre>
+<p>In Windows</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">./hello.exe
+</span><span class="code-line">hello world
+</span></code></pre>
+<h2 id="writing-more-programs">Writing more programs<a href="#writing-more-programs" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>With the workspace setup, you can now create another source file from <strong>File Explorer</strong> view, write some code, compile it from the terminal or using Ctrl-Shift-B or ⌘-Shift-B and run the program by running <code>filename.exe</code> or simply <code>filename</code>.</p>
+<p>e.g. creating a <code>helloagain.c</code> program will be like this:</p>
+<pre class="language-c"><code class="language-C code-highlight"><span class="code-line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&#x3C;stdio.h></span></span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"hello again world!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p>is compiled using</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">gcc helloagain.c <span class="token parameter variable">-o</span> helloagain
+</span></code></pre>
+<p>It can then be executed through the terminal like</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">./helloagain
+</span><span class="code-line">hello again world<span class="token operator">!</span>
+</span></code></pre>
+<h2 id="references">References<a href="#references" aria-hidden="true" tabindex="-1" class="heading-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This article was made possible with the help of <a href="https://code.visualstudio.com/docs/">Visual Studio code docs</a> Visit this documentation page to learn more about vscode features like debugging and configuration.</p>6:X
+b:X
+b:C
+0:{"buildId":"72D6BpkMBswml786ks8AC","data":[{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"blog-component","children":[["$","header",null,{"className":"head-container","children":[["$","h1",null,{"children":"Setting up your first coding environment"}],["$","section",null,{"className":"segment","children":["",[["$","h4",null,{"children":"Prerequisites"}],["$","ul",null,{"children":[["$","li","0",{"children":"Using interactive websites on browsers."}],["$","li","1",{"children":"Basic knowledge to install a program from a wizard based installer."}]]}]],[["$","h4",null,{"children":"What you'll need"}],["$","ul",null,{"children":[["$","li","0",{"children":"A computer with Linux (preferrably Debian or Ubuntu), Windows or MacOS"}],["$","li","1",{"children":"An active internet connection."}]]}]],[["$","h4",null,{"children":"After reading this article, you'll be able to"}],["$","ul",null,{"children":[["$","li","0",{"children":"Install Visual Studio Code"}],["$","li","1",{"children":"Install Compilers for C and C++"}],["$","li","2",{"children":"Set up a workspace in vscode"}]]}]]]}]]}],["$","main",null,{"className":"grid","children":[["$","aside",null,{"className":"container","children":["$","div",null,{"className":"toc-sidebar","children":[["$","h2",null,{"children":"Table of contents"}],["$","div",null,{"className":"toc","dangerouslySetInnerHTML":{"__html":"$2"}}]]}]}],["$","article",null,{"className":"container","dangerouslySetInnerHTML":{"__html":"$3"}}]]}]]}],null,"$L4"]}],"isPartial":"$@5","staleTime":"$6","varyParams":null},{"rsc":"$L7","isPartial":"$@8","staleTime":"$6","varyParams":null},{"rsc":"$L9","isPartial":"$@a","staleTime":"$6","varyParams":"$b"},{"rsc":"$Lc","isPartial":"$@d","staleTime":"$6","varyParams":"$b"},{"rsc":"$Le","isPartial":"$@f","staleTime":"$6","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@10","rootVaryParams":null,"needsRuntimeRequest":"$@11"}
+12:I[7679,["/_next/static/chunks/2l33f8zmnefev.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+15:I[7679,["/_next/static/chunks/2l33f8zmnefev.js"],"ViewportBoundary"]
+16:I[7679,["/_next/static/chunks/2l33f8zmnefev.js"],"MetadataBoundary"]
+17:I[50105,["/_next/static/chunks/2l33f8zmnefev.js"],"IconMark"]
+18:I[13275,["/_next/static/chunks/2l33f8zmnefev.js"],"default"]
+19:I[96423,["/_next/static/chunks/2l33f8zmnefev.js"],"default"]
+1a:I[99214,["/_next/static/chunks/2l33f8zmnefev.js"],"default"]
+1b:I[88052,["/_next/static/chunks/2l33f8zmnefev.js"],""]
+:HL["/_next/static/chunks/0h5fgvknm6jl9.css","style"]
+4:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+7:["$","$1","h",{"children":[null,["$","$L15",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#212529"}]]}],["$","div",null,{"hidden":true,"children":["$","$L16",null,{"children":["$","$13",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Setting up your first coding environment | Chandrashekhar Tripathi"}],["$","meta","1",{"name":"description","content":"CS Undergrad at NIT Arunachal Pradesh. This is my homepage."}],["$","link","2",{"rel":"icon","href":"/logo.png"}],["$","$L17","3",{}]]}]}]}],null]}]
+9:["$","$1","c",{"children":[null,["$","$L18",null,{"parallelRouterKey":"children","template":["$","$L19",null,{}]}]]}]
+c:["$","$1","c",{"children":[null,["$","$L18",null,{"parallelRouterKey":"children","template":["$","$L19",null,{}]}]]}]
+e:["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0h5fgvknm6jl9.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/2l33f8zmnefev.js","async":true}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L1a",null,{"children":["$","$L18",null,{"parallelRouterKey":"children","template":["$","$L19",null,{}],"notFound":[["$","div",null,{"className":"error-404","children":[["$","header",null,{"className":"head-container","children":["$","h1",null,{"id":"","children":"404"}]}],["$","section",null,{"className":"container","children":[["$","p",null,{"children":"This is not the web page you are looking for."}],["$","$L1b",null,{"href":"/","children":"Back to home"}]]}]]}],[]]}]}]}]}]]}]
+14:null
+11:true
+6:300
+6:C
+10:0
+8:"$undefined"
+a:"$undefined"
+d:"$undefined"
+f:"$undefined"
+5:"$undefined"
