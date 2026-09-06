@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "deploy": "gh-pages -d out -b gh-pages --nojekyll"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
@@ -30,6 +31,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "gh-pages": "^6.3.0",
     "sass": "^1.104.0",
     "typescript": "^5"
   },
