@@ -69,7 +69,8 @@ pre[class*='language-'] {
   margin-bottom: 1.5rem;
   padding: 1rem;
   background: var(--code-background-color);
-  overflow: initial;
+  overflow-x: auto;
+  overflow-y: hidden;
   border-radius: 6px;
 }
 

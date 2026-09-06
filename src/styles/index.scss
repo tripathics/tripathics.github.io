@@ -1584,6 +1584,7 @@ div#todo {
 
     article.container {
       grid-area: article;
+      min-width: 0;
 
       p {
         text-align: justify;
