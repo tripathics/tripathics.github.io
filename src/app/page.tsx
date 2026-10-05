@@ -57,17 +57,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container resume">
-        <Heading
-          id="resume"
-          title="Resume"
-          extLinkText="View PDF"
-          extLink="https://raw.githubusercontent.com/tripathics/resume/7d73cc617db7e93212b576f35e8e79301ee46f45/Chandrashekhar.pdf"
-        />
-        <div className="image-wrapper">
-          <img src="/resume.webp" alt="resume" width="925" height="1196" />
-        </div>
-      </section>
+      {/* <section className="container resume"> */}
+      {/*   <Heading */}
+      {/*     id="resume" */}
+      {/*     title="Resume" */}
+      {/*     extLinkText="View PDF" */}
+      {/*     extLink="https://raw.githubusercontent.com/tripathics/resume/7d73cc617db7e93212b576f35e8e79301ee46f45/Chandrashekhar.pdf" */}
+      {/*   /> */}
+      {/*   <div className="image-wrapper"> */}
+      {/*     <img src="/resume.webp" alt="resume" width="925" height="1196" /> */}
+      {/*   </div> */}
+      {/* </section> */}
     </div>
   );
 }

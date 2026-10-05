@@ -1,9 +1,19 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
-  output: 'export',
+  output: "export",
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: ["remark-gfm"],
+    rehypePlugins: [
+      "rehype-slug",
+      ["rehype-prism-plus", { ignoreMissing: true }],
+    ],
+  },
+});
+
+export default withMDX(nextConfig);

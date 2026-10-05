@@ -217,6 +217,7 @@ li {
 }
 
 @media screen and (max-width: 710px) {
+
   p,
   li {
     font-size: 0.95rem;
@@ -355,6 +356,7 @@ time {
       position: relative;
       font-size: 1.6rem;
       line-height: 0.85;
+
       #logoDash {
         transform: translateX(0.3ch);
         display: inline-block;
@@ -362,17 +364,22 @@ time {
         transition: transform 0.35s cubic-bezier(0.86, 0, 0.07, 0.995);
       }
     }
+
     a:hover {
       text-decoration: none;
     }
+
     a:active {
       color: var(--app-nav-active-color);
+
       #logoDash {
         transform: translateX(0.4ch);
       }
     }
+
     a.active {
       color: var(--app-nav-active-color);
+
       #logoDash {
         transform: translateX(-0.3ch);
       }
@@ -402,6 +409,7 @@ time {
         transition: 0.5s transform cubic-bezier(0.41, 0.47, 0.75, 1.15),
           0.3s color ease-in-out;
       }
+
       #outer {
         transform: rotate(0);
         transform-origin: center;
@@ -410,10 +418,12 @@ time {
       }
     }
   }
+
   .theme-toggle.light svg {
     #inner {
       transform: translate(-15%, 0);
     }
+
     #outer {
       transform: rotate(180deg);
     }
@@ -450,9 +460,11 @@ time {
       a {
         color: var(--app-nav-color);
       }
+
       a:hover {
         text-decoration: none;
       }
+
       a:after {
         content: "";
         position: absolute;
@@ -468,12 +480,15 @@ time {
         transition: 0.3s all ease-out;
         pointer-events: none;
       }
+
       a:hover:after {
         opacity: 1;
       }
+
       a.active {
         color: var(--app-nav-active-color);
       }
+
       a.active:after {
         opacity: 1;
         bottom: calc(50% - 2px);
@@ -573,6 +588,7 @@ time {
       visibility: hidden;
     }
   }
+
   button.menu:before,
   button.menu:after {
     position: absolute;
@@ -583,18 +599,22 @@ time {
     transition: all 0.35s cubic-bezier(0.86, 0, 0.07, 0.995);
     // transition: all 0.2s ease-out;
   }
+
   button.menu::before {
     content: "menu";
     bottom: 0;
   }
+
   button.menu:after {
     content: "close";
     bottom: -100%;
   }
+
   button.menu.open {
     &::before {
       bottom: 100%;
     }
+
     &::after {
       bottom: 0;
     }
@@ -607,12 +627,14 @@ time {
 
   @media screen and (min-width: 550px) {
     #nav-colapse-items {
+
       button.menu,
       .logo {
         display: none;
       }
     }
   }
+
   @media screen and (max-width: 550px) {
     #nav-colapse-items {
       ul {
@@ -878,7 +900,7 @@ p.hero-description {
   color: var(--heading-color);
 }
 
-.skill > img {
+.skill>img {
   vertical-align: middle;
   height: 36px;
   width: 36px;
@@ -924,48 +946,36 @@ p.hero-description {
     box-sizing: content-box;
 
     // TODO THEME
-    mask-image: -webkit-linear-gradient(
-      to right,
-      transparent,
-      white 16px,
-      white 90%,
-      transparent
-    );
-    mask-image: -moz-linear-gradient(
-      to right,
-      transparent,
-      white 16px,
-      white 90%,
-      transparent
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      white 16px,
-      white 90%,
-      transparent
-    );
-    -webkit-mask-image: -webkit-linear-gradient(
-      to right,
-      transparent,
-      white 16px,
-      white 90%,
-      transparent
-    );
-    -webkit-mask-image: -moz-linear-gradient(
-      to right,
-      transparent,
-      white 16px,
-      white 90%,
-      transparent
-    );
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent,
-      white 16px,
-      white 90%,
-      transparent
-    );
+    mask-image: -webkit-linear-gradient(to right,
+        transparent,
+        white 16px,
+        white 90%,
+        transparent);
+    mask-image: -moz-linear-gradient(to right,
+        transparent,
+        white 16px,
+        white 90%,
+        transparent);
+    mask-image: linear-gradient(to right,
+        transparent,
+        white 16px,
+        white 90%,
+        transparent);
+    -webkit-mask-image: -webkit-linear-gradient(to right,
+        transparent,
+        white 16px,
+        white 90%,
+        transparent);
+    -webkit-mask-image: -moz-linear-gradient(to right,
+        transparent,
+        white 16px,
+        white 90%,
+        transparent);
+    -webkit-mask-image: linear-gradient(to right,
+        transparent,
+        white 16px,
+        white 90%,
+        transparent);
 
     li:first-child {
       margin-left: var(--mobile-ctnr-side-padding);
@@ -1077,10 +1087,7 @@ div#todo {
         "nl1 mn";
       grid-template-columns: minmax(21rem, 1fr) minmax(0, 4fr);
       grid-template-rows:
-        var(--main-offset) 530px calc(
-          100vh - var(--main-offset) - var(--greet-height)
-        )
-        auto;
+        var(--main-offset) 530px calc(100vh - var(--main-offset) - var(--greet-height)) auto;
 
       .layout-main {
         --main-min-height: calc(100vh - var(--main-offset));
@@ -1115,10 +1122,8 @@ div#todo {
 
       .footer-component {
         --footer-height: 6rem;
-        --footer-offset: max(
-          calc(100vh - var(--footer-height)),
-          calc(var(--main-offset) + var(--greet-height))
-        );
+        --footer-offset: max(calc(100vh - var(--footer-height)),
+            calc(var(--main-offset) + var(--greet-height)));
         position: sticky;
         top: var(--footer-offset);
         height: var(--footer-height);
@@ -1389,6 +1394,7 @@ div#todo {
         color: var(--tag-hover-color);
         cursor: pointer;
       }
+
       .tag.active {
         border: solid 2px var(--tag-active-border-color);
         background-color: var(--tag-active-bg);
@@ -1397,7 +1403,7 @@ div#todo {
     }
   }
 
-  .posts > a {
+  .posts>a {
     display: flex;
     justify-content: space-between;
     color: inherit;
@@ -1467,6 +1473,7 @@ div#todo {
       background-color: var(--contact-input-focus-bg);
       border-bottom: 2px solid var(--contact-input-focus-border-color);
     }
+
     textarea:focus {
       border: 2px solid var(--contact-input-focus-border-color);
     }
@@ -1534,14 +1541,25 @@ div#todo {
 }
 
 .blog-component {
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    a svg {
-      fill: currentColor;
+    .heading-link {
+      visibility: hidden;
+      padding-left: 0.25rem;
+
+      svg {
+        stroke-color: var(--green-4);
+        fill: none;
+      }
+    }
+
+    &:hover .heading-link {
+      visibility: visible;
     }
   }
 
@@ -1571,6 +1589,7 @@ div#todo {
     padding: 0.5rem 1rem;
     border-left: 4px solid var(--blog-blockquote-border-color);
     color: var(--blog-blockquote-color);
+
     p {
       margin: 0;
     }
@@ -1636,7 +1655,7 @@ div#todo {
           }
         }
 
-        .toc > ul {
+        .toc>ul {
           margin: 0.75rem 0 0 0;
         }
       }
@@ -1703,9 +1722,11 @@ div#todo {
           0% {
             transform: translateX(calc(var(--letter-width) * -2));
           }
+
           50% {
             transform: translateX(calc(var(--letter-width) * -1));
           }
+
           100% {
             transform: translateX(calc(var(--letter-width) * 0));
           }
@@ -1728,6 +1749,7 @@ div#todo {
         0% {
           opacity: 0;
         }
+
         100% {
           opacity: 1;
         }
@@ -1735,6 +1757,7 @@ div#todo {
     }
   }
 }
+
 .loading-component.inactive {
   opacity: 0;
   pointer-events: none;
@@ -1781,6 +1804,7 @@ div#todo {
     }
   }
 }
+
 .loading-component2.inactive {
   opacity: 0;
   pointer-events: none;

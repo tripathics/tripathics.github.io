@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import { getAllPosts, getPostRender } from "@/lib/posts";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
 
@@ -14,7 +14,7 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = getPostRender(slug);
   if (!post) return {};
   return { title: post.title };
 }
@@ -27,10 +27,10 @@ const splitItems = (value: string) =>
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = getPostRender(slug);
   if (!post) notFound();
 
-  const { title, hero, html, toc } = post;
+  const { title, hero, Component } = post;
   const { txt, prerequisites, setup, lesson } = hero;
 
   return (
@@ -72,20 +72,9 @@ export default async function BlogPostPage({ params }: PageProps) {
         </section>
       </header>
 
-      <main className="grid">
-        <aside className="container">
-          <div className="toc-sidebar">
-            <h2>Table of contents</h2>
-            {toc ? (
-              <div className="toc" dangerouslySetInnerHTML={{ __html: toc }} />
-            ) : null}
-          </div>
-        </aside>
-        <article
-          className="container"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </main>
+      <article className="container">
+        <Component />
+      </article>
     </div>
   );
 }
