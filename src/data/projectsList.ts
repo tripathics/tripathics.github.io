@@ -15,7 +15,7 @@ export const projectsList: Project[] = [
     date: "2023",
     slug: "atulyam",
     tagline: "Atulyam fest website of 2023 - Code+Design",
-    url: "https://atulyam23.com",
+    url: "https://atulyam23.netlify.app",
     src: "https://github.com/tripathics/atulyam-2023",
     highlight: true,
   },
