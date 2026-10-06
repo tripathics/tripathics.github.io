@@ -4,6 +4,13 @@ import createMDX from "@next/mdx";
 const nextConfig: NextConfig = {
   reactCompiler: true,
   output: "export",
+  turbopack: {
+    rules: {
+      '*.cast': {
+        type: 'asset'
+      }
+    }
+  }
 };
 
 const withMDX = createMDX({

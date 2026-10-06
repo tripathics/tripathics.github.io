@@ -3,6 +3,7 @@ import SiteShell from "@/components/SiteShell";
 import config from "@/lib/config";
 import "@/styles/index.scss";
 import "@/styles/new-moon.css";
+import "asciinema-player/dist/bundle/asciinema-player.css"
 
 export const metadata: Metadata = {
   title: {
