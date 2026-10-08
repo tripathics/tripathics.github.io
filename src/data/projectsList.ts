@@ -24,7 +24,7 @@ export const projectsList: Project[] = [
     date: "2023",
     slug: "url-shortener",
     tagline: "URL Shortener full stack website",
-    src: "https://github.com/tripathics/url-shortner",
+    src: "https://github.com/tripathics/url-shortener",
     highlight: false,
   },
   {

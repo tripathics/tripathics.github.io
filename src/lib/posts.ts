@@ -22,8 +22,13 @@ function metaOf(mod: { metadata: PostMeta }): PostMeta {
   return mod.metadata;
 }
 
-export function getAllPosts(): PostSummary[] {
-  return Object.values(posts)
+export function getAllPosts(firstN?: number): PostSummary[] {
+  let postValues = Object.values(posts)
+  if (firstN !== undefined) {
+    postValues = postValues.slice(0, firstN)
+  }
+
+  return postValues
     .map((mod) => {
       const m = metaOf(mod);
       const date = String(m.date || "");
