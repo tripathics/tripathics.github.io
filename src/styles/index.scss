@@ -534,6 +534,7 @@ time {
       &.light {
         .core {
           transform: scale(0.6);
+          transition-delay: 0.2s;
         }
 
         .rays {
@@ -544,9 +545,9 @@ time {
           d: path("M100,35 C64.1,35 35,64.1 35,100 C35,135.9 64.1,165 100,165 C64.1,165 35,135.9 35,100 C35,64.1 64.1,35 100,35 Z");
           transform: translate(150px, 0);
           transition:
-            transform 0s linear 0.6s,
+            transform 0s linear 0.2s,
             /* jump only after the collapse finishes */
-            d 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            d 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
       }
 
