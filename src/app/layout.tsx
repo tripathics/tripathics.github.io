@@ -21,9 +21,25 @@ export const viewport: Viewport = {
   themeColor: "#212529",
 };
 
+const themeScript = `
+(function () {
+  var t = 'light';
+  try {
+    var pref = localStorage.getItem('theme') || 'system';
+    var dark = pref === 'dark' ||
+      (pref === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+    t = dark ? 'dark' : 'light';
+  } catch (e) {}
+  document.documentElement.dataset.theme = t;
+})();
+`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <SiteShell>{children}</SiteShell>
       </body>
