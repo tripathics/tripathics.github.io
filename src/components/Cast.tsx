@@ -16,7 +16,11 @@ export const Cast: React.FC<CastProps> = ({ src, ...opts }) => {
     (async () => {
       const AsciinemaPlayer = await import("asciinema-player");
       if (!cancelled && ref.current) {
-        player = AsciinemaPlayer.create(src, ref.current, opts);
+        player = AsciinemaPlayer.create(src, ref.current, {
+          terminalFontFamily: "'Iosevka', var(--font-family-monospace)",
+          cursorMode: "steady",
+          ...opts
+        });
       }
     })();
     return () => {

@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@300;350;400;450;500;550;600;650;700&family=Open+Sans:wght@400;450;500;550;600;650;700&display=swap");
 
+@font-face {
+  font-family: "Symbols Nerd Font Mono";
+  src: url("/fonts/SymbolsNerdFontMono-Regular.woff2") format("woff2");
+}
+
 :root {
   /* colors */
   --gray-0: rgb(248, 249, 250);
@@ -52,7 +57,7 @@
   --indigo-muted: rgb(241, 242, 253);
   --color-neutral-muted: rgba(175, 184, 193, 0.2);
 
-  --font-family-monospace: "IBM Plex Mono", monospace;
+  --font-family-monospace: "IBM Plex Mono", "Symbols Nerd Font Mono", monospace;
   --inline-code-background-color: rgba(175, 184, 193, 0.2);
 
   --gray-2-grad: 233, 236, 239;
@@ -395,7 +400,7 @@ h3 {
 }
 
 time {
-  font-family: monospace;
+  font-family: var(--font-family-monospace);
   font-size: 0.75rem;
   color: var(--time-color);
 }
@@ -1396,7 +1401,7 @@ div#todo {
     flex-wrap: wrap;
 
     .tag {
-      font-family: monospace;
+      font-family: var(--font-family-monospace);
       font-size: 0.7rem;
       // border: solid 1px var(--blue-1);
       border: solid 1px var(--tag-border-color);
@@ -1514,7 +1519,7 @@ div#todo {
       flex-wrap: wrap;
 
       .tag {
-        font-family: monospace;
+        font-family: var(--font-family-monospace);
         font-size: 0.75rem;
         border: solid 2px var(--tag-border-color);
         background-color: var(--tag-bg);
@@ -1551,7 +1556,7 @@ div#todo {
     }
 
     time {
-      font-family: monospace;
+      font-family: var(--font-family-monospace);
       font-size: 0.8rem;
       min-width: 5rem;
       direction: rtl;
