@@ -94,11 +94,6 @@ const skillset: {
   },
 };
 
-function getImgSrg(id: string): string {
-
-  return ''
-}
-
 const Skills = () => {
   const [currCategory, setCurrCategory] = useState("all");
 

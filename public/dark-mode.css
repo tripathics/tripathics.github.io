@@ -24,7 +24,7 @@
   --app-nav-active-color: #c2fcb6;
   --app-nav-active-dash-color: #8dda7e;
 
-  --me-box-shadow: -10px 5px 15px #0d0e0f,10px -5px 15px #35393c;
+  --me-box-shadow: -10px 5px 15px #0d0e0f, 10px -5px 15px #35393c;
 
   --scroll-bar-bg: var(--gray-9);
   --scroll-bar-thumb: var(--gray-7);
@@ -40,7 +40,8 @@
   --home-post-bg: var(--gray-9);
 
   --resume-box-shadow: 0 0 2px rgb(255 255 255),
-    0 4px 12px -4px rgb(0 0 0 / 30%);   /* TODO */
+    0 4px 12px -4px rgb(0 0 0 / 30%);
+  /* TODO */
 
   --posts-year-heading: rgb(141, 185, 83);
   --tag-bg: var(--gray-85);

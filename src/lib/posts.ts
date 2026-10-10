@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { posts, type PostHero, type PostMeta } from "@/posts";
+import { type PostHero, type PostMeta, posts } from "@/posts";
 import { formatShortDate, formatYear } from "./helpers";
 
 export interface PostSummary {
@@ -23,9 +23,9 @@ function metaOf(mod: { metadata: PostMeta }): PostMeta {
 }
 
 export function getAllPosts(firstN?: number): PostSummary[] {
-  let postValues = Object.values(posts)
+  let postValues = Object.values(posts);
   if (firstN !== undefined) {
-    postValues = postValues.slice(0, firstN)
+    postValues = postValues.slice(0, firstN);
   }
 
   return postValues

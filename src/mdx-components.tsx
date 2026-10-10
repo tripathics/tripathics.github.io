@@ -16,7 +16,7 @@ const casts = import.meta.glob("./posts/content/casts/*.cast", {
 }) as Record<string, string>;
 
 const components = {
-  img: (props: { src?: string; alt?: string;[key: string]: unknown }) => {
+  img: (props: { src?: string; alt?: string; [key: string]: unknown }) => {
     const { src, alt, ...rest } = props;
     const match = typeof src === "string" ? src.match(IMG_RE) : null;
     const resolved = match
@@ -25,11 +25,11 @@ const components = {
     return <img src={resolved} alt={alt} {...rest} />;
   },
   Cast: (props: CastProps) => {
-    const { src, ...rest } = props
+    const { src, ...rest } = props;
     const match = typeof src === "string" ? src.match(CAST_RE) : null;
-    const resolved = match ? casts[`./posts/content/casts/${match[1]}`] : src
+    const resolved = match ? casts[`./posts/content/casts/${match[1]}`] : src;
     return <Cast src={resolved} {...rest} />;
-  }
+  },
 } satisfies MDXComponents;
 
 export function useMDXComponents(): MDXComponents {

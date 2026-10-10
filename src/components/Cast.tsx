@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import type { Player } from "asciinema-player";
 import { useEffect, useRef } from "react";
 
@@ -7,31 +7,28 @@ export interface CastProps {
   [k: string]: any;
 }
 export const Cast: React.FC<CastProps> = ({ src, ...opts }) => {
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let player: Player | undefined
+    let player: Player | undefined;
     let cancelled = false;
 
     (async () => {
-      const AsciinemaPlayer = await import("asciinema-player")
+      const AsciinemaPlayer = await import("asciinema-player");
       if (!cancelled && ref.current) {
-        player = AsciinemaPlayer.create(src, ref.current, opts)
+        player = AsciinemaPlayer.create(src, ref.current, opts);
       }
     })();
     return () => {
-      cancelled = true
-      player?.dispose()
-    }
-  }, [src])
+      cancelled = true;
+      player?.dispose();
+    };
+  }, [src]);
 
-  // `isolation: isolate` creates a stacking context so the player's internal
-  // z-index (control bar 30, keystrokes 20, play overlay 10) stays contained
-  // and can't paint above the sticky navigation (z-index 1).
   return (
     <div
-      style={{ width: '100%', maxWidth: '600px', isolation: 'isolate' }}
+      style={{ width: "100%", maxWidth: "600px", isolation: "isolate" }}
       ref={ref}
     />
-  )
-}
+  );
+};

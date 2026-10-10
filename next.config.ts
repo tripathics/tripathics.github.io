@@ -1,16 +1,16 @@
-import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
   output: "export",
   turbopack: {
     rules: {
-      '*.cast': {
-        type: 'asset'
-      }
-    }
-  }
+      "*.cast": {
+        type: "asset",
+      },
+    },
+  },
 };
 
 const withMDX = createMDX({

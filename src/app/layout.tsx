@@ -3,7 +3,7 @@ import SiteShell from "@/components/SiteShell";
 import config from "@/lib/config";
 import "@/styles/index.scss";
 import "@/styles/new-moon.css";
-import "asciinema-player/dist/bundle/asciinema-player.css"
+import "asciinema-player/dist/bundle/asciinema-player.css";
 
 export const metadata: Metadata = {
   title: {
@@ -39,6 +39,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <noscript>
+          <link rel="stylesheet" href="/dark-mode.css" />
+        </noscript>
       </head>
       <body>
         <SiteShell>{children}</SiteShell>

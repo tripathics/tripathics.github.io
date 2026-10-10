@@ -16,8 +16,8 @@ export default function HomePage() {
         </h1>
 
         <p className="hero-description">
-          I&apos;m Chandrashekhar. I like pop music, coding, sketching and shooting photos. I also write sometimes.
-          &#128518;
+          I&apos;m Chandrashekhar. I like pop music, coding, sketching and
+          shooting photos. I also write sometimes. &#128518;
         </p>
       </header>
 
