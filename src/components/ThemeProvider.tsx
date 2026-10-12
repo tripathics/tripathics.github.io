@@ -19,6 +19,11 @@ function applyTheme(pref: ThemePref) {
     (pref === "system" &&
       window.matchMedia("(prefers-color-scheme: dark)").matches);
   document.documentElement.dataset.theme = dark ? "dark" : "light";
+
+  const appBg = getComputedStyle(document.documentElement).getPropertyValue("--app-bg-color")
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute("content", appBg);
 }
 
 interface ThemeContextValue {
